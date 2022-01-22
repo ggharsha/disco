@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default class SessionForm extends React.Component {
+export default class RegisterForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.form;
@@ -18,28 +18,34 @@ export default class SessionForm extends React.Component {
     }
 
     render() {
-        return(
-            <div id="login-form">
-                <h4>Welcome back!</h4>
-                <p>We're so excited to see you again!</p>
+        return (
+            <div id='register-form'>
+                <h4>Create an account!</h4>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     <label>EMAIL
-                        <input 
+                        <input
                             type='text'
                             value={this.state.form.email}
                             onChange={this.update('email')}
                         />
                     </label>
-                    <label>PASSWORD
+                    <label>USERNAME
                         <input 
+                            type='text'
+                            value={this.state.form.username}
+                            onChange={this.update('username')}
+                        />
+                    </label>
+                    <label>PASSWORD
+                        <input
                             type='password'
                             value={this.state.form.password}
                             onChange={this.update('password')}
                         />
                     </label>
-                    <button type='submit'>Login</button>
+                    <button type='submit'>Continue</button>
                 </form>
-                <p>Need an account? <Link to={`/register`}>Register</Link></p>
+                <p>Already have an account? <Link to={`/login`}>Login</Link></p>
             </div>
         )
     }
