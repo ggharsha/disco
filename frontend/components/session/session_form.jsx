@@ -23,14 +23,14 @@ export default class SessionForm extends React.Component {
                 <h4>Welcome back!</h4>
                 <p>We're so excited to see you again!</p>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
-                    <label>EMAIL
+                    <label className="field" >EMAIL
                         <input 
                             type='text'
                             value={this.state.form.email}
                             onChange={this.update('email')}
                         />
                     </label>
-                    <label>PASSWORD
+                    <label className="field" >PASSWORD
                         <input 
                             type='password'
                             value={this.state.form.password}

@@ -14,7 +14,7 @@ export default class RegisterForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
+        this.props.createUser(this.state)
     }
 
     render() {
@@ -22,21 +22,21 @@ export default class RegisterForm extends React.Component {
             <div id='register-form'>
                 <h4>Create an account!</h4>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
-                    <label>EMAIL
+                    <label className="field" >EMAIL
                         <input
                             type='text'
                             value={this.state.form.email}
                             onChange={this.update('email')}
                         />
                     </label>
-                    <label>USERNAME
+                    <label className="field" >USERNAME
                         <input 
                             type='text'
                             value={this.state.form.username}
                             onChange={this.update('username')}
                         />
                     </label>
-                    <label>PASSWORD
+                    <label className="field" >PASSWORD
                         <input
                             type='password'
                             value={this.state.form.password}
