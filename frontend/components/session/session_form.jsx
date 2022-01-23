@@ -24,19 +24,23 @@ export default class SessionForm extends React.Component {
                 <p>We're so excited to see you again!</p>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     <label className="field" >EMAIL
+                    <br />
                         <input 
                             type='text'
                             value={this.state.email}
                             onChange={this.update('email')}
                         />
                     </label>
+                    <br />
                     <label className="field" >PASSWORD
+                    <br />
                         <input 
                             type='password'
                             value={this.state.password}
                             onChange={this.update('password')}
                         />
                     </label>
+                    <br />
                     <button type='submit'>Login</button>
                 </form>
                 <p>Need an account? <Link to={`/register`}>Register</Link></p>
