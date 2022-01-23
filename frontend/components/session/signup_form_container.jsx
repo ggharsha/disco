@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { createUser } from "../../actions/users_actions";
 import RegisterForm from "./register_form";
 
-
 const mSTP = state => ({
     form: { email: '', username: '', password: '' }
 });
