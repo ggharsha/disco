@@ -25,21 +25,21 @@ export default class RegisterForm extends React.Component {
                     <label className="field" >EMAIL
                         <input
                             type='text'
-                            value={this.state.form.email}
+                            value={this.state.email}
                             onChange={this.update('email')}
                         />
                     </label>
                     <label className="field" >USERNAME
                         <input 
                             type='text'
-                            value={this.state.form.username}
+                            value={this.state.username}
                             onChange={this.update('username')}
                         />
                     </label>
                     <label className="field" >PASSWORD
                         <input
                             type='password'
-                            value={this.state.form.password}
+                            value={this.state.password}
                             onChange={this.update('password')}
                         />
                     </label>
