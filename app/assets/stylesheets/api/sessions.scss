@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import '../fonts.scss';
+
 #register-form, 
 #login-form {
     position: absolute;
@@ -16,14 +18,28 @@
     background-color: #36393f;
     color: #aaacb0;
     border-radius: 5px;
-    width: 330px;
-    height: 400px;
+    width: 290px;
+    height: 360px;
 }
 
 #register-form > h4,
 #login-form > h4 {
     color: #ffffff;
-    
+    font-size: 18px;
+    font-family: $mukta;
+    font-weight: bolder;
+}
+
+#register-form label,
+#login-form label {
+    font-size: 8px;
+    font-family: $mukta;
+}
+
+#register-form p,
+#login-form p {
+    font-size: 8px;
+    font-family: $sans;
 }
 
 #register-form form,
@@ -34,6 +50,9 @@
 #register-form input,
 #login-form input {
     width: 100%;
+    border-radius: 3px;
+    height: 20px;
+    font-size: 10px;
 }
 
 #register-form button,
@@ -41,6 +60,10 @@
     width: 100%;
     background-color: #5866f2;
     color: #ffffff;
+    border-radius: 5px;
+    font-size: 10px;
+    height: 20px;
+    font-family: $mukta;
 }
 
 #form-container {

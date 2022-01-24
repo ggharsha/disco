@@ -20,7 +20,7 @@ export default class SessionForm extends React.Component {
 
     handleDemoUser(e) {
         e.preventDefault();
-        this.props.login({ email: 'Demo@User.com', password: 'password' })
+        this.props.login({ email: 'Demo@User.com', password: 'password' });
     }
 
     render() {
