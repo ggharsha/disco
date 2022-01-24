@@ -10,7 +10,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,6 +109,10 @@
 a {
     text-decoration: none;
     color: #00aff4
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 #register-form .bottom,
