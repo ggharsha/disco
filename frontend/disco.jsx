@@ -5,7 +5,7 @@ import Root from './components/root'
 
 // testing these
 import { createUser } from './actions/users_actions';
-import { login } from './actions/session_actions';
+import { login, logout } from './actions/session_actions';
 // done testing
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,9 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // testing these
+    window.store = store;
     window.getState = store.getState;
     window.createUser = createUser;
     window.login = login;
+    window.logout = logout;
     // done testing
 
     const root = document.getElementById('root');

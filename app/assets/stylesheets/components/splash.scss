@@ -1,0 +1,39 @@
+.top-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+#splash-components {
+    display: flex;
+    flex-direction: column;
+}
+
+.splash-head {
+    display: flex;
+    flex-direction: row;
+}
+
+.second-head {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.third-head {
+    display: flex;
+    flex-direction: row;
+}
+
+.fourth-head {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.fifth-head {
+    display: flex;
+    flex-direction: row;
+}
+
+.last-head {
+    display: flex;
+    flex-direction: column;
+}
