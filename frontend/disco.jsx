@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root'
 
-//testing these
+// testing these
 import { createUser } from './actions/users_actions';
 import { login } from './actions/session_actions';
-//done testing
+// done testing
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
