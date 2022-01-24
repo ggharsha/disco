@@ -52,7 +52,7 @@
 
 #register-form input,
 #login-form input {
-    width: 98%;
+    width: 95%;
     border-radius: 3px;
     height: 40px;
     font-size: 16px;
@@ -62,11 +62,13 @@
     color: #ffffff;
     font-family: $lato;
     border: 1px solid #222327;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #register-form button,
 #login-form button {
-    width: 100%;
+    width: 99%;
     background-color: #5866f2;
     color: #ffffff;
     border-radius: 5px;
@@ -81,6 +83,13 @@
 #register-form button:hover,
 #login-form button:hover {
     background-color: #505cdd;
+    cursor: pointer;
+}
+
+#register-form button:active,
+#login-form button:active {
+    background-color: #3d45a5;
+    cursor: pointer;
 }
 
 #form-container {
