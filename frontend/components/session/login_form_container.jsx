@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import { login } from "../../actions/session_actions";
 
 const mSTP = state => ({
-    form: { email: '', password: '' }
+    form: { email: '', password: '' },
+    errors: state.errors
 });
 
 const mDTP = dispatch => ({
