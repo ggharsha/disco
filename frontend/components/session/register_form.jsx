@@ -19,10 +19,8 @@ export default class RegisterForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createUser(this.state)
-        .fail(() => this.setState({ errors: this.props.errors.sessionErrors[0] }));
-        this.props.login(this.state)
-        .fail(() => this.setState({ errors: this.props.errors.sessionErrors[0] }));
+        this.props.signup(this.state)
+        .fail(() => this.setState({ errors: this.props.errors[0] }));
     }
 
     render() {

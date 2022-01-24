@@ -20,7 +20,7 @@ export default class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state)
-        .fail(() => this.setState({ errors: this.props.errors.sessionErrors[0] }));
+        .fail(() => this.setState({ errors: this.props.errors[0] }));
     }
 
     handleDemoUser(e) {

@@ -32,12 +32,12 @@ export const fetchUser = userId => dispatch => {
 export const createUser = user => dispatch => {
     return UserApiUtil.createUser(user)
     .then(user => dispatch(receiveUser(user)))
-}
+};
 
 export const updateUser = user => dispatch => {
     return UserApiUtil.updateUser(user)
     .then(user => dispatch(receiveUser(user)))
-}
+};
 
 export const deleteUser = userId => dispatch => {
     return UserApiUtil.deleteUser(userId)

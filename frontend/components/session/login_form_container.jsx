@@ -5,7 +5,7 @@ import { login } from "../../actions/session_actions";
 
 const mSTP = state => ({
     form: { email: '', password: '' },
-    errors: state.errors
+    errors: state.errors.sessionErrors
 });
 
 const mDTP = dispatch => ({
