@@ -46,7 +46,7 @@ export default class SessionForm extends React.Component {
                         </label>
                         <button type='submit'>Login</button>
                     </form>
-                    <p>Need an account? <Link to={`/register`}>Register</Link></p>
+                    <p className="bottom">Need an account? <Link to={`/register`}>Register</Link></p>
                     <button onClick={(e) => this.handleDemoUser(e)}>Demo</button>
                 </div>
             </div>

@@ -47,7 +47,7 @@ export default class RegisterForm extends React.Component {
                         </label>
                         <button type='submit'>Continue</button>
                     </form>
-                    <p>Already have an account? <Link to={`/login`}>Login</Link></p>
+                    <p className="bottom">Already have an account? <Link to={`/login`}>Login</Link></p>
                 </div>
             </div>
         )
