@@ -33,24 +33,30 @@ export default class Splash extends React.Component {
                     <div className='second-head'>
                         <div className='second-container'>
                             <img id='splash-img-1' src={window.splashImg1} />
-                            <h3>Create an invite-only place where you belong</h3>
-                            <p>Discord servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</p>
+                            <div className='text-1'>
+                                <h3>Create an invite-only place where you belong</h3>
+                                <p>Discord servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</p>
+                            </div>
                         </div>
                     </div>
 
                     <div className='third-head'>
                         <div className='third-container'>
                             <img id='splash-img-2' src={window.splashImg2} />
-                            <h3>Where hanging out is easy</h3>
-                            <p>Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.</p>
+                            <div className='text-2'>
+                                <h3>Where hanging out is easy</h3>
+                                <p>Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.</p>
+                            </div>
                         </div>
                     </div>
 
                     <div className='fourth-head'>
                         <div className='fourth-container'>
                             <img id='splash-img-3' src={window.splashImg3} />
-                            <h3>From few to a fandom</h3>
-                            <p>Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.</p>
+                            <div className='text-3'>
+                                <h3>From few to a fandom</h3>
+                                <p>Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.</p>
+                            </div>
                         </div>
                     </div>
 
