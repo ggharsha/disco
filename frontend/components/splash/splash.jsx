@@ -35,7 +35,7 @@ export default class Splash extends React.Component {
                             <img id='splash-img-1' src={window.splashImg1} />
                             <div className='text-1'>
                                 <h3>Create an invite-only place where you belong</h3>
-                                <p>Discord servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</p>
+                                <p>Disco servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</p>
                             </div>
                         </div>
                     </div>
