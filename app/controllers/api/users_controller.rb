@@ -35,7 +35,7 @@ class Api::UsersController < ApplicationController
         @user = User.find(params[:id])
         if !@user.is_password?(user_params[:password])
             render json: ['Incorrect password.'], status: 422
-        elsif @user.id = current_user.id
+        elsif @user.id == current_user.id
             @user.destroy
             render :show
         else

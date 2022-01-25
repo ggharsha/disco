@@ -10,6 +10,7 @@
     font-weight: 300;
     font-size: 20px;
     line-height: 1.5;
+    color: #23272a;
 }
 
 #splash-components {
@@ -27,8 +28,9 @@
 
 .splash h3 {
     font-family: $mukta;
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 800;
+    color: #23272a;
 }
 
 .top-nav {
@@ -74,7 +76,7 @@
     position: absolute;
     object-fit: contain;
     margin-left: -1200px;
-    margin-top: -240px;
+    margin-top: -210px;
 }
 
 #splash-head-left {
@@ -82,7 +84,7 @@
     margin-left: -1070px;
     position: absolute;
     object-fit: contain;
-    padding-top: 34px;
+    padding-top: 64px;
 }
 
 #splash-head-right {
@@ -90,7 +92,7 @@
     margin-left: 370px;
     position: absolute;
     object-fit: contain;
-    padding-top: 26px;
+    padding-top: 56px;
 }
 
 .splash-head {
@@ -111,12 +113,14 @@
 }
 
 .splash-head h3 {
+    font-family: $candal;
     text-align: center;
     font-size: 60px;
     font-weight: 900;
     color: white;
     z-index: 5;
-    width: 600px;
+    width: 700px;
+    line-height: 2;
 }
 
 .splash-head p {
@@ -133,7 +137,7 @@
 .second-head {
     display: flex;
     flex-direction: row;
-    height: 600px;
+    height: 700px;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -156,10 +160,14 @@
     padding-left: 100px
 }
 
+.second-head p {
+    padding-top: 20px;
+}
+
 .third-head {
     display: flex;
     flex-direction: row-reverse;
-    height: 600px;
+    height: 700px;
     width: 100%;
     background: #f6f6f6;
     align-items: center;
@@ -183,10 +191,14 @@
     padding-right: 100px;
 }
 
+.third-head p {
+    padding-top: 20px;
+}
+
 .fourth-head {
     display: flex;
     flex-direction: row;
-    height: 600px;
+    height: 700px;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -209,6 +221,10 @@
     padding-left: 100px;
 }
 
+.fourth-head p {
+    padding-top: 20px;
+}
+
 .fifth-head {
     display: flex;
     flex-direction: column;
@@ -221,11 +237,12 @@
 }
 
 .fifth-head h3 {
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 900;
     align-self: center;
     justify-self: center;
     text-align: center;
+    font-family: $candal;
 }
 
 .fifth-head h4 {

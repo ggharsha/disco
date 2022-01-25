@@ -29,7 +29,7 @@ class Api::ServersController < ApplicationController
 
     def destroy
         @server = Server.find(params[:id])
-        if current_user.id = @server.owner_id
+        if current_user.id == @server.owner_id
             @server.destroy
         else
             render json: ['You cannot destroy someone else\'s server.'], status: 422
