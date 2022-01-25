@@ -60,14 +60,18 @@
 }
 
 #splash-head-left {
-    padding-top: 266px;
-    padding-left: -30%;
+    padding-top: 274px;
+    // padding-left: -30%;
+    left: 50%;
+    margin-left: -1030px;
     position: absolute;
 }
 
 #splash-head-right {
     padding-top: 266px;
-    padding-left: 70%;
+    // padding-left: 70%;
+    left: 50%;
+    margin-left: 370px;
     position: absolute;
 }
 
@@ -81,11 +85,18 @@
     height: 626px;
 }
 
+.head-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
 .splash-head h3 {
     font-size: 60px;
     font-weight: 900;
     color: white;
-    z-index: 1;
+    z-index: 5;
     width: 600px;
 }
 
@@ -93,7 +104,7 @@
     font-family: $lato;
     color: white;
     width: 700px;
-    z-index: 1;
+    z-index: 5;
     font-size: 18px;
     letter-spacing: 1.5px;
     line-height: 1.6;
