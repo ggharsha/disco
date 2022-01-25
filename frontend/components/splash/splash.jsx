@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default class Splash extends React.Component {
     render() {
         return (
-            <div>
+            <div className='splash'>
                 <div className='top-nav'>
                     <h6>Disco</h6>
                     <ul id='socials'>
@@ -17,7 +17,7 @@ export default class Splash extends React.Component {
                 </div>
 
                 <div id='splash-components'>
-                    <div id='splash-img-1'></div>
+                    <img id='splash-img-1' src={window.splashClouds} />
                     <div id='splash-img-2'></div>
                     <div id='splash-img-3'></div>
                     <div className='splash-head'>

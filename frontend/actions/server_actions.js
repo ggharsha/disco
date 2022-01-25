@@ -1,4 +1,4 @@
-import * as ServerApiUtil from '../util/session_api_util';
+import * as ServerApiUtil from '../util/servers_api_util';
 
 export const RECEIVE_ALL_SERVERS = 'RECEIVE_ALL_SERVERS';
 export const RECEIVE_SERVER = 'RECEIVER_SERVER';
