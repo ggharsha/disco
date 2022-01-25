@@ -5,19 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script type="text/javascript">
+      window.splashClouds = "<%= image_url('clouds') %>";
+      window.splashHeadRight = "<%= image_url('splash5') %>";
+      window.splashHeadLeft = "<%= image_url('splash4') %>";
+      window.splashImg1 = "<%= image_url('splash1') %>";
+      window.splashImg2 = "<%= image_url('splash2') %>";
+      window.splashImg3 = "<%= image_url('splash3') %>";
+      window.splashImg4 = "<%= image_url('splash6') %>";
+      window.formBackground = "<%= image_url('background') %>";
+    </script>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
-    <script type="text/javascript">
-      window.splashClouds = "<%= image_url('/assets/images/clouds') %>";
-      window.splashHeadLeft = "<%= image_url('/assets/images/splash5') %>";
-      window.splashHeadRight = "<%= image_url('/assets/images/splash6') %>";
-      window.splashImg1 = "<%= image_url('/assets/images/splash1') %>";
-      window.splashImg2 = "<%= image_url('/assets/images/splash2') %>";
-      window.splashImg3 = "<%= image_url('/assets/images/splash3') %>";
-      window.splashImg4 = "<%= image_url('/assets/images/splash4') %>";
-      window.formBackground = "<%= image_url('/assets/images/background') %>";
-    </script>
   </head>
 
   <body>
