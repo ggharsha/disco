@@ -1,6 +1,6 @@
 class Api::ServersController < ApplicationController
     def index
-        @servers = Server.all
+        @servers = Server.where(public: true)
         render :index
     end
 
