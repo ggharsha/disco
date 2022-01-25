@@ -5,6 +5,12 @@
     height: 100%;
 }
 
+.splash p {
+    font-family: $lato;
+    font-weight: 300;
+    font-size: 18px;
+}
+
 #splash-components {
     display: flex;
     flex-direction: column;
@@ -20,14 +26,16 @@
 
 .splash h3 {
     font-family: $mukta;
-    font-size: 26px;
+    font-size: 40px;
+    font-weight: 700;
+    width: 300px;
 }
 
 .top-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
     background: #404eed;
     font-family: $mukta;
@@ -38,7 +46,8 @@
 
 .top-nav ul {
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
+    justify-content: space-between;    
 }
 
 #header-images {
@@ -52,13 +61,13 @@
 
 #splash-head-left {
     padding-top: 266px;
-    justify-self: center;
+    padding-left: -30%;
     position: absolute;
 }
 
 #splash-head-right {
     padding-top: 266px;
-    justify-self: center;
+    padding-left: 70%;
     position: absolute;
 }
 
@@ -77,6 +86,7 @@
     font-weight: 900;
     color: white;
     z-index: 1;
+    width: 600px;
 }
 
 .splash-head p {
@@ -92,24 +102,44 @@
 .second-head {
     display: flex;
     flex-direction: row-reverse;
+    height: 600px;
+    width: 100%;
 }
 
 .third-head {
     display: flex;
     flex-direction: row;
+    height: 600px;
+    width: 100%;
+    background: #f6f6f6;
 }
 
 .fourth-head {
     display: flex;
     flex-direction: row-reverse;
+    height: 600px;
+    width: 100%;
 }
 
 .fifth-head {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 100%;
+    background: #f6f6f6;
+}
+
+.fifth-head h3 {
+    font-size: 60px;
+    font-weight: 900;
+    width: 1000px;
 }
 
 .last-head {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
