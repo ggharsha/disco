@@ -5,6 +5,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= image_tag "rails.png" %>
+
     <script type="text/javascript">
       window.splashClouds = "<%= image_url('clouds') %>";
       window.splashHeadRight = "<%= image_url('splash5') %>";
@@ -16,8 +20,7 @@
       window.formBackground = "<%= image_url('background') %>";
     </script>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
