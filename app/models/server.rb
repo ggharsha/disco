@@ -13,7 +13,7 @@ class Server < ApplicationRecord
     validates :owner_id, :server_name, :public, presence: true
 
     belongs_to :owner,
-        foreign_key: :user_id,
+        foreign_key: :owner_id,
         class_name: :User
     has_many :memberships,
         dependent: :destroy

@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_SERVERS, RECEIVE_SERVER, REMOVE_SERVER } from "../actions/server_actions";
+import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
 const serversReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -12,6 +13,8 @@ const serversReducer = (state = {}, action) => {
         case REMOVE_SERVER:
             delete nextState[action.serverId];
             return nextState;
+        case RECEIVE_CURRENT_USER:
+            return action.currentUser.servers;
         default:
             return state;
     };

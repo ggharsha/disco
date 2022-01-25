@@ -21,7 +21,7 @@ class User < ApplicationRecord
     attr_reader :password, :handle
 
     has_many :owned_servers,
-        foreign_key: :user_id,
+        foreign_key: :owner_id,
         class_name: :Server,
         dependent: :destroy
     has_many :memberships,

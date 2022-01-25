@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Server.destroy_all
+Membership.destroy_all
 
 users = User.create!([
     { username: "DemoUser", email: "Demo@User.com", password: "password" }, 
@@ -22,4 +24,54 @@ users = User.create!([
     { username: "diego", email: "taytaynumber1fan@gmail.com", password: "ilovetaylor" },
     { username: "yuhuan", email: "yuuuuhuan@gmail.com", password: "passworddd" },
     { username: "ayce", email: "ayceofspaydes@gmail.com", password: "PASSWORD123" }
+])
+
+servers = Server.create!([
+    { owner_id: 2, server_name: "aa friends", public: true },
+    { owner_id: 4, server_name: "anime", public: true },
+    { owner_id: 2, server_name: "league of legends", public: true },
+    { owner_id: 6, server_name: "overwatch", public: true },
+    { owner_id: 7, server_name: "gaming", public: true },
+    { owner_id: 8, server_name: "emote server", public: true },
+    { owner_id: 1, server_name: "keyboard lovers", public: true },
+    { owner_id: 5, server_name: "memes", public: true },
+    { owner_id: 4, server_name: "funfunfun", public: true },
+    { owner_id: 4, server_name: "dodriobrate", public: true },
+    { owner_id: 1, server_name: "pokemon", public: true },
+    { owner_id: 7, server_name: "cohort channel", public: true },
+    { owner_id: 6, server_name: "ta server", public: true },
+    { owner_id: 5, server_name: "don't click", public: true },
+    { owner_id: 4, server_name: "this is a public server", public: true },
+])
+
+memberships = Membership.create!([
+    { user_id: 2, server_id: 1 },
+    { user_id: 3, server_id: 1 },
+    { user_id: 4, server_id: 1 },
+    { user_id: 5, server_id: 1 },
+    { user_id: 6, server_id: 1 },
+    { user_id: 7, server_id: 1 },
+    { user_id: 8, server_id: 1 },
+    { user_id: 1, server_id: 2 },
+    { user_id: 1, server_id: 3 },
+    { user_id: 1, server_id: 4 },
+    { user_id: 1, server_id: 5 },
+    { user_id: 1, server_id: 9 },
+    { user_id: 2, server_id: 1 },
+    { user_id: 2, server_id: 2 },
+    { user_id: 2, server_id: 3 },
+    { user_id: 2, server_id: 4 },
+    { user_id: 2, server_id: 5 },
+    { user_id: 2, server_id: 7 },
+    { user_id: 6, server_id: 4 },
+    { user_id: 2, server_id: 1 },
+    { user_id: 4, server_id: 2 },
+    { user_id: 6, server_id: 4 },
+    { user_id: 7, server_id: 5 },
+    { user_id: 8, server_id: 6 },
+    { user_id: 1, server_id: 9 },
+    { user_id: 12, server_id: 10 },
+    { user_id: 5, server_id: 11 },
+    { user_id: 4, server_id: 12 },
+    { user_id: 4, server_id: 13 },
 ])
