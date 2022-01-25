@@ -65,16 +65,16 @@ export default class Splash extends React.Component {
                             <h3>RELIABLE TECH FOR STAYING CLOSE</h3>
                             <p>Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.</p>
                             <img id='splash-img-4' src={window.splashImg4} />
+                            <h4>Ready to start your journey?</h4>
+                            <br />
+                            <br />
+                            <Link to='/register'>Sign up</Link>
                         </div>
-                    </div>
-
-                    <div className='last-head'>
-                        <h3>Ready to start your journey?</h3>
                     </div>
                 </div>
 
                 <div className='splash-foot'>
-                    <Link to='/register'>Sign up</Link>
+                    
                 </div>
             </div>
         )

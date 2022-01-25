@@ -8,7 +8,8 @@
 .splash p {
     font-family: $lato;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 #splash-components {
@@ -151,7 +152,8 @@
 }
 
 .second-head .text-1 {
-    width: 700px;
+    width: 300px;
+    padding-left: 100px
 }
 
 .third-head {
@@ -177,7 +179,8 @@
 }
 
 .third-head .text-2 {
-    width: 700px;
+    width: 300px;
+    padding-right: 100px;
 }
 
 .fourth-head {
@@ -202,7 +205,8 @@
 }
 
 .fourth-head .text-3 {
-    width: 700px;
+    width: 300px;
+    padding-left: 100px;
 }
 
 .fifth-head {
@@ -210,7 +214,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    text-align: center;
+    height: 1000px;
     width: 100%;
     background: #f6f6f6;
 }
@@ -218,12 +223,47 @@
 .fifth-head h3 {
     font-size: 60px;
     font-weight: 900;
-    width: 1000px;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
 }
 
-.last-head {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.fifth-head h4 {
+    font-family: $mukta;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.fifth-head p {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.fifth-head img {
+    height: 600px;
+}
+
+.fifth-head a {
+    border: 1px solid #5866f2;
+    text-align: center;
+    border-radius: 45px;
+    padding: 15px;
+    color: #ffffff;
+    background: #5866f2;
+    font-family: $mukta;
+}
+
+.fifth-head a:hover {
+    text-decoration: none;
+
+}
+
+.splash-foot {
+    height: 400px;
+    background: #23272a;
 }
