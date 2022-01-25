@@ -13,15 +13,17 @@ export default class Splash extends React.Component {
                         <li>GitHub</li>
                         <li>Portfolio</li>
                     </ul>
-                    <Link to='/login'>Login</Link>
+                    <Link to='/login' className='login'>Login</Link>
                 </div>
 
                 <div id='splash-components'>
-                    <img id='splash-head-clouds' src={window.splashClouds} />
-                    <img id='splash-head-left' src={window.splashHeadLeft} />
-                    <img id='splash-head-right' src={window.splashHeadRight} />
+                    <div id='header-images'>
+                        <img id='splash-head-clouds' src={window.splashClouds} />
+                        <img id='splash-head-left' src={window.splashHeadLeft} />
+                        <img id='splash-head-right' src={window.splashHeadRight} />
+                    </div>
                     <div className='splash-head'>
-                        <h3>IMAGINE A PLACE</h3>
+                        <h3>IMAGINE A PLACE...</h3>
                         <p>...where you can belong to a school club, a gaming group, or a worldwide art community. Where just you and a handful of friends can spend time together. A place that makes it easy to talk every day and hang out more often.</p>
                     </div>
 
@@ -50,7 +52,7 @@ export default class Splash extends React.Component {
                     </div>
 
                     <div className='last-head'>
-                        <h3>Ready to start your jorney?</h3>
+                        <h3>Ready to start your journey?</h3>
                     </div>
                 </div>
 
