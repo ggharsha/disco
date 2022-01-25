@@ -17,4 +17,9 @@ users = User.create!([
     { username: "presley", email: "presley@gmail.com", password: "password" },
     { username: "perry", email: "perry_platypus@gmail.com", password: "demoUser" },
     { username: "jack", email: "jack@gmail.com", password: "123456789" },
+    { username: "darren", email: "DARRENNNN@gmail.com", password: "123456789" },
+    { username: "spencer", email: "thespence@gmail.com", password: "spencerrrr" },
+    { username: "diego", email: "taytaynumber1fan@gmail.com", password: "ilovetaylor" },
+    { username: "yuhuan", email: "yuuuuhuan@gmail.com", password: "passworddd" },
+    { username: "ayce", email: "ayceofspaydes@gmail.com", password: "PASSWORD123" }
 ])
