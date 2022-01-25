@@ -56,22 +56,25 @@
 
 #splash-head-clouds {
     position: absolute;
+    object-fit: contain;
+    margin-left: -1200px;
+    margin-top: -240px;
 }
 
 #splash-head-left {
-    padding-top: 274px;
-    // padding-left: -30%;
     left: 50%;
     margin-left: -1030px;
     position: absolute;
+    object-fit: contain;
+    padding-top: 34px;
 }
 
 #splash-head-right {
-    padding-top: 266px;
-    // padding-left: 70%;
     left: 50%;
     margin-left: 370px;
     position: absolute;
+    object-fit: contain;
+    padding-top: 26px;
 }
 
 .splash-head {
