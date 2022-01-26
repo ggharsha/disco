@@ -23,7 +23,8 @@ users = User.create!([
     { username: "spencer", email: "thespence@gmail.com", password: "spencerrrr" },
     { username: "diego", email: "taytaynumber1fan@gmail.com", password: "ilovetaylor" },
     { username: "yuhuan", email: "yuuuuhuan@gmail.com", password: "passworddd" },
-    { username: "ayce", email: "ayceofspaydes@gmail.com", password: "PASSWORD123" }
+    { username: "ayce", email: "ayceofspaydes@gmail.com", password: "PASSWORD123" },
+    { username: "alex", email: "AIBUG@gmail.com", password: "i_am_albug" }
 ])
 
 servers = Server.create!([

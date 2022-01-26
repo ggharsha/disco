@@ -74,7 +74,11 @@ export default class Splash extends React.Component {
                 </div>
 
                 <div className='splash-foot'>
-                    
+                    <div className='left-text'>
+                        <p>IMAGINE A PLACE...</p>
+                    </div>
+                    <div className='middle-text'></div>
+                    <div className='right-text'></div>
                 </div>
             </div>
         )

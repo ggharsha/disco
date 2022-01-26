@@ -283,4 +283,16 @@
 .splash-foot {
     height: 400px;
     background: #23272a;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.left-text p {
+    font-family: $candal;
+    font-size: 32px;
+    width: 200px;
+    color: #5866f2;
+    line-height: 1;
 }
