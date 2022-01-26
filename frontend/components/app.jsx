@@ -3,6 +3,7 @@ import { Route, Redirect, Switch, Link } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import ServerNavContainer from './servers/server_nav_container';
 import Splash from "./splash/splash";
 
 const App = () => (
@@ -16,7 +17,7 @@ const App = () => (
             <ProtectedRoute exact path="/channels/:serverId/:channelId" /> {/* channel within server page */}
             <Route exact path="/" component={Splash} /> {/* splash page */}
         </Switch>
-        <ProtectedRoute path="/channels" /> {/* server nav bar */}
+        <ProtectedRoute path="/channels" component={ServerNavContainer} /> {/* server nav bar */}
         <ProtectedRoute path="/channels" /> {/* user settings */}
         <ProtectedRoute path="/channels/@me" /> {/* dm list nav bar */}
     </div>
