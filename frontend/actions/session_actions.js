@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/session_api_util';
+import { fetchUser } from '../util/users_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -38,4 +39,8 @@ export const logout = () => dispatch => (
     APIUtil.logout().then(user => (
         dispatch(logoutCurrentUser())
     ))
+);
+
+export const fetchCurrentUser = userId => dispatch => (
+    fetchUser(userId).then(currentUser => dispatch(receiveCurrentUser(currentUser)))
 );
