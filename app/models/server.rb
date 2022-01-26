@@ -15,9 +15,13 @@ class Server < ApplicationRecord
     belongs_to :owner,
         foreign_key: :owner_id,
         class_name: :User
+        
     has_many :memberships,
         dependent: :destroy
+
     has_many :users,
         through: :memberships,
         source: :user
+
+    has_one_attached :server_picture
 end
