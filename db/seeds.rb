@@ -24,7 +24,19 @@ users = User.create!([
     { username: "diego", email: "taytaynumber1fan@gmail.com", password: "ilovetaylor" },
     { username: "yuhuan", email: "yuuuuhuan@gmail.com", password: "passworddd" },
     { username: "ayce", email: "ayceofspaydes@gmail.com", password: "PASSWORD123" },
-    { username: "alex", email: "AIBUG@gmail.com", password: "i_am_albug" }
+    { username: "alex", email: "AIBUG@gmail.com", password: "i_am_albug" },
+    { username: "laney", email: "laney@gmail.com", password: "password123" },
+    { username: "brian", email: "brian@gmail.com", password: "password123" },
+    { username: "chris", email: "chris@gmail.com", password: "password123" },
+    { username: "jerry", email: "jerry@gmail.com", password: "password123" },
+    { username: "amanda", email: "amanda@gmail.com", password: "password123" },
+    { username: "ann", email: "ann@gmail.com", password: "password123" },
+    { username: "kirti", email: "kirti@gmail.com", password: "password123" },
+    { username: "helen", email: "helen@gmail.com", password: "password123" },
+    { username: "efrem", email: "efrem@gmail.com", password: "password123" },
+    { username: "zack", email: "zack@gmail.com", password: "password123" },
+    { username: "charlie", email: "charlie@gmail.com", password: "password123" },
+    { username: "arleen", email: "arleen@gmail.com", password: "password123" }
 ])
 
 servers = Server.create!([
