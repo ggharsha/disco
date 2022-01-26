@@ -3,8 +3,15 @@ import { connect } from "react-redux";
 import ServerNavBar from "./server_nav_bar";
 import { fetchServer } from "../../actions/server_actions";
 
+// selectors start
+const selectServers = state => (
+    state.servers ?  Object.values(state.servers) : []
+);
+// selectors end
+
+
 const mSTP = state => ({
-    servers: Object.values(state.servers)
+    servers: selectServers(state)
 });
 
 const mDTP = dispatch => ({
