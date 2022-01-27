@@ -6,7 +6,7 @@ export default class Splash extends React.Component {
         return (
             <div className='splash'>
                 <div className='top-nav'>
-                    <h6>Disco</h6>
+                    <h6><i className="fab fa-discord" /> Disco</h6>
                     <ul id='socials'>
                         <li>LinkedIn</li>
                         <li>AngelList</li>
