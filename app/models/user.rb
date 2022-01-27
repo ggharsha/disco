@@ -34,6 +34,26 @@ class User < ApplicationRecord
     
     has_one_attached :avatar
 
+    has_many :friendships
+
+    has_many :friends,
+        -> { where friendships: { status: "accepted" }},
+        through: :friendships,
+        source: :friend,
+        dependent: :destroy
+
+    has_many :outgoing_friend_requests,
+        -> { where friendships: { status: "outgoing" }},
+        through: :friendships,
+        source: :friend,
+        dependent: :destroy
+
+    has_many :incoming_friend_requests,
+        -> { where friendships: { status: "incoming" }},
+        through: :friendships,
+        source: :friend,
+        dependent: :destroy
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil unless user

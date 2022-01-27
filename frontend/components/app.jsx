@@ -11,11 +11,11 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} /> {/* login page */}
             <AuthRoute exact path="/register" component={SignupFormContainer} /> {/* register page */}
-            <AuthRoute exact path="/" component={Splash} /> {/* splash page */}
             <ProtectedRoute exact path="/app" /> {/* loading page */}
             <ProtectedRoute exact path="/channels/@me/:directMessageId" /> {/* dm show page */}
             <ProtectedRoute exact path="/channels/@me" /> {/* home page */}
             <ProtectedRoute exact path="/channels/:serverId/:channelId" /> {/* channel within server page */}
+            <Route exact path="/" component={Splash} /> {/* splash page */}
         </Switch>
         <ProtectedRoute path="/channels" component={ServerNavContainer} /> {/* server nav bar, setting bar */}
         {/* <ProtectedRoute path="/channels/@me" /> {/* dm list nav bar */}

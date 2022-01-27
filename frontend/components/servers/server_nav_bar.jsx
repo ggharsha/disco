@@ -7,6 +7,10 @@ export default class ServerNavBar extends React.Component {
         this.props.fetchCurrentUser(this.props.currentUser.id)
     }
 
+    handleModal() {
+        
+    }
+
     render() {
         const { servers, fetchServer } = this.props;
         if (!this.props.currentUser) return null
