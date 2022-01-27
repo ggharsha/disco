@@ -18,7 +18,6 @@ const App = () => (
             <Route exact path="/" component={Splash} /> {/* splash page */}
         </Switch>
         <ProtectedRoute path="/channels" component={ServerNavContainer} /> {/* server nav bar, setting bar */}
-        {/* <ProtectedRoute path="/channels/@me" /> {/* dm list nav bar */}
     </div>
 );
 

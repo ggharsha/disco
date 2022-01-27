@@ -35,9 +35,32 @@
     background-size: 50px 50px;
 }
 
+.add-server {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 32px;
+    color: #3ba55d;
+}
+
+.public-servers .fa-compass {
+    text-align: center;
+    font-size: 24px;
+    line-height: 2;
+    color: #3ba55d;
+}
+
 .add-server:hover,
 .public-servers:hover {
     background: #3ba55d;
+}
+
+.add-server:hover,
+.public-servers .fa-compass:hover {
+    color: white;
+}
+
+.fa-compass {
+    padding-left: 4px;
 }
 
 #backdrop {

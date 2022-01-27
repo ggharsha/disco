@@ -18,13 +18,14 @@ export default class ServerNavBar extends React.Component {
             <div>
                 <div className="server-div">
                     <ul className="server-list">
-                        <li className="profile server-icon"></li>
+                        <Link to={"/channels/@me"}><li className="profile server-icon"></li></Link>
                         <li className="disco-line" />
                         {servers.map(server => (
                             <ServerNavIcon key={server.id} server={server} fetchServer={fetchServer} />
                         ))}
-                        <li className="server-icon add-server"/>
-                        <li className="server-icon public-servers"/>
+                        <li className="disco-line" />
+                        <li className="server-icon add-server">+</li>
+                        <li className="server-icon public-servers"><i className="fas fa-compass"/></li>
                     </ul>
                 </div>
                 <div id="channel-bg">
