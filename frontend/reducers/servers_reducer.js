@@ -14,7 +14,8 @@ const serversReducer = (state = {}, action) => {
             delete nextState[action.serverId];
             return nextState;
         case RECEIVE_CURRENT_USER:
-            return action.currentUser.servers;
+            Object.assign(nextState, action.currentUser.servers);
+            return nextState;
         default:
             return state;
     };

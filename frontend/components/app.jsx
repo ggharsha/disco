@@ -4,7 +4,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ServerNavContainer from './servers/server_nav_container';
-import SettingsNavContainer from './settings/settings_container';
 import Splash from "./splash/splash";
 
 const App = () => (
@@ -18,8 +17,7 @@ const App = () => (
             <ProtectedRoute exact path="/channels/@me" /> {/* home page */}
             <ProtectedRoute exact path="/channels/:serverId/:channelId" /> {/* channel within server page */}
         </Switch>
-        <ProtectedRoute path="/channels" component={ServerNavContainer} /> {/* server nav bar */}
-        <ProtectedRoute path="/channels" component={SettingsNavContainer} /> {/* user settings */} 
+        <ProtectedRoute path="/channels" component={ServerNavContainer} /> {/* server nav bar, setting bar */}
         {/* <ProtectedRoute path="/channels/@me" /> {/* dm list nav bar */}
     </div>
 );

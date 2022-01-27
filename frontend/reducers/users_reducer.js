@@ -14,7 +14,8 @@ const usersReducer = (state = {}, action) => {
             delete nextState[action.userId];
             return nextState;
         case RECEIVE_CURRENT_USER:
-            return action.currentUser;
+            nextState[action.currentUser.user.id] = action.currentUser.user;
+            return nextState;
         default:
             return state;
     };
