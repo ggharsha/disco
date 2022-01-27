@@ -93,6 +93,8 @@ channels = Channel.create!([
     { server_id: 1, channel_name: "general" },
     { server_id: 1, channel_name: "off-topic" },
     { server_id: 1, channel_name: "memes" },
+    { server_id: 1, channel_name: "study guides" },
+    { server_id: 1, channel_name: "homework-help" },
     { server_id: 2, channel_name: "general" },
     { server_id: 2, channel_name: "off-topic" },
     { server_id: 2, channel_name: "memes" },

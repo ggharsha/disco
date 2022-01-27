@@ -5,7 +5,7 @@
 .user-list {
     height: 100%;
     width: 240px;
-    z-index: 1;
+    z-index: 4;
     position: absolute;
     top: 0;
     right: 0;
@@ -60,16 +60,20 @@
 .channel-list .channels {
     display: flex;
     flex-direction: column;
-    line-height: 1.5;
-    margin-left: 30px;
+    line-height: 1.8;
+    margin-left: 25px;
     padding-top: 70px;
 }
 
 .channel-list-item {
     color: #8d9297;
-    font-size: 18px;
-    font-family: $mukta;
-    font-weight: 300;
+    font-size: 16px;
+    font-family: $lato;
+    font-weight: 600;
+}
+
+.channel-list-item:hover {
+    color: #fefefe;
 }
 
 .channels a {
@@ -78,4 +82,37 @@
 
 .channels a:hover {
     text-decoration: none;
+}
+
+.channel-div .server-name {
+    margin-left: 70px;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 240px;
+    height: 50px;
+    border-bottom: 2px solid #232529;
+    box-shadow: 0px 2px #2c2e34;
+}
+
+.server-name .server-name-text {
+    font-size: 18px;
+    color: #fefefe;
+    font-family: $lato;
+    padding-left: 25px;
+}
+
+.channel-main .channel-topic {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    margin-left: 310px;
+    margin-right: 240px;
+    height: 50px;
+    border-bottom: 2px solid #232529;
+    box-shadow: 0px 2px #2c2e34;
 }

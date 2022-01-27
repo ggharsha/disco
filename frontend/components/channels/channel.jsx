@@ -13,6 +13,9 @@ export default class Channel extends React.Component {
         if (!this.props.server) return null;
         return (
             <div className="channel-div">
+                <div className="server-name">
+                    <p className="server-name-text">{this.props.server.serverName}</p>
+                </div>
                 <div className="channel-list">
                     <ul className="channels">
                         {this.props.channels.map(channel => (
@@ -23,7 +26,9 @@ export default class Channel extends React.Component {
                     </ul>
                 </div>
                 <div className="channel-main">
+                    <div className="channel-topic">
 
+                    </div>
                 </div>
                 <div className="user-list">
                     <ul className="users">
