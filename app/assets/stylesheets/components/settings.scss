@@ -1,5 +1,16 @@
 @import '../fonts.scss';
 
+#channel-bg {
+    height: 100%;
+    width: 240px;
+    z-index: -1;
+    margin-left: 70px;
+    position: absolute;
+    background: #2f3136;
+    bottom: 0;
+    left: 0;
+}
+
 #own-settings {
     position: fixed;
     margin-left: 70px;
@@ -11,6 +22,7 @@
     background: #292b2f;
     z-index: 1;
     bottom: 0;
+    left: 0;
 }
 
 #own-avatar {
@@ -46,7 +58,7 @@
 }
 
 .fa-microphone {
-    margin-left: 70px;
+    margin-left: 65px;
 }
 
 .fas:hover {
