@@ -34,3 +34,8 @@
     background-image: image_url('Pastel-Black.png');
     background-size: 50px 50px;
 }
+
+.add-server:hover,
+.public-servers:hover {
+    background: #3ba55d;
+}

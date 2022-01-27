@@ -12,7 +12,7 @@ export default class ServerNavBar extends React.Component {
     }
 
     render() {
-        const { servers, fetchServer } = this.props;
+        const { servers, fetchServer, fetchServers, updateUser, deleteUser, logout } = this.props;
         if (!this.props.currentUser) return null
         return (
             <div>
@@ -23,6 +23,8 @@ export default class ServerNavBar extends React.Component {
                         {servers.map(server => (
                             <ServerNavIcon key={server.id} server={server} fetchServer={fetchServer} />
                         ))}
+                        <li className="server-icon add-server"/>
+                        <li className="server-icon public-servers"/>
                     </ul>
                 </div>
                 <div id="channel-bg">
