@@ -18,7 +18,11 @@ export default class ServerNavBar extends React.Component {
             <div>
                 <div className="server-div">
                     <ul className="server-list">
-                        <Link to={"/channels/@me"}><li className="profile server-icon"></li></Link>
+                        <Link to={"/channels/@me"}>
+                            <li className="profile server-icon">
+                                <i className="fab fa-discord" />
+                            </li>
+                            </Link>
                         <li className="disco-line" />
                         {servers.map(server => (
                             <ServerNavIcon key={server.id} server={server} fetchServer={fetchServer} />

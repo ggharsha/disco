@@ -30,9 +30,16 @@
     margin-left: 10px;
 }
 
-.server-list .profile {
-    background-image: image_url('Pastel-Black.png');
-    background-size: 50px 50px;
+.server-list .profile .fa-discord {
+    color: #fefefe;
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.6;
+    padding-left: 6px;
+}
+
+.server-list .profile:hover {
+    background: #5866f2;
 }
 
 .add-server {
