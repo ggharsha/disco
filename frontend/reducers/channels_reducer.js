@@ -11,8 +11,12 @@ const channelsReducer = (state = {}, action) => {
         case REMOVE_CHANNEL:
             delete nextState[action.channel.id];
             return nextState;
-        // case RECEIVE_SERVER:
-        // case REMOVE_SERVER:
+        case RECEIVE_SERVER:
+            Object.assign(nextState, action.server.channels);
+            return nextState;
+        case REMOVE_SERVER:
+            Object.assign(nextState, action.server.channels);
+            return nextState;
         default:
             return nextState;
     };
