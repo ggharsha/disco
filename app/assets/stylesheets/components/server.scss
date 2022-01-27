@@ -1,3 +1,13 @@
+@import '../fonts.scss';
+
+.link-to-server {
+    text-decoration: none;
+}
+
+.link-to-server:hover {
+    text-decoration: none;
+}
+
 .server-div {
     width: 70px;
     height: 100%;
@@ -16,11 +26,19 @@
     margin: 10px;
     background: #36393f;
     border-radius: 50%;
+    text-align: center;
+    font-family: $lato;
+    color: #fefefe;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 2.2;
 }
 
 .server-icon:hover {
     border-radius: 35%;
     cursor: pointer;
+    text-decoration: none;
+    color: #5866f2
 }
 
 .disco-line {
@@ -35,7 +53,7 @@
     text-align: center;
     font-size: 30px;
     line-height: 1.6;
-    padding-left: 6px;
+    padding-left: 1px;
 }
 
 .server-list .profile:hover {
@@ -77,3 +95,4 @@
     height: 100%;
     position: absolute;
 }
+

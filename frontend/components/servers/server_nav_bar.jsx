@@ -26,7 +26,7 @@ export default class ServerNavBar extends React.Component {
                             </Link>
                         <li className="disco-line" />
                             {servers.map(server => (
-                                <Link key={server.id} to={`/channels/${server.id}/1`}>
+                                <Link className="link-to-server" key={server.id} to={`/channels/${server.id}/1`}>
                                     <ServerNavIcon key={server.id} fetchServer={fetchServer} server={server} />
                                 </Link>
                             ))}
