@@ -8,7 +8,7 @@ export default class ServerNavBar extends React.Component {
     }
 
     handleModal() {
-        
+
     }
 
     render() {
@@ -19,6 +19,7 @@ export default class ServerNavBar extends React.Component {
                 <div className="server-div">
                     <ul className="server-list">
                         <li className="profile server-icon"></li>
+                        <li className="disco-line" />
                         {servers.map(server => (
                             <ServerNavIcon key={server.id} server={server} fetchServer={fetchServer} />
                         ))}
