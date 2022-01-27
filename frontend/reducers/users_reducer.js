@@ -18,8 +18,7 @@ const usersReducer = (state = {}, action) => {
             nextState[action.currentUser.user.id] = action.currentUser.user;
             return nextState;
         case RECEIVE_SERVER:
-            Object.assign(nextState, action.server.users);
-            return nextState;
+            return action.server.users;
         default:
             return state;
     };

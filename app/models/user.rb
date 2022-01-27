@@ -11,12 +11,26 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+
+AVATAR_FILE_PATHS = [
+    "Pastel-Black.png",
+    "Pastel-Blue.png",
+    "Pastel-Gray.png",
+    "Pastel-Green.png",
+    "Pastel-Indigo.png",
+    "Pastel-Orange.png",
+    "Pastel-Pink.png",
+    "Pastel-Red.png",
+    "Pastel-Violet.png",
+    "Pastel-Yellow.png"
+]
+
 class User < ApplicationRecord
     validates :username, :tag, :email, :password_digest, :session_token, :handle, presence: true
     validates :email, :session_token, uniqueness: true
     validates :username, uniqueness: { scope: :tag }
     validates :password, length: { minimum: 8 }, allow_nil: true
-    after_initialize :ensure_session_token, :assign_tag
+    after_initialize :ensure_session_token, :assign_tag, :assign_avatar
 
     attr_reader :password, :handle
 
@@ -82,6 +96,7 @@ class User < ApplicationRecord
     def assign_tag
         self.tag ||= build_tag
         @handle = username + '#' + tag
+        self.save!
     end
 
     def build_tag
@@ -95,5 +110,15 @@ class User < ApplicationRecord
         else 
             num = num.to_s
         end
+    end
+
+    def assign_avatar
+        self.avatar ||= build_avatar
+    end
+
+    def build_avatar
+        color = AVATAR_FILE_PATHS.sample
+        self.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/#{color}"), filename: color)
+        self.save!
     end
 end

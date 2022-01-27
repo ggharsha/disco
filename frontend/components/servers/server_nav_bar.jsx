@@ -1,6 +1,7 @@
 import React from "react";
 import ServerNavIcon from "./server_nav_icon";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 export default class ServerNavBar extends React.Component {
     componentDidMount() {
@@ -24,9 +25,11 @@ export default class ServerNavBar extends React.Component {
                             </li>
                             </Link>
                         <li className="disco-line" />
-                        {servers.map(server => (
-                            <ServerNavIcon key={server.id} server={server} fetchServer={fetchServer} />
-                        ))}
+                            {servers.map(server => (
+                                <Link key={server.id} to={`/channels/${server.id}/1`}>
+                                    <ServerNavIcon key={server.id} fetchServer={fetchServer} server={server} />
+                                </Link>
+                            ))}
                         <li className="disco-line" />
                         <li className="server-icon add-server">+</li>
                         <li className="server-icon public-servers"><i className="fas fa-compass"/></li>

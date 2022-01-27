@@ -1,0 +1,45 @@
+@import '../fonts.scss';
+
+.user-list {
+    height: 100%;
+    width: 240px;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #2f3136;
+}
+
+.user-list .users {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.user-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 210px;
+}
+
+.user-list-item:hover {
+    background: #36393f;
+}
+
+.user-list-item .user-list-avatar {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+}
+
+.user-list-item .user-list-name {
+    color: #fefefe;
+    font-size: 16px;
+    font-family: $lato;
+    padding-left: 15px;
+}
