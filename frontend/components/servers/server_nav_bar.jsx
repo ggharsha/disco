@@ -45,6 +45,8 @@ export default class ServerNavBar extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div id="backdrop">
+                </div>
             </div>
         )
     }
