@@ -1,5 +1,7 @@
 import React from "react";
 import UserListItem from "./user_list_item";
+import ChannelListItem from "./channel_list_item";
+import { Link } from "react-router-dom";
 
 export default class Channel extends React.Component {
     componentDidMount() {
@@ -8,10 +10,17 @@ export default class Channel extends React.Component {
     }
 
     render() {
+        if (!this.props.server) return null;
         return (
             <div className="channel-div">
                 <div className="channel-list">
-
+                    <ul className="channels">
+                        {this.props.channels.map(channel => (
+                            <Link onClick={() => this.props.fetchChannel(channel.id)} key={channel.id} to={`/channels/${this.props.server.id}/${channel.id}`}>
+                                <ChannelListItem channel={channel} />
+                            </Link>
+                        ))}
+                    </ul>
                 </div>
                 <div className="channel-main">
 

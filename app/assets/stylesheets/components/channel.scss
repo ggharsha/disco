@@ -1,5 +1,7 @@
 @import '../fonts.scss';
 
+// user list
+
 .user-list {
     height: 100%;
     width: 240px;
@@ -42,4 +44,38 @@
     font-size: 16px;
     font-family: $lato;
     padding-left: 15px;
+}
+
+// channels
+
+.channel-list {
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    z-index: 2;
+    margin-left: 70px;
+}
+
+.channel-list .channels {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    margin-left: 30px;
+    padding-top: 70px;
+}
+
+.channel-list-item {
+    color: #8d9297;
+    font-size: 18px;
+    font-family: $mukta;
+    font-weight: 300;
+}
+
+.channels a {
+    text-decoration: none;
+}
+
+.channels a:hover {
+    text-decoration: none;
 }

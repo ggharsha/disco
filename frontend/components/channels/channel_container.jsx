@@ -8,7 +8,8 @@ import { fetchUser } from "../../actions/users_actions";
 const mSTP = (state, ownProps) => ({
     channel: state.entities.channels[ownProps.match.params.channelId],
     server: state.entities.servers[ownProps.match.params.serverId],
-    users: Object.values(state.entities.users)
+    users: Object.values(state.entities.users),
+    channels: Object.values(state.entities.channels)
 });
 
 const mDTP = dispatch => ({
