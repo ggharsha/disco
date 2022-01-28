@@ -19,8 +19,12 @@ export default class Channel extends React.Component {
                 <div className="channel-list">
                     <ul className="channels">
                         {this.props.channels.map(channel => (
-                            <Link onClick={() => this.props.fetchChannel(channel.id)} key={channel.id} to={`/channels/${this.props.server.id}/${channel.id}`}>
-                                <ChannelListItem channel={channel} />
+                            <Link 
+                                onClick={() => this.props.fetchChannel(channel.id)}
+                                key={channel.id} to={`/channels/${this.props.server.id}/${channel.id}`}>
+                                <ChannelListItem 
+                                    channel={channel} 
+                                />
                             </Link>
                         ))}
                     </ul>
@@ -33,7 +37,10 @@ export default class Channel extends React.Component {
                 <div className="user-list">
                     <ul className="users">
                         {this.props.users.map(user => (
-                            <UserListItem key={user.id} user={user} fetchUser={this.props.fetchUser} />
+                            <UserListItem 
+                                key={user.id} user={user} 
+                                fetchUser={this.props.fetchUser} 
+                            />
                         ))}
                     </ul>
                 </div>
