@@ -9,6 +9,7 @@ import Splash from "./splash/splash";
 
 const App = () => (
     <div className="App">
+        {/* <Modal /> this component will display user settings, create channel, and channel settings */}
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} /> {/* login page */}
             <AuthRoute exact path="/register" component={SignupFormContainer} /> {/* register page */}
