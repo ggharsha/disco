@@ -118,7 +118,8 @@ memberships = Membership.create!([
     { user_id: 13, server_id: 3 },
     { user_id: 9, server_id: 3 },
     { user_id: 10, server_id: 3 },
-    { user_id: 16, server_id: 7 }
+    { user_id: 16, server_id: 7 },
+    { user_id: 12, server_id: 7 }
 ])
 
 channels = Channel.create!([
@@ -175,54 +176,54 @@ channels = Channel.create!([
 ])
 
 z = User.first 
-z.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Gray.png"), filename: "default-gray.png")
+z.avatar.attach(io: File.open("app/assets/images/Pastel-Gray.png"), filename: "default-gray.png")
 a = User.second
-a.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Black.png"), filename: "default-black.png")
+a.avatar.attach(io: File.open("app/assets/images/Pastel-Black.png"), filename: "default-black.png")
 b = User.third
-b.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Red.png"), filename: "default-red.png")
+b.avatar.attach(io: File.open("app/assets/images/Pastel-Red.png"), filename: "default-red.png")
 c = User.fourth
-c.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Blue.png"), filename: "default-blue.png")
+c.avatar.attach(io: File.open("app/assets/images/Pastel-Blue.png"), filename: "default-blue.png")
 d = User.fifth
-d.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Green.png"), filename: "default-green.png")
-e = User.where(id: 6)
-e[0].avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Gray.png"), filename: "default-gray.png")
+d.avatar.attach(io: File.open("app/assets/images/Pastel-Green.png"), filename: "default-green.png")
+e = User.where(id: 6)[0]
+e.avatar.attach(io: File.open("app/assets/images/Pastel-Gray.png"), filename: "default-gray.png")
 f = User.where(id: 7)[0]
-f.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Orange.png"), filename: "default-orange.png")
+f.avatar.attach(io: File.open("app/assets/images/Pastel-Orange.png"), filename: "default-orange.png")
 g = User.where(id: 8)[0]
-g.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Violet.png"), filename: "default-violet.png")
+g.avatar.attach(io: File.open("app/assets/images/Pastel-Violet.png"), filename: "default-violet.png")
 h = User.where(id: 9)[0]
-h.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Yellow.png"), filename: "default-yellow.png")
+h.avatar.attach(io: File.open("app/assets/images/Pastel-Yellow.png"), filename: "default-yellow.png")
 i = User.where(id: 10)[0]
-i.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Yellow.png"), filename: "default-yellow.png")
+i.avatar.attach(io: File.open("app/assets/images/Pastel-Yellow.png"), filename: "default-yellow.png")
 j = User.where(id: 11)[0]
-j.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Pink.png"), filename: "default-pink.png")
+j.avatar.attach(io: File.open("app/assets/images/Pastel-Pink.png"), filename: "default-pink.png")
 k = User.where(id: 12)[0]
-k.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Blue.png"), filename: "default-blue.png")
+k.avatar.attach(io: File.open("app/assets/images/Pastel-Blue.png"), filename: "default-blue.png")
 l = User.where(id: 13)[0]
-l.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Indigo.png"), filename: "default-indigo.png")
+l.avatar.attach(io: File.open("app/assets/images/Pastel-Indigo.png"), filename: "default-indigo.png")
 m = User.where(id: 14)[0]
-m.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Yellow.png"), filename: "default-yellow.png")
+m.avatar.attach(io: File.open("app/assets/images/Pastel-Yellow.png"), filename: "default-yellow.png")
 n = User.where(id: 15)[0]
-n.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Pink.png"), filename: "default-pink.png")
+n.avatar.attach(io: File.open("app/assets/images/Pastel-Pink.png"), filename: "default-pink.png")
 o = User.where(id: 16)[0]
-o.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Orange.png"), filename: "default-orange.png")
+o.avatar.attach(io: File.open("app/assets/images/Pastel-Orange.png"), filename: "default-orange.png")
 p = User.where(id: 17)[0]
-p.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Red.png"), filename: "default-red.png")
+p.avatar.attach(io: File.open("app/assets/images/Pastel-Red.png"), filename: "default-red.png")
 q = User.where(id: 18)[0]
-q.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Gray.png"), filename: "default-gray.png")
+q.avatar.attach(io: File.open("app/assets/images/Pastel-Gray.png"), filename: "default-gray.png")
 r = User.where(id: 19)[0]
-r.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Blue.png"), filename: "default-blue.png")
+r.avatar.attach(io: File.open("app/assets/images/Pastel-Blue.png"), filename: "default-blue.png")
 s = User.where(id: 20)[0]
-s.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Green.png"), filename: "default-green.png")
+s.avatar.attach(io: File.open("app/assets/images/Pastel-Green.png"), filename: "default-green.png")
 t = User.where(id: 21)[0]
-t.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Indigo.png"), filename: "default-indigo.png")
+t.avatar.attach(io: File.open("app/assets/images/Pastel-Indigo.png"), filename: "default-indigo.png")
 u = User.where(id: 22)[0]
-u.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Black.png"), filename: "default-black.png")
+u.avatar.attach(io: File.open("app/assets/images/Pastel-Black.png"), filename: "default-black.png")
 v = User.where(id: 23)[0]
-v.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Blue.png"), filename: "default-blue.png")
+v.avatar.attach(io: File.open("app/assets/images/Pastel-Blue.png"), filename: "default-blue.png")
 w = User.where(id: 24)[0]
-w.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Violet.png"), filename: "default-violet.png")
+w.avatar.attach(io: File.open("app/assets/images/Pastel-Violet.png"), filename: "default-violet.png")
 x = User.where(id: 25)[0]
-x.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Violet.png"), filename: "default-violet.png")
+x.avatar.attach(io: File.open("app/assets/images/Pastel-Violet.png"), filename: "default-violet.png")
 y = User.where(id: 26)[0]
-y.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/Pastel-Orange.png"), filename: "default-orange.png")
+y.avatar.attach(io: File.open("app/assets/images/Pastel-Orange.png"), filename: "default-orange.png")
