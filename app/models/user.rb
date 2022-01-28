@@ -96,7 +96,6 @@ class User < ApplicationRecord
     def assign_tag
         self.tag ||= build_tag
         @handle = username + '#' + tag
-        self.save!
     end
 
     def build_tag
@@ -119,6 +118,5 @@ class User < ApplicationRecord
     def build_avatar
         color = AVATAR_FILE_PATHS.sample
         self.avatar.attach(io: File.open("app/assets/images/#{color}"), filename: color)
-        self.save!
     end
 end
