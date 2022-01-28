@@ -32,6 +32,7 @@
 .user-list-item:hover {
     background: #36393f;
     cursor: pointer;
+    color: #fefefe;
 }
 
 .user-list-item .user-list-avatar {
@@ -41,10 +42,14 @@
 }
 
 .user-list-item .user-list-name {
-    color: #fefefe;
+    color: #8d9297;
     font-size: 16px;
     font-family: $lato;
     padding-left: 15px;
+}
+
+.user-list-item:hover .user-list-name {
+    color: #fefefe;
 }
 
 // channels
