@@ -12,50 +12,50 @@ Membership.destroy_all
 Channel.destroy_all
 
 users = User.create!([
-    { username: "DemoUser", email: "Demo@User.com", password: "password" }, 
-    { username: "harsha", email: "harsha@gmail.com", password: "password1" },
-    { username: "michelle", email: "michelle@gmail.com", password: "password2" },
-    { username: "jj", email: "jj@gmail.com", password: "password3" },
-    { username: "daniel", email: "daniel@gmail.com", password: "danieldanieldaniel" },
-    { username: "presley", email: "presley@gmail.com", password: "password" },
-    { username: "perry", email: "perry_platypus@gmail.com", password: "demoUser" },
-    { username: "jack", email: "jack@gmail.com", password: "123456789" },
-    { username: "darren", email: "DARRENNNN@gmail.com", password: "123456789" },
-    { username: "spencer", email: "thespence@gmail.com", password: "spencerrrr" },
-    { username: "diego", email: "taytaynumber1fan@gmail.com", password: "ilovetaylor" },
-    { username: "yuhuan", email: "yuuuuhuan@gmail.com", password: "passworddd" },
-    { username: "ayce", email: "ayceofspaydes@gmail.com", password: "PASSWORD123" },
-    { username: "alex", email: "AIBUG@gmail.com", password: "i_am_albug" },
-    { username: "laney", email: "laney@gmail.com", password: "password123" },
-    { username: "brian", email: "brian@gmail.com", password: "password123" },
-    { username: "chris", email: "chris@gmail.com", password: "password123" },
-    { username: "jerry", email: "jerry@gmail.com", password: "password123" },
-    { username: "amanda", email: "amanda@gmail.com", password: "password123" },
-    { username: "ann", email: "ann@gmail.com", password: "password123" },
-    { username: "kirti", email: "kirti@gmail.com", password: "password123" },
-    { username: "helen", email: "helen@gmail.com", password: "password123" },
-    { username: "efrem", email: "efrem@gmail.com", password: "password123" },
-    { username: "zack", email: "zack@gmail.com", password: "password123" },
-    { username: "charlie", email: "charlie@gmail.com", password: "password123" },
-    { username: "arleen", email: "arleen@gmail.com", password: "password123" }
+    { username: "DemoUser", email: "Demo@User.com", password: "password" }, #1
+    { username: "harsha", email: "harsha@gmail.com", password: "password1" }, #2
+    { username: "michelle", email: "michelle@gmail.com", password: "password2" }, #3
+    { username: "jj", email: "jj@gmail.com", password: "password3" }, #4
+    { username: "daniel", email: "daniel@gmail.com", password: "danieldanieldaniel" }, #5
+    { username: "presley", email: "presley@gmail.com", password: "password" }, #6
+    { username: "perry", email: "perry_platypus@gmail.com", password: "demoUser" }, #7
+    { username: "jack", email: "jack@gmail.com", password: "123456789" }, #8
+    { username: "darren", email: "DARRENNNN@gmail.com", password: "123456789" }, #9
+    { username: "spencer", email: "thespence@gmail.com", password: "spencerrrr" }, #10
+    { username: "diego", email: "taytaynumber1fan@gmail.com", password: "ilovetaylor" }, #11
+    { username: "yuhuan", email: "yuuuuhuan@gmail.com", password: "passworddd" }, #12
+    { username: "ayce", email: "ayceofspaydes@gmail.com", password: "PASSWORD123" }, #13
+    { username: "alex", email: "AIBUG@gmail.com", password: "i_am_albug" }, #14
+    { username: "laney", email: "laney@gmail.com", password: "password123" }, #15
+    { username: "brian", email: "brian@gmail.com", password: "password123" }, #16
+    { username: "chris", email: "chris@gmail.com", password: "password123" }, #17
+    { username: "jerry", email: "jerry@gmail.com", password: "password123" }, #18
+    { username: "amanda", email: "amanda@gmail.com", password: "password123" }, #19
+    { username: "ann", email: "ann@gmail.com", password: "password123" }, #20
+    { username: "kirti", email: "kirti@gmail.com", password: "password123" }, #21
+    { username: "helen", email: "helen@gmail.com", password: "password123" }, #22
+    { username: "efrem", email: "efrem@gmail.com", password: "password123" }, #23
+    { username: "zack", email: "zack@gmail.com", password: "password123" }, #24
+    { username: "charlie", email: "charlie@gmail.com", password: "password123" }, #25
+    { username: "arleen", email: "arleen@gmail.com", password: "password123" } #26
 ])
 
 servers = Server.create!([
-    { owner_id: 2, server_name: "aa friends", public: true }, #1
-    { owner_id: 4, server_name: "anime", public: true }, #2
-    { owner_id: 2, server_name: "league of legends", public: true }, #3
-    { owner_id: 6, server_name: "overwatch", public: true }, #4
-    { owner_id: 7, server_name: "gaming", public: true }, #5
-    { owner_id: 8, server_name: "emote server", public: true }, #6
-    { owner_id: 1, server_name: "keyboard lovers", public: true }, #7
-    { owner_id: 5, server_name: "memes", public: true }, #8
-    { owner_id: 4, server_name: "funfunfun", public: true }, #9
-    { owner_id: 4, server_name: "dodriobrate", public: true }, #10
-    { owner_id: 1, server_name: "pokemon", public: true }, #11
-    { owner_id: 7, server_name: "cohort channel", public: true }, #12
-    { owner_id: 6, server_name: "ta server", public: true }, #13
-    { owner_id: 5, server_name: "don't click", public: true }, #14
-    { owner_id: 4, server_name: "this is a public server", public: true }, #15
+    { owner_id: User.where(username: "harsha").id, server_name: "aa friends", public: true }, #1
+    { owner_id: User.where(username: "jj").id, server_name: "anime", public: true }, #2
+    { owner_id: User.where(username: "harsha").id, server_name: "league of legends", public: true }, #3
+    { owner_id: User.where(username: "presley").id, server_name: "overwatch", public: true }, #4
+    { owner_id: User.where(username: "perry").id, server_name: "gaming", public: true }, #5
+    { owner_id: User.where(username: "jack").id, server_name: "emote server", public: true }, #6
+    { owner_id: User.where(username: "harsha").id, server_name: "keyboard lovers", public: true }, #7
+    { owner_id: User.where(username: "daniel").id, server_name: "memes", public: true }, #8
+    { owner_id: User.where(username: "jj").id, server_name: "funfunfun", public: true }, #9
+    { owner_id: User.where(username: "jj").id, server_name: "dodriobrate", public: true }, #10
+    { owner_id: User.where(username: "DemoUser").id, server_name: "pokemon", public: true }, #11
+    { owner_id: User.where(username: "perry").id, server_name: "cohort channel", public: true }, #12
+    { owner_id: User.where(username: "presley").id, server_name: "ta server", public: true }, #13
+    { owner_id: User.where(username: "daniel").id, server_name: "don't click", public: true }, #14
+    { owner_id: User.where(username: "jj").id, server_name: "this is a public server", public: true }, #15
 ])
 
 memberships = Membership.create!([
