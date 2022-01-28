@@ -113,7 +113,7 @@ class User < ApplicationRecord
     end
 
     def assign_avatar
-        self.avatar ||= build_avatar
+        self.avatar.attached? ||= build_avatar
     end
 
     def build_avatar
