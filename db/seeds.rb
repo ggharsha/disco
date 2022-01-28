@@ -9,6 +9,7 @@
 User.destroy_all
 Server.destroy_all
 Membership.destroy_all
+Channel.destroy_all
 
 users = User.create!([
     { username: "DemoUser", email: "Demo@User.com", password: "password" }, 
