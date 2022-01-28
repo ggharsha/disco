@@ -41,21 +41,21 @@ users = User.create!([
 ])
 
 servers = Server.create!([
-    { owner_id: User.where(username: "harsha").id, server_name: "aa friends", public: true }, #1
-    { owner_id: User.where(username: "jj").id, server_name: "anime", public: true }, #2
-    { owner_id: User.where(username: "harsha").id, server_name: "league of legends", public: true }, #3
-    { owner_id: User.where(username: "presley").id, server_name: "overwatch", public: true }, #4
-    { owner_id: User.where(username: "perry").id, server_name: "gaming", public: true }, #5
-    { owner_id: User.where(username: "jack").id, server_name: "emote server", public: true }, #6
-    { owner_id: User.where(username: "harsha").id, server_name: "keyboard lovers", public: true }, #7
-    { owner_id: User.where(username: "daniel").id, server_name: "memes", public: true }, #8
-    { owner_id: User.where(username: "jj").id, server_name: "funfunfun", public: true }, #9
-    { owner_id: User.where(username: "jj").id, server_name: "dodriobrate", public: true }, #10
-    { owner_id: User.where(username: "DemoUser").id, server_name: "pokemon", public: true }, #11
-    { owner_id: User.where(username: "perry").id, server_name: "cohort channel", public: true }, #12
-    { owner_id: User.where(username: "presley").id, server_name: "ta server", public: true }, #13
-    { owner_id: User.where(username: "daniel").id, server_name: "don't click", public: true }, #14
-    { owner_id: User.where(username: "jj").id, server_name: "this is a public server", public: true }, #15
+    { owner_id: User.where(username: "harsha").first.id, server_name: "aa friends", public: true }, #1
+    { owner_id: User.where(username: "jj").first.id, server_name: "anime", public: true }, #2
+    { owner_id: User.where(username: "harsha").first.id, server_name: "league of legends", public: true }, #3
+    { owner_id: User.where(username: "presley").first.id, server_name: "overwatch", public: true }, #4
+    { owner_id: User.where(username: "perry").first.id, server_name: "gaming", public: true }, #5
+    { owner_id: User.where(username: "jack").first.id, server_name: "emote server", public: true }, #6
+    { owner_id: User.where(username: "harsha").first.id, server_name: "keyboard lovers", public: true }, #7
+    { owner_id: User.where(username: "daniel").first.id, server_name: "memes", public: true }, #8
+    { owner_id: User.where(username: "jj").first.id, server_name: "funfunfun", public: true }, #9
+    { owner_id: User.where(username: "jj").first.id, server_name: "dodriobrate", public: true }, #10
+    { owner_id: User.where(username: "DemoUser").first.id, server_name: "pokemon", public: true }, #11
+    { owner_id: User.where(username: "perry").first.id, server_name: "cohort channel", public: true }, #12
+    { owner_id: User.where(username: "presley").first.id, server_name: "ta server", public: true }, #13
+    { owner_id: User.where(username: "daniel").first.id, server_name: "don't click", public: true }, #14
+    { owner_id: User.where(username: "jj").first.id, server_name: "this is a public server", public: true }, #15
 ])
 
 memberships = Membership.create!([
