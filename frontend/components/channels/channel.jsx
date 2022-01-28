@@ -1,12 +1,26 @@
 import React from "react";
 import UserListItem from "./user_list_item";
-import ChannelListItem from "./channel_list_item";
 import { Link } from "react-router-dom";
 
 export default class Channel extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this)
+    }
+
     componentDidMount() {
         this.props.fetchServer(this.props.match.params.serverId);
         this.props.fetchChannel(this.props.match.params.channelId);
+    }
+
+    handleChange(e, channel) {
+        this.props.fetchChannel(channel.id);
+        let channels = document.getElementsByClassName('channel-list-item');
+        channels = Array.prototype.slice.call(channels);
+        channels.map(channel => {
+            if (channel.classList.contains('selected-channel')) channel.classList.remove('selected-channel')
+        });
+        e.currentTarget.classList.add('selected-channel');
     }
 
     render() {
@@ -22,13 +36,15 @@ export default class Channel extends React.Component {
                     <ul className="channels">
                         {this.props.channels.map(channel => (
                             <Link 
-                                onClick={() => this.props.fetchChannel(channel.id)}
                                 key={channel.id} 
                                 to={`/channels/${this.props.server.id}/${channel.id}`}
                             >
-                                <ChannelListItem 
-                                    channel={channel} 
-                                />
+                                <li
+                                    onClick={(e) => this.handleChange(e, channel)}
+                                    className='channel-list-item'
+                                >
+                                    # {channel.channelName}
+                                </li>
                             </Link>
                         ))}
                     </ul>
