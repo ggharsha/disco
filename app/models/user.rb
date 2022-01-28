@@ -117,6 +117,6 @@ class User < ApplicationRecord
 
     def build_avatar
         color = AVATAR_URL_PATHS.sample
-        self.avatar.attach(io: open("https://disco-aa-dev.s3.amazonaws.com/seeds/#{color}"), filename: color)
+        self.avatar.attach(io: open("https://disco-aa-seeds.s3.amazonaws.com/#{color}"), filename: color)
     end
 end
