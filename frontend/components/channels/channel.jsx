@@ -14,14 +14,18 @@ export default class Channel extends React.Component {
         return (
             <div className="channel-div">
                 <div className="server-name">
-                    <p className="server-name-text">{this.props.server.serverName}</p>
+                    <p className="server-name-text">
+                        {this.props.server.serverName}
+                    </p>
                 </div>
                 <div className="channel-list">
                     <ul className="channels">
                         {this.props.channels.map(channel => (
                             <Link 
                                 onClick={() => this.props.fetchChannel(channel.id)}
-                                key={channel.id} to={`/channels/${this.props.server.id}/${channel.id}`}>
+                                key={channel.id} 
+                                to={`/channels/${this.props.server.id}/${channel.id}`}
+                            >
                                 <ChannelListItem 
                                     channel={channel} 
                                 />
@@ -38,7 +42,8 @@ export default class Channel extends React.Component {
                     <ul className="users">
                         {this.props.users.map(user => (
                             <UserListItem 
-                                key={user.id} user={user} 
+                                key={user.id} 
+                                user={user} 
                                 fetchUser={this.props.fetchUser} 
                             />
                         ))}

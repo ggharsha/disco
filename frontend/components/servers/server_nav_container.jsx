@@ -7,7 +7,7 @@ import { updateUser, deleteUser } from '../../actions/users_actions';
 
 // selectors start
 const selectServers = state => (
-    state.entities.servers ?  Object.values(state.entities.servers) : []
+    state.entities.servers ? Object.values(state.entities.servers) : []
 );
 // selectors end
 

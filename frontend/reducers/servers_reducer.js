@@ -6,12 +6,12 @@ const serversReducer = (state = {}, action) => {
     const nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_ALL_SERVERS:
-            return action.servers.server;
+            return action.servers;
         case RECEIVE_SERVER:
             nextState[action.server.server.id] = action.server.server;
             return nextState;
         case REMOVE_SERVER:
-            delete nextState[action.server.serverId];
+            delete nextState[action.serverId];
             return nextState;
         case RECEIVE_CURRENT_USER:
             Object.assign(nextState, action.currentUser.servers);

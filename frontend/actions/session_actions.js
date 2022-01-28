@@ -42,5 +42,6 @@ export const logout = () => dispatch => (
 );
 
 export const fetchCurrentUser = userId => dispatch => (
-    fetchUser(userId).then(currentUser => dispatch(receiveCurrentUser(currentUser)))
+    fetchUser(userId).then(currentUser => 
+        dispatch(receiveCurrentUser(currentUser)))
 );

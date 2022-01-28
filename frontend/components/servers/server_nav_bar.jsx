@@ -4,17 +4,26 @@ import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
 export default class ServerNavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.checkDefaultChannel = this.checkDefaultChannel.bind(this);
+    }
+    
     componentDidMount() {
-        this.props.fetchCurrentUser(this.props.currentUser.id)
+        this.props.fetchCurrentUser(this.props.currentUser.id);
     }
 
     handleModal() {
 
     }
 
+    checkDefaultChannel(server) {
+        return server.channels[0]
+    }
+
     render() {
         const { servers, fetchServer, fetchServers, updateUser, deleteUser, logout } = this.props;
-        if (!this.props.currentUser) return null
+        if (!this.props.currentUser && servers[0]) return null
         return (
             <div>
                 <div className="server-div">
@@ -26,21 +35,38 @@ export default class ServerNavBar extends React.Component {
                             </Link>
                         <li className="disco-line" />
                             {servers.map(server => (
-                                <Link className="link-to-server" key={server.id} to={`/channels/${server.id}/1`}>
-                                    <ServerNavIcon key={server.id} fetchServer={fetchServer} server={server} />
+                                <Link 
+                                    className="link-to-server" 
+                                    key={server.id} 
+                                    to={`/channels/${server.id}/${this.checkDefaultChannel(server)}`}
+                                >
+                                    <ServerNavIcon 
+                                        key={server.id} 
+                                        fetchServer={fetchServer} 
+                                        server={server} 
+                                    />
                                 </Link>
                             ))}
                         <li className="disco-line" />
                         <li className="server-icon add-server">+</li>
-                        <li className="server-icon public-servers"><i className="fas fa-compass"/></li>
+                        <li className="server-icon public-servers">
+                            <i className="fas fa-compass"/>
+                        </li>
                     </ul>
                 </div>
                 <div id="channel-bg">
                     <div id="own-settings">
-                        <img id="own-avatar" src={this.props.currentUser.photoUrl} />
+                        <img 
+                            id="own-avatar" 
+                            src={this.props.currentUser.photoUrl} 
+                        />
                         <div id="handle">
-                            <p id="own-username">{this.props.currentUser.username}</p>
-                            <p id="own-tag">#{this.props.currentUser.tag}</p>
+                            <p id="own-username">
+                                {this.props.currentUser.username}
+                            </p>
+                            <p id="own-tag">
+                                #{this.props.currentUser.tag}
+                            </p>
                         </div>
                         <div id="own-mic">
                             <i className="fas fa-microphone" />
