@@ -6,11 +6,12 @@ import SignupFormContainer from './session/signup_form_container';
 import ServerNavContainer from './servers/server_nav_container';
 import ChannelContainer from './channels/channel_container';
 import MeContainer from './me/me_container';
+import Modal from './modal/modal';
 import Splash from "./splash/splash";
 
 const App = () => (
     <div className="App">
-        {/* <Modal /> this component will display user settings, create channel, and channel settings */}
+        <Modal /> {/* this component will display user settings, create channel, and channel settings */}
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} /> {/* login page */}
             <AuthRoute exact path="/register" component={SignupFormContainer} /> {/* register page */}

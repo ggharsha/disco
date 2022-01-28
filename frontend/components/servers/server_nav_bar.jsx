@@ -22,7 +22,7 @@ export default class ServerNavBar extends React.Component {
     }
 
     render() {
-        const { servers, fetchServer, fetchServers, updateUser, deleteUser, logout } = this.props;
+        const { servers, fetchServer, fetchServers, openModal } = this.props;
         if (!this.props.currentUser && servers[0]) return null
         return (
             <div>
@@ -75,7 +75,10 @@ export default class ServerNavBar extends React.Component {
                             <i className="fas fa-headphones" />
                         </div>
                         <div id="own-gear">
-                            <i className="fas fa-cog" />
+                            <i 
+                                className="fas fa-cog"
+                                onClick={() => openModal('updateUser')}
+                            />
                         </div>
                     </div>
                 </div>
