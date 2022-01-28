@@ -12,7 +12,7 @@
 #  updated_at      :datetime         not null
 #
 
-AVATAR_FILE_PATHS = [
+AVATAR_URL_PATHS = [
     "Pastel-Black.png",
     "Pastel-Blue.png",
     "Pastel-Gray.png",
@@ -112,11 +112,11 @@ class User < ApplicationRecord
     end
 
     def assign_avatar
-        self.avatar ||= build_avatar
+        self.avatar.attached? ? self.avatar : build_avatar
     end
 
     def build_avatar
-        color = AVATAR_FILE_PATHS.sample
-        self.avatar.attach(io: File.open("app/assets/images/#{color}"), filename: color)
+        color = AVATAR_URL_PATHS.sample
+        self.avatar.attach(io: open("https://disco-aa-dev.s3.amazonaws.com/seeds/#{color}"), filename: color)
     end
 end
