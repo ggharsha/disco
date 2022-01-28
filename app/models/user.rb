@@ -118,7 +118,7 @@ class User < ApplicationRecord
 
     def build_avatar
         color = AVATAR_FILE_PATHS.sample
-        self.avatar.attach(io: File.open("/Users/ggharsha/Desktop/disco/app/assets/images/#{color}"), filename: color)
+        self.avatar.attach(io: File.open("app/assets/images/#{color}"), filename: color)
         self.save!
     end
 end
