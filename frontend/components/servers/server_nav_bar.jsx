@@ -51,6 +51,7 @@ export default class ServerNavBar extends React.Component {
                     </ul>
                 </div>
                 <div id="channel-bg">
+                    <div id="dm-line"></div>
                     <div id="own-settings">
                         <div id="own-attributes">
                             <img 
