@@ -72,7 +72,7 @@ export default class Channel extends React.Component {
                 </div>
                 <div className="channel-main">
                     <p id="channel-header-name">
-                        #&nbsp;&nbsp;{this.props.channel.channelName}
+                        <span>#</span>&nbsp;&nbsp;{this.props.channel.channelName}
                     </p>
                     <div className="channel-topic">
 

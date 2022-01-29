@@ -110,6 +110,7 @@
     color: #fefefe;
     font-family: $lato;
     padding-left: 25px;
+    font-weight: 700;
 }
 
 .channel-main .channel-topic {
@@ -136,5 +137,10 @@
     margin-left: 330px;
     margin-top: 15px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
+}
+
+#channel-header-name span {
+    color: #8d9297;
+    font-weight: 400;
 }
