@@ -13,10 +13,6 @@ export default class ServerNavBar extends React.Component {
         this.props.fetchCurrentUser(this.props.currentUser.id);
     }
 
-    handleModal() {
-
-    }
-
     checkDefaultChannel(server) {
         return server.channels[0]
     }
