@@ -32,7 +32,11 @@ export default class UpdateUser extends React.Component {
                 <div id="user-settings-left">
                     <ul className="user-settings-nav-bar">
                         <li className="user-settings-header">USER SETTINGS</li>
-                        <li>My Account</li>
+                        <li
+                            className="my-account"
+                        >
+                            My Account
+                        </li>
                         <li 
                             className="logout"
                             onClick={() => logout()}
@@ -42,22 +46,30 @@ export default class UpdateUser extends React.Component {
                     </ul>
                 </div>
                 <div id="user-settings-right">
-                    <p onClick={() => closeModal()}>&times;</p>
+                    <p 
+                        onClick={() => closeModal()}
+                        className="close-modal-x"
+                    >
+                        &times;
+                    </p>
                     <div id="user-settings-form-container">
                         <form 
                             onSubmit={(e) => this.handleSubmit(e)}
                             className="update-user-form"
                         >
+                            <label>USERNAME</label>
                             <input 
                                 type='text'
                                 value={this.state.username}
                                 onChange={this.update('username')}
                             />
+                            <label>EMAIL</label>
                             <input 
                                 type='text'
                                 value={this.state.email}
                                 onChange={this.update('email')}
                             />
+                            <label>PASSWORD</label>
                             <input 
                                 type='password'
                                 value={this.state.password}
