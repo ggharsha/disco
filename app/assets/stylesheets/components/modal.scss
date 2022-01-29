@@ -64,8 +64,8 @@
 }
 
 .close-modal-x {
-    margin-left: 500px;
-    margin-bottom: 50px;
+    margin-left: 430px;
+    margin-bottom: 40px;
     width: 30px;
     height: 30px;
     text-align: center;
@@ -77,6 +77,12 @@
 
 .close-modal-x:hover {
     cursor: pointer;
+    background: #2f3136;
+}
+
+.close-modal-x:active {
+    cursor: pointer;
+    background: #222327;
 }
 
 #user-settings-form-container {
