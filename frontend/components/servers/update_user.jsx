@@ -47,7 +47,7 @@ export default class UpdateUser extends React.Component {
                             className="logout"
                             onClick={() => logout()}
                         >
-                            Logout
+                            Log Out
                         </li>
                     </ul>
                 </div>
@@ -59,6 +59,7 @@ export default class UpdateUser extends React.Component {
                         &times;
                     </p>
                     <div id="user-settings-form-container">
+                        <p className="my-account-header">My Account</p>
                         <form 
                             onSubmit={(e) => this.handleSubmit(e)}
                             className="update-user-form"
