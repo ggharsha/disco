@@ -150,13 +150,15 @@
 }
 
 .delete-account-button {
-    border: 2px solid #ed4245;
+    border: 1px solid #ed4245;
     color: #ed4245;
-    margin-left: 50px;
+    margin-left: 35px;
     margin-top: 20px;
     background: none;
     font-size: 18px;
     font-weight: 500;
+    font-family: $mukta;
+    border-radius: 25px;
 }
 
 .delete-account-button:hover {
