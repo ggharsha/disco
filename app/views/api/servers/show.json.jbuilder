@@ -13,8 +13,7 @@ end
 json.users do 
     @server.users.each do |user|
         json.set! user.id do
-            json.extract! user, :id, :username, :tag, :handle
-            json.photoUrl url_for(user.avatar)
+            json.partial! 'api/users/user', user: user
         end
     end
 end

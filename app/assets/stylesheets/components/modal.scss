@@ -81,12 +81,12 @@
 
 #user-settings-form-container {
     margin-left: 30px;
-    height: 300px;
+    height: 500px;
     width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     background: #2f3136;
     border-radius: 10%;
 }
@@ -117,12 +117,13 @@
 }
 
 .update-user-form {
-    height: 200px;
+    height: 250px;
     width: 400px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
+    margin-bottom: 50px;
 }
 
 .update-user-form input {
@@ -164,4 +165,16 @@
 .delete-account-button:hover {
     background: #2f3136;
     cursor: pointer;
+}
+
+.settings-avatar {
+    position: absolute;
+    border-radius: 50%;
+    margin-bottom: 270px;
+    margin-left: 30px;
+    border: 4px solid #f3f3f3;
+}
+
+.settings-avatar:hover {
+    // replace to make avatar background darker on hover
 }

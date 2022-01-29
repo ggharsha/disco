@@ -63,6 +63,10 @@ export default class UpdateUser extends React.Component {
                             onSubmit={(e) => this.handleSubmit(e)}
                             className="update-user-form"
                         >
+                            <img
+                                src={currentUser.photoUrl}
+                                className="settings-avatar"
+                            />
                             <label>USERNAME</label>
                             <input 
                                 type='text'
