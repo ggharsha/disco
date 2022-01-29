@@ -43,7 +43,7 @@ export default class Channel extends React.Component {
     }
 
     render() {
-        if (!this.props.server) return null;
+        if (!this.props.server || !this.props.channel) return null;
         this.handleChannelNav();
         return (
             <div className="channel-div">
@@ -71,6 +71,9 @@ export default class Channel extends React.Component {
                     </ul>
                 </div>
                 <div className="channel-main">
+                    <p id="channel-header-name">
+                        #&nbsp;&nbsp;{this.props.channel.channelName}
+                    </p>
                     <div className="channel-topic">
 
                     </div>

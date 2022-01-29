@@ -127,3 +127,14 @@
     color: #fefefe;
     font-weight: 700;
 }
+
+#channel-header-name {
+    position: absolute;
+    z-index: 10;
+    color: #fefefe;
+    font-family: $lato;
+    margin-left: 330px;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
