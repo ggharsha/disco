@@ -25,7 +25,13 @@ export default class UpdateUser extends React.Component {
     }
 
     render() {
-        const { currentUser, updateUser, deleteUser, logout, closeModal } = this.props;
+        const { 
+            currentUser, 
+            updateUser, 
+            deleteUser, 
+            logout, 
+            closeModal 
+        } = this.props;
         if (!currentUser) return null;
         return (
             <div id="user-settings-container">

@@ -9,7 +9,10 @@ Rails.application.routes.draw do
     end
     resources :memberships, only: [:create, :destroy]
     # resources :friendships, only: [:create, :update, :destroy, :index]
-    resources :channels, only: [:show, :update, :destroy]
+    resources :channels, only: [:show, :update, :destroy] do 
+      resources :messages, only: [:create]
+    end
+    resources :messages, only: [:update, :show, :destroy, :index]
   end
 
   root to: "static_pages#root"
