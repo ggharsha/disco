@@ -28,4 +28,8 @@ class Server < ApplicationRecord
     has_many :channels,
         foreign_key: :server_id,
         class_name: :Channel
+
+    has_many :messages,
+        through: :channels,
+        source: :messages
 end
