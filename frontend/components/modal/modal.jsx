@@ -5,7 +5,7 @@ import UpdateUserContainer from '../servers/update_user_container';
 // import CreateServerContainer from '../servers/create_server_container';
 // import UpdateServerContainer from '../servers/update_server_container';
 // import PublicServerContainer from '../servers/public_server_container';
-// import UpdateChannel
+// import UpdateChannelContainer from '../channels/update_channel_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) return null;
