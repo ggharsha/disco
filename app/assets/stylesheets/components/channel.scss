@@ -188,20 +188,67 @@
 #channel-message-container {
     position: fixed;
     margin-left: 310px;
-    margin-right: 240px;
+    padding-right: 240px;
     padding-top: 50px;
     height: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    z-index: 20;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
 }
 
 #type-message-form {
     height: 50px;
-    padding-bottom: 30px;
     width: 100%;
-    padding-left: 360px;
-    padding-right: 270px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#type-message-form input {
+    width: 95%;
+    border-radius: 3px;
+    height: 35px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background-color: #3f454b;
+    color: #ffffff;
+    font-family: $lato;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+}
+
+#type-message-form button {
+    display: none;
+}
+
+.message-username {
+    color: #fafafa;
+    font-family: $mukta;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.message-username:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.message-body {
+    color: #dcddde;
+    font-family: $mukta;
+    font-weight: 300;
+}
+
+.channel-message {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 16px;
 }

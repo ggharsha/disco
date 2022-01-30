@@ -6,10 +6,13 @@ export default class Messages extends React.Component {
         this.state = {
             body: ""
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.parseDate = this.parseDate.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchChannel(this.props.channelId);
+        this.props.fetchCurrentUser(this.props.currentUser.id);
     }
 
     update(field) {
@@ -23,8 +26,12 @@ export default class Messages extends React.Component {
         this.setState({ body: "" });
     }
 
+    parseDate(date) {
+
+    }
+
     render() {
-        if (!this.props.channelId) return null
+        if (!this.props.channelId || !this.props.currentUser) return null
         return (
             <div id="channel-message-container">
                 <div className="channel-message-history">
@@ -34,10 +41,15 @@ export default class Messages extends React.Component {
                                 key={channelMessage.id}
                                 className="channel-message"
                             >
-                                <span className="timestamp-message">
+                                <span className="message-timestamp">
                                     {channelMessage.createdAt}
                                 </span>
-                                {channelMessage.body}
+                                <span className="message-username">
+                                    &nbsp;{this.props.currentUser.username}
+                                </span>
+                                <span className="message-body">
+                                    &nbsp;{channelMessage.body}
+                                </span>
                             </li>
                         ))}
                     </ul>
