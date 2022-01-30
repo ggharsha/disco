@@ -4,8 +4,10 @@ export default class UpdateUser extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: `${this.props.currentUser.id}`,
             email: `${this.props.currentUser.email}`,
             username: `${this.props.currentUser.username}`,
+            tag: `${this.props.currentUser.tag}`,
             password: ``
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -73,6 +75,12 @@ export default class UpdateUser extends React.Component {
                                 type='text'
                                 value={this.state.username}
                                 onChange={this.update('username')}
+                            />
+                            <label>TAG</label>
+                            <input
+                                type='text'
+                                value={this.state.tag}
+                                onChange={this.update('tag')}
                             />
                             <label>EMAIL</label>
                             <input 

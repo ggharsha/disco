@@ -26,13 +26,13 @@ AVATAR_URL_PATHS = [
 ]
 
 class User < ApplicationRecord
-    validates :username, :tag, :email, :password_digest, :session_token, :handle, presence: true
+    validates :username, :tag, :email, :password_digest, :session_token, :handle, :avatar, presence: true
     validates :email, :session_token, uniqueness: true
     validates :username, uniqueness: { scope: :tag }
     validates :password, length: { minimum: 8 }, allow_nil: true
     after_initialize :ensure_session_token, :assign_tag, :assign_avatar
 
-    attr_reader :password, :handle
+    attr_reader :password, :handle, :avatar
 
     has_many :owned_servers,
         foreign_key: :owner_id,
