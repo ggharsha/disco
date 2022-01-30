@@ -54,6 +54,7 @@ export default class Channel extends React.Component {
                 </div>
                 <div className="channel-list">
                     <ul className="channels">
+                        <li className="text-channels-header">TEXT CHANNELS</li>
                         {this.props.channels.map(channel => (
                             <Link 
                                 key={channel.id} 
@@ -64,7 +65,7 @@ export default class Channel extends React.Component {
                                     className='channel-list-item'
                                     id={channel.id}
                                 >
-                                    # {channel.channelName}
+                                    <span className="chan-hashtag">#</span>&nbsp;&nbsp;{channel.channelName}
                                 </li>
                             </Link>
                         ))}
@@ -80,6 +81,9 @@ export default class Channel extends React.Component {
                 </div>
                 <div className="user-list">
                     <ul className="users">
+                        <li className="member-count">
+                            MEMBERS - {this.props.users.length}
+                        </li>
                         {this.props.users.map(user => (
                             <UserListItem 
                                 key={user.id} 

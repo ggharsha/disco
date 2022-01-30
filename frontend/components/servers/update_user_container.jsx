@@ -2,10 +2,11 @@ import { connect } from "react-redux";
 import { updateUser, deleteUser } from "../../actions/users_actions";
 import { logout, fetchCurrentUser } from "../../actions/session_actions";
 import { closeModal } from "../../actions/modal_actions";
+import { fetchServer } from "../../actions/server_actions";
 import UpdateUser from "./update_user";
 
 const mSTP = state => ({
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
 });
 
 const mDTP = dispatch => ({
