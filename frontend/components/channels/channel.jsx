@@ -1,5 +1,6 @@
 import React from "react";
 import UserListItem from "./user_list_item";
+import MessagesContainer from "./messages_container";
 import { Link } from "react-router-dom";
 
 export default class Channel extends React.Component {
@@ -75,6 +76,7 @@ export default class Channel extends React.Component {
                     </ul>
                 </div>
                 <div className="channel-main">
+                    <MessagesContainer channelId={this.props.channel.id} />
                     <p id="channel-header-name">
                         <span>#</span>&nbsp;&nbsp;{this.props.channel.channelName}
                     </p>

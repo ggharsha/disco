@@ -29,7 +29,7 @@ export const fetchMessage = messageId => dispatch => (
     .then(message => dispatch(receiveMessage(message)))
 );
 
-export const createMessage = message => dispatch => (
+export const createMessage = (channelId, message) => dispatch => (
     MessageApiUtil.createMessage(message)
     .then(message => dispatch(receiveMessage(message)))
 );
