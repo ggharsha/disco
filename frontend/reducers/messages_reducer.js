@@ -12,7 +12,8 @@ const messagesReducer = (state = {}, action) => {
         case RECEIVE_ALL_MESSAGES: 
             return action.messages;
         case RECEIVE_CHANNEL:
-            return action.channel.messages;
+            if (action.channel.messages) return action.channel.messages;
+            else return {};
         case RECEIVE_MESSAGE:
             nextState[action.message.id] = action.message;
             return nextState;

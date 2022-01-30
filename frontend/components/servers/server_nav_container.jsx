@@ -4,6 +4,7 @@ import ServerNavBar from "./server_nav_bar";
 import { fetchServer, fetchServers } from "../../actions/server_actions";
 import { fetchCurrentUser } from "../../actions/session_actions";
 import { openModal } from "../../actions/modal_actions";
+import { fetchChannel } from "../../actions/channel_actions";
 
 // selectors start
 const selectServers = state => (
@@ -20,7 +21,8 @@ const mDTP = dispatch => ({
     fetchServer: serverId => dispatch(fetchServer(serverId)),
     fetchCurrentUser: userId => dispatch(fetchCurrentUser(userId)),
     fetchServers: () => dispatch(fetchServers()),
-    openModal: () => dispatch(openModal('updateUser'))
+    openModal: () => dispatch(openModal('updateUser')),
+    fetchChannel: channelId => dispatch(fetchChannel(channelId))
 });
 
 export default connect(mSTP, mDTP)(ServerNavBar);

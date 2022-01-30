@@ -20,6 +20,7 @@ export default class Messages extends React.Component {
         e.preventDefault();
         this.props.createMessage(this.props.channelId, this.state)
         .then(() => this.props.fetchChannel(this.props.channelId));
+        this.setState({ body: "" });
     }
 
     render() {
