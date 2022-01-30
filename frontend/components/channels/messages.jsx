@@ -7,7 +7,7 @@ export default class Messages extends React.Component {
     }
 
     componentDidMount() {
-
+        this.props.fetchChannel(this.props.channelId);
     }
 
     update(field) {
