@@ -30,7 +30,7 @@ export const fetchMessage = messageId => dispatch => (
 );
 
 export const createMessage = (channelId, message) => dispatch => (
-    MessageApiUtil.createMessage(message)
+    MessageApiUtil.createMessage(channelId, message)
     .then(message => dispatch(receiveMessage(message)))
 );
 
