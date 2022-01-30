@@ -6,8 +6,7 @@ import Messages from "./messages";
 
 const mSTP = (state, ownProps) => ({
     channelId: ownProps.channelId,
-    message: { body: "" },
-    channelMessages: state.messages
+    channelMessages: Object.values(state.entities.messages)
 });
 
 const mDTP = dispatch => ({

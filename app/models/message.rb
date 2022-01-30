@@ -12,7 +12,7 @@
 #
 class Message < ApplicationRecord
     validates :sender_id, :channel_id, :body, presence: true
-    validates :body, length: { in: 1..2000 }
+    validates :body, length: { in: 1..2000, too_long: "2000 characters is the maximum allowed." }
 
     belongs_to :user,
         foreign_key: :sender_id,
@@ -20,9 +20,9 @@ class Message < ApplicationRecord
     
     belongs_to :channel,
         foreign_key: :channel_id,
-        class_name: :channel
+        class_name: :Channel
 
-    belongs_to :replied_message,
-        foreign_key: :replied_id,
-        class_name: :Message
+    # belongs_to :replied_message,
+    #     foreign_key: :replied_id,
+    #     class_name: :Message
 end
