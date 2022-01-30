@@ -12,6 +12,8 @@
 #  updated_at      :datetime         not null
 #
 
+require 'open-uri'
+
 AVATAR_URL_PATHS = [
     "Pastel-Black.png",
     "Pastel-Blue.png",
@@ -26,13 +28,13 @@ AVATAR_URL_PATHS = [
 ]
 
 class User < ApplicationRecord
-    validates :username, :tag, :email, :password_digest, :session_token, :handle, :avatar, presence: true
+    validates :username, :tag, :email, :password_digest, :session_token, :handle, presence: true
     validates :email, :session_token, uniqueness: true
     validates :username, uniqueness: { scope: :tag }
     validates :password, length: { minimum: 8 }, allow_nil: true
     after_initialize :ensure_session_token, :assign_tag, :assign_avatar
 
-    attr_reader :password, :handle, :avatar
+    attr_reader :password, :handle
 
     has_many :owned_servers,
         foreign_key: :owner_id,
@@ -122,6 +124,6 @@ class User < ApplicationRecord
 
     def build_avatar
         color = AVATAR_URL_PATHS.sample
-        self.avatar.attach(io: open("https://disco-aa-seeds.s3.amazonaws.com/#{color}"), filename: color)
+        self.avatar.attach(io: open("https://disco-aa-seeds.s3.amazonaws.com/" + color), filename: color)
     end
 end
