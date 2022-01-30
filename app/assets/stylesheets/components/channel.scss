@@ -99,13 +99,28 @@
     top: 0;
     z-index: 20;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     width: 240px;
     height: 50px;
     border-bottom: 2px solid #232529;
     box-shadow: 0px 2px #2c2e34;
+}
+
+.channel-div .server-name:hover {
+    background: #383d43;
+}
+
+.channel-div .server-name-down-arrow {
+    color: #8d9297;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.channel-div .server-name-down-arrow:hover {
+    cursor: pointer;
 }
 
 .server-name .server-name-text {

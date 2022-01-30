@@ -51,6 +51,9 @@ export default class Channel extends React.Component {
                     <p className="server-name-text">
                         {this.props.server.serverName}
                     </p>
+                    <p className="server-name-down-arrow">
+                        &#8964;
+                    </p>
                 </div>
                 <div className="channel-list">
                     <ul className="channels">

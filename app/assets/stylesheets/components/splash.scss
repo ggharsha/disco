@@ -51,6 +51,10 @@
     color: white;
 }
 
+.top-nav a {
+    color: #f6f6f6;
+}
+
 .top-nav .login {
     border: 1px solid #ffffff;
     text-align: center;
@@ -63,7 +67,7 @@
 .top-nav .login:hover {
     text-decoration: none;
     color: #5866f2;
-    box-shadow: 0px 6px 10px #494949; // fix this
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
 .top-nav ul {
@@ -283,7 +287,11 @@
 
 .fifth-head a:hover {
     text-decoration: none;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
 
+.fifth-head a:active {
+    background: #404eed;
 }
 
 .splash-foot {
