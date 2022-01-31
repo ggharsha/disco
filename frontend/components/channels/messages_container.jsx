@@ -7,6 +7,7 @@ import Messages from "./messages";
 
 const mSTP = (state, ownProps) => ({
     channelId: ownProps.channelId,
+    channel: ownProps.channel,
     channelMessages: Object.values(state.entities.messages),
     currentUser: state.entities.users[state.session.id]
 });

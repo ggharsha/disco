@@ -76,7 +76,7 @@ export default class Channel extends React.Component {
                     </ul>
                 </div>
                 <div className="channel-main">
-                    <MessagesContainer channelId={this.props.channel.id} />
+                    <MessagesContainer channel={this.props.channel} channelId={this.props.channel.id} />
                     <p id="channel-header-name">
                         <span>#</span>&nbsp;&nbsp;{this.props.channel.channelName}
                     </p>
