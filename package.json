@@ -13,7 +13,7 @@
     "postinstall": "webpack --mode=production"
   },
   "engines": {
-    "npm": "6.4.1", 
+    "npm": "6.4.1",
     "node": "10.13.0"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "actioncable": "^5.2.6",
     "babel-loader": "^8.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

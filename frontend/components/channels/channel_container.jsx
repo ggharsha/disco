@@ -9,7 +9,8 @@ const mSTP = (state, ownProps) => ({
     channel: state.entities.channels[ownProps.match.params.channelId],
     server: state.entities.servers[ownProps.match.params.serverId],
     users: Object.values(state.entities.users),
-    channels: Object.values(state.entities.channels)
+    channels: Object.values(state.entities.channels),
+    cableApp: ownProps.cableApp
 });
 
 const mDTP = dispatch => ({

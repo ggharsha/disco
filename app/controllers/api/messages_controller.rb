@@ -11,10 +11,20 @@ class Api::MessagesController < ApplicationController
 
     def create
         @message = Message.new(message_params)
+        @channel = Channel.find_by(id: params[:channel_id])
         @message.sender_id = current_user.id
-        @message.channel_id = params[:channel_id]
+        @message.channel_id = @channel.id
+
         if @message.save
-            render 'api/messages/show'
+            ChannelsChannel.broadcast_to(@channel, {
+                id: @message.id,
+                senderId: @message.sender_id,
+                user: User.find_by(id: @message.sender_id),
+                channelId: @message.channel_id,
+                body: @message.body,
+                createdAt: @message.created_at
+                
+            })
         else
             render json: @message.errors.full_messages, status: 422
         end

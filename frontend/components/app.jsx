@@ -9,7 +9,7 @@ import MeContainer from './me/me_container';
 import Modal from './modal/modal';
 import Splash from "./splash/splash";
 
-const App = () => (
+const App = ({ cableApp }) => (
     <div className="App">
         <Modal /> {/* this component will display user settings, create channel, and channel settings */}
         <Switch>
@@ -18,7 +18,11 @@ const App = () => (
             <ProtectedRoute exact path="/app" /> {/* loading page */}
             <ProtectedRoute exact path="/channels/@me/:directMessageId" /> {/* dm show page */}
             <ProtectedRoute exact path="/channels/@me" component={MeContainer} /> {/* home page */}
-            <ProtectedRoute exact path="/channels/:serverId/:channelId" component={ChannelContainer} /> {/* channel within server page */}
+            <ProtectedRoute 
+                exact path="/channels/:serverId/:channelId" 
+                component={ChannelContainer} 
+                cableApp={cableApp}
+            /> {/* channel within server page */}
             <Route exact path="/" component={Splash} /> {/* splash page */}
         </Switch>
         <ProtectedRoute path="/channels" component={ServerNavContainer} /> {/* server nav bar, setting bar */}
