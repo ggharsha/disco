@@ -222,6 +222,9 @@
     border: none;
     flex-grow: 1;
     margin-left: 20px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #type-message-form button {

@@ -12,18 +12,17 @@ export default class Messages extends React.Component {
     componentDidMount() {
         this.props.fetchCurrentUser(this.props.currentUser.id);
         this.props.fetchChannel(this.props.channelId)
-        .then(() => {
-            this.props.cableApp.cable.subscriptions.create({
-                channel: `ChannelsChannel`,
-                id: this.props.channelId
-            },
-            {
-                received: msg => {
-                    this.props.receiveMessage(msg)
-                }
-            })
-        });
-
+            .then(() => {
+                this.props.cableApp.cable.subscriptions.create({
+                    channel: `ChannelsChannel`,
+                    id: this.props.channelId
+                },
+                {
+                    received: msg => {
+                        this.props.receiveMessage(msg)
+                    }
+                })
+            });
         this.scrollToBottom();
     }
 
@@ -38,8 +37,8 @@ export default class Messages extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createMessage(this.props.channelId, this.state)
-        .then(() => this.props.fetchChannel(this.props.channelId))
-        .then(() => this.setState({ body: "" }));
+            .then(() => this.setState({ body: "" }))
+            .then(() => this.props.fetchChannel(this.props.channelId))
     }
 
     scrollToBottom = () => {
@@ -52,9 +51,7 @@ export default class Messages extends React.Component {
             <div id="channel-message-container">
                 <div className="channel-message-history">
                     <ul className="channel-message-list">
-                        {this.props.channelMessages.map(channelMessage => {
-                            console.log(channelMessage)
-                            return (
+                        {this.props.channelMessages.map(channelMessage => (
                             <li 
                                 key={channelMessage.id}
                                 className="channel-message"
@@ -69,7 +66,7 @@ export default class Messages extends React.Component {
                                     &nbsp;&nbsp;{channelMessage.body}
                                 </span>
                             </li>
-                            )})}
+                            ))}
                         <div style={{ float: "left", clear: "both" }}
                             ref={(el) => { this.messagesEnd = el; }}>
                         </div>

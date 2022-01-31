@@ -14,7 +14,6 @@ class Api::MessagesController < ApplicationController
         @channel = Channel.find_by(id: params[:channel_id])
         @message.sender_id = current_user.id
         @message.channel_id = @channel.id
-
         if @message.save
             ChannelsChannel.broadcast_to(@channel, {
                 id: @message.id,
@@ -23,7 +22,6 @@ class Api::MessagesController < ApplicationController
                 channelId: @message.channel_id,
                 body: @message.body,
                 createdAt: @message.created_at
-                
             })
         else
             render json: @message.errors.full_messages, status: 422

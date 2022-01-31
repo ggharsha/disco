@@ -31,7 +31,6 @@ export const fetchMessage = messageId => dispatch => (
 
 export const createMessage = (channelId, message) => dispatch => (
     MessageApiUtil.createMessage(channelId, message)
-    // .then(message => dispatch(receiveMessage(message)))
 );
 
 export const updateMessage = message => dispatch => (

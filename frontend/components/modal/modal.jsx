@@ -20,6 +20,9 @@ function Modal({ modal, closeModal }) {
         case 'updateServer':
             // component = <UpdateServerContainer />;
             break;
+        case 'publicServer':
+            // component = <PublicServerContainer />;
+            break;
         default:
             return null;
     }

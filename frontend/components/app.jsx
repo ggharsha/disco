@@ -11,21 +11,36 @@ import Splash from "./splash/splash";
 
 const App = ({ cableApp }) => (
     <div className="App">
-        <Modal /> {/* this component will display user settings, create channel, and channel settings */}
+        <Modal />
         <Switch>
-            <AuthRoute exact path="/login" component={LoginFormContainer} /> {/* login page */}
-            <AuthRoute exact path="/register" component={SignupFormContainer} /> {/* register page */}
+            <AuthRoute 
+                exact path="/login" 
+                component={LoginFormContainer} 
+            />
+            <AuthRoute 
+                exact path="/register" 
+                component={SignupFormContainer} 
+            />
             <ProtectedRoute exact path="/app" /> {/* loading page */}
             <ProtectedRoute exact path="/channels/@me/:directMessageId" /> {/* dm show page */}
-            <ProtectedRoute exact path="/channels/@me" component={MeContainer} /> {/* home page */}
+            <ProtectedRoute 
+                exact path="/channels/@me" 
+                component={MeContainer}
+            />
             <ProtectedRoute 
                 exact path="/channels/:serverId/:channelId" 
                 component={ChannelContainer} 
                 cableApp={cableApp}
-            /> {/* channel within server page */}
-            <Route exact path="/" component={Splash} /> {/* splash page */}
+            />
+            <Route 
+                exact path="/" 
+                component={Splash} 
+            /> 
         </Switch>
-        <ProtectedRoute path="/channels" component={ServerNavContainer} /> {/* server nav bar, setting bar */}
+        <ProtectedRoute 
+            path="/channels" 
+            component={ServerNavContainer} 
+        />
     </div>
 );
 
