@@ -32,7 +32,7 @@ function Modal({ modal, closeModal }) {
     );
 }
 
-const mSTP = (state, ownProps) => ({
+const mSTP = state => ({
     modal: state.ui.modal
 });
 
