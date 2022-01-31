@@ -225,8 +225,8 @@
     flex-grow: 1;
     margin-left: 20px;
     box-sizing: border-box;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #type-message-form button {
@@ -279,4 +279,19 @@
     font-family: $lato;
     font-size: 14px;
     margin-left: 20px;
+}
+
+.modal-background {
+    z-index: 50;
+    background: #030404;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.modal-child {
+    z-index: 100;
+    position: fixed;
+    height: 100%;
+    width: 100%;
 }
