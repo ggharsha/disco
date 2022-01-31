@@ -7,12 +7,17 @@ export default class Messages extends React.Component {
             body: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.parseDate = this.parseDate.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchChannel(this.props.channelId);
         this.props.fetchCurrentUser(this.props.currentUser.id);
+
+        this.scrollToBottom();
+    }
+
+    componentDidUpdate() {
+        this.scrollToBottom();
     }
 
     update(field) {
@@ -26,8 +31,8 @@ export default class Messages extends React.Component {
         this.setState({ body: "" });
     }
 
-    parseDate(date) {
-
+    scrollToBottom = () => {
+        this.messagesEnd.scrollIntoView({ behavior: "auto" });
     }
 
     render() {
@@ -42,16 +47,19 @@ export default class Messages extends React.Component {
                                 className="channel-message"
                             >
                                 <span className="message-timestamp">
-                                    {channelMessage.createdAt.slice(11, 16)}
+                                    {channelMessage.createdAt.slice(11, 16)}&nbsp;&nbsp;
                                 </span>
                                 <span className="message-username">
-                                    &nbsp;&nbsp;{channelMessage.user.username}
+                                    {channelMessage.user.username}
                                 </span>
                                 <span className="message-body">
                                     &nbsp;&nbsp;{channelMessage.body}
                                 </span>
                             </li>
                         ))}
+                        <div style={{ float: "left", clear: "both" }}
+                            ref={(el) => { this.messagesEnd = el; }}>
+                        </div>
                     </ul>
                 </div>
                 <form 

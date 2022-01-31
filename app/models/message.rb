@@ -25,4 +25,5 @@ class Message < ApplicationRecord
     # belongs_to :replied_message,
     #     foreign_key: :replied_id,
     #     class_name: :Message
+    # this breaks my validations for whatever reason
 end
