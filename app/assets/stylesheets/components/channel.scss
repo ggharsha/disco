@@ -190,37 +190,37 @@
     margin-left: 310px;
     padding-right: 240px;
     padding-top: 50px;
-    height: 100%;
-    width: 50%;
+    height: calc(100vh - 50px);
+    width: calc(100% - 550px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
     z-index: 1;
     bottom: 0;
-    left: 0;
+    left: 310;
+    flex-grow: 1;
+    line-height: 1.7;
 }
 
 #type-message-form {
     height: 50px;
     width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
 }
 
 #type-message-form input {
-    width: 95%;
+    width: calc(100% - 40px);
     border-radius: 3px;
     height: 35px;
     font-size: 16px;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     background-color: #3f454b;
     color: #ffffff;
     font-family: $lato;
-    padding-left: 10px;
-    padding-right: 10px;
     border: none;
+    flex-grow: 1;
+    margin-left: 20px;
 }
 
 #type-message-form button {
@@ -243,6 +243,7 @@
     color: #dcddde;
     font-family: $mukta;
     font-weight: 300;
+    overflow-wrap: anywhere;
 }
 
 .channel-message {
@@ -251,4 +252,25 @@
     align-items: center;
     justify-content: flex-start;
     font-size: 16px;
+}
+
+.channel-message:hover {
+    background: #33343b;
+}
+
+.channel-message-list {
+    overflow-y: scroll;
+    position: fixed;
+    padding-right: 240px;
+    padding-top: 50px;
+    height: calc(100vh - 50px);
+    width: calc(100% - 550px);
+    bottom: 50px;
+}
+
+.message-timestamp {
+    color: #5d6167;
+    font-family: $lato;
+    font-size: 14px;
+    margin-left: 20px;
 }

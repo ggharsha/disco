@@ -42,13 +42,13 @@ export default class Messages extends React.Component {
                                 className="channel-message"
                             >
                                 <span className="message-timestamp">
-                                    {channelMessage.createdAt}
+                                    {channelMessage.createdAt.slice(11, 16)}
                                 </span>
                                 <span className="message-username">
-                                    &nbsp;{this.props.currentUser.username}
+                                    &nbsp;&nbsp;{channelMessage.user.username}
                                 </span>
                                 <span className="message-body">
-                                    &nbsp;{channelMessage.body}
+                                    &nbsp;&nbsp;{channelMessage.body}
                                 </span>
                             </li>
                         ))}
