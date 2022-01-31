@@ -13,6 +13,7 @@
     z-index: 1;
     border-top: 2px solid #232529;
     box-shadow: 0px 2px #2c2e34;
+    box-sizing: border-box;
 }
 
 .user-list .users {
@@ -64,6 +65,7 @@
     height: 100%;
     z-index: 10;
     margin-left: 70px;
+    box-sizing: border-box;
 }
 
 .channel-list .channels {

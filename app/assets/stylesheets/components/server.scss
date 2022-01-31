@@ -11,6 +11,7 @@
 .server-div {
     width: 70px;
     height: 100%;
+    box-sizing: border-box;
     background: #212225;
     position: fixed;
     display: flex;
