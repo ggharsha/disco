@@ -189,7 +189,7 @@
     position: fixed;
     margin-left: 310px;
     padding-right: 240px;
-    padding-top: 50px;
+    padding-top: 100px;
     height: calc(100vh - 50px);
     width: calc(100% - 550px);
     display: flex;
@@ -262,8 +262,8 @@
     overflow-y: scroll;
     position: fixed;
     padding-right: 240px;
-    padding-top: 50px;
-    height: calc(100vh - 50px);
+    padding-top: 100px;
+    height: calc(100vh - 110px);
     width: calc(100% - 550px);
     bottom: 50px;
 }
