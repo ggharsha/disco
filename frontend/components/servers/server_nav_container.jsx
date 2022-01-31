@@ -21,7 +21,7 @@ const mDTP = dispatch => ({
     fetchServer: serverId => dispatch(fetchServer(serverId)),
     fetchCurrentUser: userId => dispatch(fetchCurrentUser(userId)),
     fetchServers: () => dispatch(fetchServers()),
-    openModal: () => dispatch(openModal('updateUser')),
+    openModal: modalType => dispatch(openModal(modalType)),
     fetchChannel: channelId => dispatch(fetchChannel(channelId))
 });
 

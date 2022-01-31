@@ -9,7 +9,7 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_ALL_USERS:
             return action.users;
         case RECEIVE_USER:
-            nextState[action.user.id] = action.user;
+            nextState[action.user.user.id] = action.user.user;
             return nextState;
         case REMOVE_USER:
             delete nextState[action.userId];

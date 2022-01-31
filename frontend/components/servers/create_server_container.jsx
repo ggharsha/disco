@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
-import { createServer } from "../../actions/server_actions";
-import { createChannel } from "../../actions/channel_actions";
+import { createServer, fetchServer} from "../../actions/server_actions";
 import { fetchCurrentUser } from "../../actions/session_actions";
 import CreateServer from "./create_server";
 
@@ -14,8 +13,8 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
     closeModal: () => dispatch(closeModal()),
     createServer: server => dispatch(createServer(server)),
-    createChannel: channel => dispatch(createChannel(channel)),
-    fetchCurrentUser: userId => dispatch(fetchCurrentUser(userId))
+    fetchCurrentUser: userId => dispatch(fetchCurrentUser(userId)),
+    fetchServer: serverId => dispatch(fetchServer(serverId))
 });
 
 export default connect(mSTP, mDTP)(CreateServer);

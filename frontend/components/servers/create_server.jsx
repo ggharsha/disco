@@ -4,11 +4,8 @@ export default class CreateServer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            server: {
-                ownerId: this.props.currentUserId,
-                serverName: '',
-                public: true
-            }, errors: []
+            server_name: '',
+            public: null
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -18,16 +15,12 @@ export default class CreateServer extends React.Component {
     }
 
     update(field) {
-        return e => this.setState({ server: { [field]: e.currentTarget.value } });
+        return e => this.setState({ [field]: e.currentTarget.value });
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createServer(this.state.server)
-            .then(server => this.props.createChannel({ 
-                channelName: 'general',
-                serverId: server.id
-            }));
+        this.props.createServer(this.state);
     }
 
     render() {
@@ -38,11 +31,35 @@ export default class CreateServer extends React.Component {
                     className="create-server-form"
                     onSubmit={e => this.handleSubmit(e)}
                 >
+                    <label>
+                        WHO IS THIS FOR?
+                    </label>
+                    <label>
+                        Your community
+                    </label>
+                    <input
+                        type="radio"
+                        name="type"
+                        value="true"
+                        onChange={this.update("public")}
+                    />
+                    <label>
+                        Just friends
+                    </label>
+                    <input
+                        type="radio"
+                        name="type"
+                        value="false"
+                        onChange={this.update("public")}
+                    />
+                    <label>
+                        SERVER NAME
+                    </label>
                     <input
                         type='text'
-                        value={this.state.server.serverName}
-                        onChange={this.update('serverName')}
-                        placeholder="Enter a server name!"
+                        value={this.state.serverName}
+                        onChange={this.update('server_name')}
+                        placeholder="Enter a server name"
                     />
                     <button type="submit">
                         Create

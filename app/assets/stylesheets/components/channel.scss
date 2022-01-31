@@ -280,18 +280,3 @@
     font-size: 14px;
     margin-left: 20px;
 }
-
-.modal-background {
-    z-index: 50;
-    background: #030404;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-}
-
-.modal-child {
-    z-index: 100;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-}

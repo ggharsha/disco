@@ -50,7 +50,10 @@ export default class ServerNavBar extends React.Component {
                                 </Link>
                             ))}
                         <li className="disco-line" />
-                        <li className="server-icon add-server">+</li>
+                        <li 
+                            className="server-icon add-server"
+                            onClick={() => openModal('createServer')}
+                        >+</li>
                         <li className="server-icon public-servers">
                             <i className="fas fa-compass"/>
                         </li>
