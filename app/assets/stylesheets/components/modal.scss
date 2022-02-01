@@ -215,9 +215,116 @@
     box-sizing: border-box;
     border-radius: 10px;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.create-server-form h3 {
+.create-server-form-container h3 {
     font-family: $mukta;
     font-weight: 700;
+    font-size: 26px;
+    color: #060607;
+}
+
+.create-form-subtext {
+    font-family: $lato;
+    font-size: 16px;
+    color: #525964;
+    text-align: center;
+    line-height: 1.5;
+    width: 400px;
+}
+
+.create-server-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-server-form {
+    width: 100px;
+    height: 40px;
+    color: #f3f3f3;
+    text-align: center;
+    font-family: $mukta;
+    font-weight: 500;
+    font-size: 16px;
+    background: #5866f2;
+    border: none;
+    border-radius: 3px;
+}
+
+.submit-server-form:hover {
+    background: #505cdd;
+    cursor: pointer;
+}
+
+.submit-server-form:active {
+    background: #3d45a5;
+}
+
+.nav-links-server-form {
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links-server-form-back {
+    font-family: $mukta;
+}
+
+.nav-links-server-form-back:hover {
+    cursor: pointer;
+}
+
+.server-create-button-option {
+    height: 90px;
+    width: 420px;
+    font-family: $mukta;
+    font-weight: 700;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ebebeb;
+}
+
+.server-create-button-option:hover {
+    background: #b3b4b8;
+    cursor: pointer;
+}
+
+.selected-form-button {
+    background: #8f9093;
+}
+
+.all-caps-form {
+    font-family: $mukta;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.enter-a-server-name {
+    width: 420px;
+    border: 1px solid #525964;
+    height: 40px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.left-align-server-form {
+    width: 420px;
 }

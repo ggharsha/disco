@@ -8,6 +8,7 @@ export default class CreateServer extends React.Component {
             public: null
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -24,47 +25,73 @@ export default class CreateServer extends React.Component {
         // .then(server => this.props.history.push(`/channels/${server.id}/${server.channels[0].id}`))
     }
 
+    handleClick(e, string) {
+        e.preventDefault();
+        let selected = document.getElementsByClassName('selected-form-button');
+        if (selected.length) {
+            selected = Array.prototype.slice.call(selected);
+            selected[0].classList.remove('selected-form-button');
+        }
+        if (string === 'public') {
+            this.setState({ ["public"]: true });
+            e.currentTarget.classList.add('selected-form-button');
+        } else if (string === 'private') {
+            this.setState({ ["public"]: false });
+            e.currentTarget.classList.add('selected-form-button');
+        };
+    }
+
     render() {
         return (
             <div className="create-server-form-container">
                 <h3 className="create-server-form-header">Create a server</h3>
+                <p className="create-form-subtext">Your server is where you and your friends can hang out. Make yours and start talking.</p>
                 <form 
                     className="create-server-form"
                     onSubmit={e => this.handleSubmit(e)}
                 >
-                    <label className="all-caps-form">
-                        WHO IS THIS FOR?
-                    </label>
-                    <label className="radio-label-form">
-                        Your community
-                    </label>
-                    <input
-                        type="radio"
-                        name="type"
-                        value="true"
-                        onChange={this.update("public")}
-                    />
-                    <label className="radio-label-form">
-                        Just friends
-                    </label>
-                    <input
-                        type="radio"
-                        name="type"
-                        value="false"
-                        onChange={this.update("public")}
-                    />
-                    <label className="all-caps-form">
-                        SERVER NAME
-                    </label>
+                    <div className="left-align-server-form">
+                        <label className="all-caps-form">
+                            WHO IS THIS FOR?
+                        </label>
+                    </div>
+
+                    <button
+                        value="Your community"
+                        onClick={e => this.handleClick(e, 'public')}
+                        className="server-create-button-option"
+                    >For a club or a community</button>
+
+                    <button
+                        value="Just friends"
+                        onClick={e => this.handleClick(e, 'private')}
+                        className="server-create-button-option"
+                    >For me and my friends</button>
+
+                    <div className="left-align-server-form">
+                        <label className="all-caps-form">
+                            SERVER NAME
+                        </label>
+                    </div>
                     <input
                         type='text'
-                        value={this.state.serverName}
+                        value={this.state.server_name}
                         onChange={this.update('server_name')}
                         placeholder="Enter a server name"
+                        className="enter-a-server-name"
                     />
-                    <button type="submit">
+                    <div className="nav-links-server-form">
+                        <p 
+                            className="nav-links-server-form-back"
+                            onClick={() => this.props.closeModal()}
+                        >Back</p>
+                        <button 
+                            type="submit"
+                            className="submit-server-form"
+                        >
                         Create
                     </button>
+                    </div>
                 </form>
             </div>
         )
