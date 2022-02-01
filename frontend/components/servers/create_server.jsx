@@ -60,13 +60,19 @@ export default class CreateServer extends React.Component {
                         value="Your community"
                         onClick={e => this.handleClick(e, 'public')}
                         className="server-create-button-option"
-                    >For a club or a community</button>
+                    ><img 
+                        className="button-img-server-form"
+                        src={window.public}
+                    />&nbsp;&nbsp;For a club or a community</button>
 
                     <button
                         value="Just friends"
                         onClick={e => this.handleClick(e, 'private')}
                         className="server-create-button-option"
-                    >For me and my friends</button>
+                    ><img 
+                        className="button-img-server-form"
+                        src={window.private}
+                    />&nbsp;&nbsp;For me and my friends</button>
 
                     <div className="left-align-server-form">
                         <label className="all-caps-form">

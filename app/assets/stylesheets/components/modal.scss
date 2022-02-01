@@ -297,6 +297,11 @@
     margin-top: 10px;
     border-radius: 5px;
     border: 1px solid #ebebeb;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
 }
 
 .server-create-button-option:hover {
@@ -327,4 +332,9 @@
 
 .left-align-server-form {
     width: 420px;
+}
+
+.button-img-server-form {
+    height: 40px;
+    width: 40px;
 }
