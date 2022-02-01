@@ -21,6 +21,4 @@ class Message < ApplicationRecord
     belongs_to :channel,
         foreign_key: :channel_id,
         class_name: :Channel
-
-    # must create associations for replied messages and replies
 end

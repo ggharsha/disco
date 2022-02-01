@@ -75,6 +75,20 @@ class User < ApplicationRecord
         class_name: :Message,
         dependent: :destroy
 
+    has_many :conversation_memberships,
+        foreign_key: :member_id,
+        class_name: :ConversationMembership,
+        dependent: :destroy
+    
+    has_many :direct_messages,
+        foreign_key: :sender_id,
+        class_name: :DirectMessage,
+        dependent: :destroy
+
+    has_many :conversations,
+        through: :conversation_memberships,
+        source: :conversation
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil unless user
