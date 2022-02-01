@@ -22,7 +22,11 @@ const App = ({ cableApp }) => (
                 component={SignupFormContainer} 
             />
             <ProtectedRoute exact path="/app" /> {/* loading page */}
-            <ProtectedRoute exact path="/channels/@me/:directMessageId" /> {/* dm show page */}
+            <ProtectedRoute 
+                exact path="/channels/@me/:directMessageId"
+                
+                cableApp={cableApp}
+            /> {/* dm show page */}
             <ProtectedRoute 
                 exact path="/channels/:serverId/:channelId" 
                 component={ChannelContainer} 
