@@ -1,7 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import ServerNavBar from "./server_nav_bar";
-import { fetchServer, fetchServers } from "../../actions/server_actions";
+import { 
+    fetchServer, 
+    fetchServers 
+} from "../../actions/server_actions";
 import { fetchCurrentUser } from "../../actions/session_actions";
 import { openModal } from "../../actions/modal_actions";
 import { fetchChannel } from "../../actions/channel_actions";

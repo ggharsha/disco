@@ -10,6 +10,10 @@ User.destroy_all
 Server.destroy_all
 Membership.destroy_all
 Channel.destroy_all
+Message.destroy_all
+Conversation.destroy_all
+ConversationMembership.destroy_all
+DirectMessage.destroy_all
 
 users = User.create!([
     { username: "DemoUser", email: "Demo@User.com", password: "password" }, #1
@@ -176,4 +180,28 @@ channels = Channel.create!([
     { server_id: 15, channel_name: "general" },
     { server_id: 15, channel_name: "off-topic" },
     { server_id: 15, channel_name: "memes" }
+])
+
+conversations = Conversation.create!([
+    { owner_id: User.first.id },
+    { owner_id: User.second.id },
+    { owner_id: User.third.id },
+    { owner_id: User.fourth.id },
+    { owner_id: User.fifth.id }
+])
+
+conversation_memberships = ConversationMembership.create!([
+    { member_id: User.first.id, conversation_id: Conversation.first.id },
+    { member_id: User.second.id, conversation_id: Conversation.first.id },
+    { member_id: User.third.id, conversation_id: Conversation.second.id },
+    { member_id: User.second.id, conversation_id: Conversation.second.id },
+    { member_id: User.first.id, conversation_id: Conversation.second.id },
+    { member_id: User.second.id, conversation_id: Conversation.third.id },
+    { member_id: User.third.id, conversation_id: Conversation.third.id },
+    { member_id: User.fourth.id, conversation_id: Conversation.third.id },
+    { member_id: User.fifth.id, conversation_id: Conversation.third.id },
+    { member_id: User.first.id, conversation_id: Conversation.fourth.id },
+    { member_id: User.fourth.id, conversation_id: Conversation.fourth.id },
+    { member_id: User.fifth.id, conversation_id: Conversation.fifth.id },
+    { member_id: User.first.id, conversation_id: Conversation.fifth.id }
 ])
