@@ -42,14 +42,6 @@
     // overflow-x: hidden;
 }
 
-.convo-list-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: content-box;
-}
-
 .conversation-list-icon {
     margin-left: 10px;
     border-radius: 50%;
@@ -118,4 +110,12 @@
 
 .add-conversation:hover {
     cursor: pointer;
+}
+
+.selected-conversation {
+    background: #383d43;
+}
+
+.selected-conversation li {
+    color: #ffffff;
 }

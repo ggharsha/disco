@@ -3,9 +3,26 @@ import ConvoListItem from "./dm_list_item";
 import { Link } from "react-router-dom";
 
 export default class DmList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
     componentDidMount() {
         this.props.fetchCurrentUser(this.props.currentUserId)
-            .then(() => this.props.fetchAllConversations());
+        .then(() => this.props.fetchAllConversations());
+    }
+
+    handleChange(e, conversationId) {
+        this.props.fetchConversation(conversationId);
+        let conversations = document.getElementsByClassName('conversation-list-item');
+        conversations = Array.prototype.slice.call(conversations);
+        conversations.map(conversation => {
+            if (conversation.classList.contains('selected-conversation')) {
+                conversation.classList.remove('selected-conversation');
+            }
+        });
+        e.currentTarget.classList.add('selected-conversation');
     }
 
     render() {
@@ -22,7 +39,7 @@ export default class DmList extends React.Component {
                             key={convo.id} 
                             to={`/channels/@me/${convo.id}`}
                             className="link-to-conversation"
-                            onClick={() => this.props.fetchConversation(convo.id)}
+                            onClick={e => this.handleChange(e, convo.id)}
                         >
                             <ConvoListItem 
                                 key={convo.id} 

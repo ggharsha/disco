@@ -24,7 +24,7 @@ const App = ({ cableApp }) => (
             <ProtectedRoute exact path="/app" /> {/* loading page */}
             <ProtectedRoute 
                 exact path="/channels/@me/:directMessageId"
-                
+                // component goes here
                 cableApp={cableApp}
             /> {/* dm show page */}
             <ProtectedRoute 

@@ -11,8 +11,6 @@ const ConvoListItem = ({ conversation, currentUser }) => {
     convoUsers = convoUsers.map(user => user.username);
     convoUsers = convoUsers.filter(username => username !== currentUser.username)
 
-    console.log(conversation.users)
-
     let conversationText;
     if (convoUsers.length <= 1) {
         conversationText = convoUsers[0]
