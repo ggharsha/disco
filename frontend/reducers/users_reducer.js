@@ -1,6 +1,11 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
-import { RECEIVE_ALL_USERS, RECEIVE_USER, REMOVE_USER } from "../actions/users_actions";
+import { 
+    RECEIVE_ALL_USERS, 
+    RECEIVE_USER, 
+    REMOVE_USER 
+} from "../actions/users_actions";
 import { RECEIVE_SERVER } from "../actions/server_actions";
+import { RECEIVE_CONVERSATION } from "../actions/conversation_actions";
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -19,6 +24,8 @@ const usersReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_SERVER:
             return action.server.users;
+        case RECEIVE_CONVERSATION:
+            return action.payload.users;
         default:
             return state;
     };

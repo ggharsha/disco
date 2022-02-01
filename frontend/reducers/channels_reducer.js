@@ -21,9 +21,7 @@ const channelsReducer = (state = {}, action) => {
         case RECEIVE_SERVER:
             return action.server.channels;
         case REMOVE_SERVER:
-            // Object.assign(nextState, action.server.channels);
-            // return nextState;
-            return action.server.channels;
+            return {};
         case LOGOUT_CURRENT_USER:
             return {};
         default:
