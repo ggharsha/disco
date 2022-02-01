@@ -10,19 +10,19 @@ export const fetchDm = dmId => (
     })
 );
 
-export const createDm = (conversationId, dm) => (
+export const createDm = (conversationId, direct_message) => (
     $.ajax({
         url: `api/conversations/${conversationId}/direct_messages`,
         method: `POST`,
-        data: { dm }
+        data: { direct_message }
     })
 );
 
-export const updateDm = dm => (
+export const updateDm = direct_message => (
     $.ajax({
-        url: `api/direct_messages/${dm.id}`,
+        url: `api/direct_messages/${direct_message.id}`,
         method: `PATCH`,
-        data: { dm }
+        data: { direct_message }
     })
 );
 

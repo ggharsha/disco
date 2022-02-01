@@ -1,6 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchAllMessages, fetchMessage, createMessage, updateMessage, deleteMessage, receiveMessage } from "../../actions/message_actions";
+import { 
+    fetchAllMessages, 
+    fetchMessage, 
+    createMessage, 
+    updateMessage, 
+    deleteMessage, 
+    receiveMessage 
+} from "../../actions/message_actions";
 import { fetchChannel } from "../../actions/channel_actions";
 import { fetchCurrentUser } from "../../actions/session_actions";
 import Messages from "./messages";

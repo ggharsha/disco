@@ -5,6 +5,9 @@ export default class Me extends React.Component {
     render() {
         return (
             <div id="me-container">
+                <div className="search-bar-header">
+
+                </div>
                 <div id="dm-container">
                     <DmListContainer />
                 </div>

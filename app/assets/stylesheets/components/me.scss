@@ -2,9 +2,10 @@
 
 #me-container {
     position: fixed;
-    width: 100%;
+    width: calc(100% - 310px);
     height: calc(100% - 50px);
     top: 0;
+    left: 0;
     margin-left: 70px;
     z-index: 5;
 }

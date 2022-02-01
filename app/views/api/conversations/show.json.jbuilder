@@ -1,4 +1,6 @@
-json.partial! 'api/conversations/conversation', conversation: @conversation
+json.conversation do
+    json.partial! 'api/conversations/conversation', conversation: @conversation
+end
 
 json.direct_messages do
     @conversation.direct_messages.each do |direct_message|

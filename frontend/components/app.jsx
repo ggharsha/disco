@@ -5,6 +5,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ServerNavContainer from './servers/server_nav_container';
 import ChannelContainer from './channels/channel_container';
+import ConversationContainer from './conversations/conversation_container';
 import MeContainer from './me/me_container';
 import Modal from './modal/modal';
 import Splash from "./splash/splash";
@@ -12,6 +13,7 @@ import Splash from "./splash/splash";
 const App = ({ cableApp }) => (
     <div className="App">
         <Modal />
+
         <Switch>
             <AuthRoute 
                 exact path="/login" 
@@ -24,9 +26,9 @@ const App = ({ cableApp }) => (
             <ProtectedRoute exact path="/app" /> {/* loading page */}
             <ProtectedRoute 
                 exact path="/channels/@me/:directMessageId"
-                // component goes here
+                component={ConversationContainer}
                 cableApp={cableApp}
-            /> {/* dm show page */}
+            />
             <ProtectedRoute 
                 exact path="/channels/:serverId/:channelId" 
                 component={ChannelContainer} 
@@ -37,12 +39,13 @@ const App = ({ cableApp }) => (
                 component={Splash} 
             /> 
         </Switch>
+
         <ProtectedRoute 
             path="/channels" 
             component={ServerNavContainer} 
         />
         <ProtectedRoute
-            exact path="/channels/@me"
+            path="/channels/@me"
             component={MeContainer}
         />
     </div>
