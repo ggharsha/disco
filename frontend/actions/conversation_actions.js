@@ -19,3 +19,27 @@ const removeConversation = conversationId => ({
     conversationId
 });
 
+export const fetchAllConversations = () => dispatch => (
+    ConversationApiUtil.fetchAllConversations()
+    .then(conversations => dispatch(receiveAllConversations(conversations)))
+);
+
+export const fetchConversation = conversationId => dispatch => (
+    ConversationApiUtil.fetchConversation(conversationId)
+    .then(conversation => dispatch(receiveConversation(conversation)))
+);
+
+export const createConversation = conversation => dispatch => (
+    ConversationApiUtil.createConversation(conversation)
+    .then(conversation => dispatch(receiveConversation(conversation)))
+);
+
+export const updateConversation = conversation => dispatch => (
+    ConversationApiUtil.updateConversation(conversation)
+    .then(conversation => dispatch(receiveConversation(conversation)))
+);
+
+export const deleteConversation = conversationId => dispatch => (
+    ConversationApiUtil.deleteConversation(conversationId)
+    .then(() => dispatch(removeConversation(conversationId)))
+);
