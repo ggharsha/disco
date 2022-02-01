@@ -1,7 +1,7 @@
 import * as ServerApiUtil from '../util/servers_api_util';
 
 export const RECEIVE_ALL_SERVERS = 'RECEIVE_ALL_SERVERS';
-export const RECEIVE_SERVER = 'RECEIVER_SERVER';
+export const RECEIVE_SERVER = 'RECEIVE_SERVER';
 export const REMOVE_SERVER = 'REMOVE_SERVER';
 
 const receiveAllServers = servers => ({

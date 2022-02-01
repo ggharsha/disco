@@ -20,7 +20,8 @@ export default class CreateServer extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createServer(this.state);
+        this.props.createServer(this.state)
+        // .then(server => this.props.history.push(`/channels/${server.id}/${server.channels[0].id}`))
     }
 
     render() {
