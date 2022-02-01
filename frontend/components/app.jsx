@@ -24,10 +24,6 @@ const App = ({ cableApp }) => (
             <ProtectedRoute exact path="/app" /> {/* loading page */}
             <ProtectedRoute exact path="/channels/@me/:directMessageId" /> {/* dm show page */}
             <ProtectedRoute 
-                exact path="/channels/@me" 
-                component={MeContainer}
-            />
-            <ProtectedRoute 
                 exact path="/channels/:serverId/:channelId" 
                 component={ChannelContainer} 
                 cableApp={cableApp}
@@ -40,6 +36,10 @@ const App = ({ cableApp }) => (
         <ProtectedRoute 
             path="/channels" 
             component={ServerNavContainer} 
+        />
+        <ProtectedRoute
+            exact path="/channels/@me"
+            component={MeContainer}
         />
     </div>
 );
