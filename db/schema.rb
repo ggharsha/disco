@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_044439) do
+ActiveRecord::Schema.define(version: 2022_02_01_050135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2022_02_01_044439) do
   create_table "conversations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "owner_id"
+    t.index ["owner_id"], name: "index_conversations_on_owner_id"
   end
 
   create_table "direct_messages", force: :cascade do |t|

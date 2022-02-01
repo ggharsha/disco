@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :create, :update, :show, :destroy]
     resource :session, only: [:create, :destroy]
@@ -8,7 +6,6 @@ Rails.application.routes.draw do
       resources :channels, only: [:create]
     end
     resources :memberships, only: [:create, :destroy]
-    # resources :friendships, only: [:create, :update, :destroy, :index]
     resources :channels, only: [:show, :update, :destroy] do 
       resources :messages, only: [:create]
     end
@@ -18,6 +15,7 @@ Rails.application.routes.draw do
     end
     resources :conversation_memberships, only: [:create, :destroy]
     resources :direct_messages, only: [:update, :show, :destroy, :index]
+    # resources :friendships, only: [:create, :update, :destroy, :index]
   end
 
   mount ActionCable.server => '/cable'
