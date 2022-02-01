@@ -1,0 +1,1 @@
+json.extract! @conversation_membership, :id, :member_id, :conversation_id
