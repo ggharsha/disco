@@ -1,5 +1,11 @@
-import { RECEIVE_CHANNEL, REMOVE_CHANNEL } from "../actions/channel_actions";
-import { RECEIVE_SERVER, REMOVE_SERVER } from "../actions/server_actions";
+import { 
+    RECEIVE_CHANNEL, 
+    REMOVE_CHANNEL 
+} from "../actions/channel_actions";
+import { 
+    RECEIVE_SERVER, 
+    REMOVE_SERVER 
+} from "../actions/server_actions";
 import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const channelsReducer = (state = {}, action) => {
