@@ -9,11 +9,16 @@ const ConvoListItem = ({ conversation, currentUser }) => {
 
     let convoUsers = selectConversationMembers(conversation.users);
     convoUsers = convoUsers.map(user => user.username);
+    convoUsers = convoUsers.filter(username => username !== currentUser.username)
+
+    console.log(conversation.users)
 
     let conversationText;
-    if (convoUsers.length <= 2) {
-        conversationText = convoUsers.filter(user => user !== currentUser)[0]
-    } else conversationText = convoUsers.join(", ").slice(0, 14) + '...';
+    if (convoUsers.length <= 1) {
+        conversationText = convoUsers[0]
+    } else {
+        conversationText = convoUsers.join(", ").slice(0, 23) + '...'
+    };
 
     return (
         <li className="conversation-list-item">

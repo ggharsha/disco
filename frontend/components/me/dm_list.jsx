@@ -13,6 +13,10 @@ export default class DmList extends React.Component {
         return (
             <div className="convo-list-container">
                 <ul className="convo-list">
+                    <li className="direct-message-header">
+                        <span>DIRECT MESSAGES</span>
+                        <span className="add-conversation">+</span>
+                    </li>
                     {this.props.conversations.map(convo => (
                         <Link
                             key={convo.id} 

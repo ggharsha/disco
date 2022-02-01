@@ -1,1 +1,1 @@
-json.extract! conversation, :id, :owner_id
+json.extract! conversation, :id, :owner_id, :users
