@@ -2,7 +2,7 @@
 
 .modal-background {
     z-index: 50;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.6);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -215,4 +215,9 @@
     box-sizing: border-box;
     border-radius: 10px;
     position: absolute;
+}
+
+.create-server-form h3 {
+    font-family: $mukta;
+    font-weight: 700;
 }

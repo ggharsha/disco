@@ -32,10 +32,10 @@ export default class CreateServer extends React.Component {
                     className="create-server-form"
                     onSubmit={e => this.handleSubmit(e)}
                 >
-                    <label>
+                    <label className="all-caps-form">
                         WHO IS THIS FOR?
                     </label>
-                    <label>
+                    <label className="radio-label-form">
                         Your community
                     </label>
                     <input
@@ -44,7 +44,7 @@ export default class CreateServer extends React.Component {
                         value="true"
                         onChange={this.update("public")}
                     />
-                    <label>
+                    <label className="radio-label-form">
                         Just friends
                     </label>
                     <input
@@ -53,7 +53,7 @@ export default class CreateServer extends React.Component {
                         value="false"
                         onChange={this.update("public")}
                     />
-                    <label>
+                    <label className="all-caps-form">
                         SERVER NAME
                     </label>
                     <input
