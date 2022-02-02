@@ -4,6 +4,7 @@ import Channel from "./channel";
 import { updateChannel, deleteChannel, createChannel, fetchChannel } from "../../actions/channel_actions";
 import { fetchServer } from "../../actions/server_actions";
 import { fetchUser } from "../../actions/users_actions";
+import { openModal } from "../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => ({
     channel: state.entities.channels[ownProps.match.params.channelId],
@@ -19,7 +20,8 @@ const mDTP = dispatch => ({
     updateChannel: (channel, channelId) => dispatch(updateChannel(channel, channelId)),
     deleteChannel: channelId => dispatch(deleteChannel(channelId)),
     fetchServer: serverId => dispatch(fetchServer(serverId)),
-    fetchUser: userId => dispatch(fetchUser(userId))
+    fetchUser: userId => dispatch(fetchUser(userId)),
+    openModal: category => dispatch(openModal(category))
 });
 
 export default connect(mSTP, mDTP)(Channel);

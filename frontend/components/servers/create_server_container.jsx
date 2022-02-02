@@ -7,7 +7,8 @@ import CreateServer from "./create_server";
 
 const mSTP = state => ({
     currentUser: state.entities.users[state.session.id],
-    currentUserId: state.session.id
+    currentUserId: state.session.id,
+    errors: state.errors.serverErrors
 });
 
 const mDTP = dispatch => ({

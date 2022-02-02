@@ -1,6 +1,12 @@
 import React from "react";
-import { Route, Redirect, Switch, Link } from "react-router-dom";
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { 
+    Route, 
+    Switch
+} from "react-router-dom";
+import { 
+    AuthRoute, 
+    ProtectedRoute 
+} from '../util/route_util';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ServerNavContainer from './servers/server_nav_container';
@@ -12,7 +18,11 @@ import Splash from "./splash/splash";
 
 const App = ({ cableApp }) => (
     <div className="App">
-        <Modal />
+        {/* <Modal /> */}
+        <Route 
+            path="/" 
+            component={Modal} 
+        />
 
         <Switch>
             <AuthRoute 

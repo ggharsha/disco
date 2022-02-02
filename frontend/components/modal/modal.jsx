@@ -3,24 +3,24 @@ import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 import UpdateUserContainer from '../servers/update_user_container';
 import CreateServerContainer from '../servers/create_server_container';
-// import UpdateServerContainer from '../servers/update_server_container';
+import UpdateServerContainer from '../servers/update_server_container';
 // import PublicServerContainer from '../servers/public_server_container';
 // import CreateConversationContainer from '../conversations/create_conversation_container';
 // import DeleteMessageContainer from '../channels/delete_message_container';
 // import DeleteDirectMessageContainer from '../conversations/delete_direct_message_container';
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal, history }) {
     if (!modal) return null;
     let component;
     switch (modal) {
         case 'createServer':
-            component = <CreateServerContainer />;
+            component = <CreateServerContainer history={history} />;
             break;
         case 'updateUser':
             component = <UpdateUserContainer />;
             return component;
         case 'updateServer':
-            // component = <UpdateServerContainer />;
+            component = <UpdateServerContainer />;
             break;
         case 'publicServer':
             // component = <PublicServerContainer />;
