@@ -58,7 +58,10 @@ export default class Channel extends React.Component {
                 </div>
                 <div className="channel-list">
                     <ul className="channels">
-                        <li className="text-channels-header">TEXT CHANNELS</li>
+                        <li className="text-channels-header">
+                            <span>TEXT CHANNELS</span>
+                            <span className="add-channel">+</span>
+                        </li>
                         {this.props.channels.map(channel => (
                             <Link 
                                 key={channel.id} 

@@ -23,7 +23,6 @@ class Friendship < ApplicationRecord
         class_name: :User
 
     private
-
     def add_self
         errors.add(:user_id, 'You can\'t add yourself!') if user_id == friend_id
     end

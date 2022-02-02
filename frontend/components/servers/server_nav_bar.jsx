@@ -47,6 +47,9 @@ export default class ServerNavBar extends React.Component {
                                         key={server.id} 
                                         server={server} 
                                     />
+                                    {/* <span className="tooltiptext">
+                                        {server.serverName}
+                                    </span> */}
                                 </Link>
                             ))}
                         <li className="disco-line" />

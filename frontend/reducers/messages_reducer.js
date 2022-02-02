@@ -4,6 +4,10 @@ import {
     REMOVE_MESSAGE
 } from '../actions/message_actions';
 import { RECEIVE_CHANNEL } from '../actions/channel_actions';
+import { 
+    RECEIVE_ALL_CONVERSATIONS, 
+    RECEIVE_CONVERSATION 
+} from '../actions/conversation_actions';
 
 const messagesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -20,6 +24,10 @@ const messagesReducer = (state = {}, action) => {
         case REMOVE_MESSAGE:
             delete nextState[action.messageId];
             return nextState;
+        case RECEIVE_CONVERSATION:
+            return {};
+        case RECEIVE_ALL_CONVERSATIONS:
+            return {};
         default:
             return state;
     };

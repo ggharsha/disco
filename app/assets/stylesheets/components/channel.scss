@@ -59,21 +59,21 @@
 // channels
 
 .channel-list {
-    left: 0;
+    left: 70px;
     top: 0;
     position: fixed;
-    height: 100%;
+    height: calc(100% - 50px);
+    width: 240px;
     z-index: 10;
-    margin-left: 70px;
     box-sizing: border-box;
 }
 
 .channel-list .channels {
     display: flex;
     flex-direction: column;
-    line-height: 2;
-    margin-left: 20px;
-    padding-top: 60px;
+    line-height: 1.8;
+    margin-left: 10px;
+    padding-top: 52px;
 }
 
 .channel-list-item {
@@ -176,10 +176,22 @@
 }
 
 .text-channels-header {
+    width: 215px;
     color: #8d9297;
     font-family: $mukta;
     font-size: 14px;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-channel {
+    font-size: 18px;
+}
+
+.add-channel:hover {
+    cursor: pointer;
 }
 
 .chan-hashtag {

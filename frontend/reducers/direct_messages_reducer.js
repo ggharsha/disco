@@ -4,6 +4,7 @@ import {
     REMOVE_DM
 } from '../actions/direct_message_actions';
 import { RECEIVE_CONVERSATION } from '../actions/conversation_actions';
+import { RECEIVE_SERVER } from '../actions/server_actions';
 
 const directMessagesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -20,6 +21,8 @@ const directMessagesReducer = (state = {}, action) => {
         case RECEIVE_CONVERSATION:
             if (action.payload.directMessages) return action.payload.directMessages;
             else return {};
+        case RECEIVE_SERVER:
+            return {};
         default:
             return state;
     };

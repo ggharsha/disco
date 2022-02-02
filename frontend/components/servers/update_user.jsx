@@ -24,7 +24,6 @@ export default class UpdateUser extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.updateUser(this.state);
-        // this.props.fetchCurrentUser(this.props.currentUser.id);
     }
 
     render() {
@@ -101,7 +100,7 @@ export default class UpdateUser extends React.Component {
                         </form>
                     </div>
                     <button 
-                        onClick={(userId) => deleteUser(userId)}
+                        onClick={() => deleteUser(currentUser.id)}
                         className="delete-account-button"
                     >
                         Delete Account

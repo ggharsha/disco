@@ -9,7 +9,7 @@ class Api::DirectMessagesController < ApplicationController
         render :show
     end
 
-    def create #refactor with actioncable
+    def create 
         @direct_message = DirectMessage.new(direct_message_params)
         @conversation = Conversation.find(params[:conversation_id])
         @direct_message.sender_id = current_user.id

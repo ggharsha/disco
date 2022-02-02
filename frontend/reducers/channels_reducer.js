@@ -7,6 +7,10 @@ import {
     REMOVE_SERVER 
 } from "../actions/server_actions";
 import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
+import { 
+    RECEIVE_ALL_CONVERSATIONS, 
+    RECEIVE_CONVERSATION 
+} from "../actions/conversation_actions";
 
 const channelsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -23,6 +27,10 @@ const channelsReducer = (state = {}, action) => {
         case REMOVE_SERVER:
             return {};
         case LOGOUT_CURRENT_USER:
+            return {};
+        case RECEIVE_CONVERSATION:
+            return {};
+        case RECEIVE_ALL_CONVERSATIONS:
             return {};
         default:
             return nextState;
