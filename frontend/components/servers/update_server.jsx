@@ -5,12 +5,18 @@ export default class UpdateServer extends React.Component {
         super(props);
         this.state = this.props.currentServer;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.serverId = null;
     }
 
     componentDidMount() {
-        this.props.fetchServer(this.props.match.params.serverId);
-        console.log(this.props.match)
-        console.log(this.props.currentServer)
+        this.fetchDetails();
+        this.props.fetchServer(this.serverId);
+    }
+
+    fetchDetails() {
+        const url = this.props.history.location.pathname;
+        const urlArr = url.split("/");
+        this.serverId = parseInt(urlArr[2]);
     }
 
     update(field) {
@@ -19,7 +25,7 @@ export default class UpdateServer extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updateServer(this.props.state)
+        this.props.updateServer(this.state)
         .then(() => this.props.closeModal());
     }
 
@@ -30,12 +36,12 @@ export default class UpdateServer extends React.Component {
                 <h3 className='update-server-header'>Edit server name</h3>
                 <form
                     className='update-server-form'
-                    onSubmit={(e) => this.props.updateServer(e)}
+                    onSubmit={(e) => this.handleSubmit(e)}
                 >
                     <input 
                         type='text'
                         value={this.state.serverName}
-                        onChange={this.props.update('serverName')}
+                        onChange={this.update('serverName')}
                         className='update-server-input'
                     />
                     <button 
@@ -43,6 +49,15 @@ export default class UpdateServer extends React.Component {
                         className='update-server-button'
                     >Update</button>
                 </form>
+                <button 
+                    onClick={
+                        () => this.props.deleteServer(this.serverId)
+                        .then(() => this.props.closeModal())
+                        .then(() => this.props.history.push('/channels/@me'))
+                    }
+                >
+                        Delete Server
+                </button>
             </div>
         )
     }

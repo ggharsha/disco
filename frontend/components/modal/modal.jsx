@@ -8,6 +8,7 @@ import UpdateServerContainer from '../servers/update_server_container';
 // import CreateConversationContainer from '../conversations/create_conversation_container';
 // import DeleteMessageContainer from '../channels/delete_message_container';
 // import DeleteDirectMessageContainer from '../conversations/delete_direct_message_container';
+// import CreateChannelContainer from '../channels/create_channel_container';
 
 function Modal({ modal, closeModal, history }) {
     if (!modal) return null;
@@ -20,7 +21,7 @@ function Modal({ modal, closeModal, history }) {
             component = <UpdateUserContainer />;
             return component;
         case 'updateServer':
-            component = <UpdateServerContainer />;
+            component = <UpdateServerContainer history={history} />;
             break;
         case 'publicServer':
             // component = <PublicServerContainer />;

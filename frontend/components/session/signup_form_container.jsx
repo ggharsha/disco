@@ -1,7 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-// import { createUser } from "../../actions/users_actions";
-// import { login } from "../../actions/session_actions";
 import { signup } from "../../actions/session_actions";
 import RegisterForm from "./register_form";
 

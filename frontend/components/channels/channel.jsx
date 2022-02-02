@@ -54,7 +54,7 @@ export default class Channel extends React.Component {
                     </p>
                     <p 
                         className="server-name-down-arrow"
-                        // onClick={() => this.props.openModal('updateServer')}
+                        onClick={() => this.props.openModal('updateServer')}
                     >
                         &#8964;
                     </p>

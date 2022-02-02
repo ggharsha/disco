@@ -23,9 +23,8 @@ export default class CreateServer extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createServer(this.state)
-        .then(server => {
-            this.props.history.push(`/channels/${server.server.server.id}/${server.server.server.channels[0]}`)
-        })
+        .then(server => this.props.history.push(`/channels/${server.server.server.id}/${server.server.server.channels[0]}`))
+        .then(() => this.props.closeModal())
         .fail(() => this.setState({ errors: this.props.errors[0] }));
     }
 
@@ -53,7 +52,7 @@ export default class CreateServer extends React.Component {
             >
                 <div className="left-align-server-form">
                     <label className="all-caps-form field-error">
-                        WHO IS THIS FOR? - {this.state.errors}
+                        WHO IS THIS FOR? <span>- {this.state.errors}</span>
                     </label>
                 </div>
 
@@ -77,7 +76,7 @@ export default class CreateServer extends React.Component {
 
                 <div className="left-align-server-form">
                     <label className="all-caps-form field-error">
-                        SERVER NAME - {this.state.errors}
+                        SERVER NAME <span>- {this.state.errors}</span>
                     </label>
                 </div>
                 <input

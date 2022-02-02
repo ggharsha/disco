@@ -8,8 +8,15 @@ import {
 import { closeModal } from "../../actions/modal_actions";
 import UpdateServer from "./update_server";
 
+// selectors start
+const parseServerId = (url) => {
+    const urlArr = url.split("/");
+    return parseInt(urlArr[2]);
+};
+// selectors end
+
 const mSTP = (state, ownProps) => ({
-    currentServer: state.entities.servers[ownProps.match.params.serverId],
+    currentServer: state.entities.servers[parseServerId(ownProps.history.location.pathname)],
     currentUser: state.entities.users[state.session.id]
 });
 
