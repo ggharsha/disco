@@ -365,15 +365,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 300px;
-    width: 500px;
+    height: 220px;
+    width: 400px;
     background: #36393f;
     z-index: 10;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .update-server-header {
@@ -392,7 +392,7 @@
 }
 
 .update-server-input {
-    width: 240px;
+    width: 300px;
     height: 30px;
     color: white;
     background: #525964;
@@ -402,4 +402,44 @@
     font-size: 18px;
     box-sizing: border-box;
     margin: 10px;
+}
+
+.update-server-button {
+    width: 300px;
+    height: 30px;
+    background: #5866f2;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: $mukta;
+    box-sizing: border-box;
+    margin: 10px;
+    border: none;
+}
+
+.update-server-button:hover {
+    background-color: #505cdd;
+    cursor: pointer;
+}
+
+.update-server-button:active {
+    background-color: #3d45a5;
+    cursor: pointer;
+}
+
+.delete-server-button {
+    border: 1px solid #ed4245;
+    color: #ed4245;
+    background: none;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: $mukta;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.delete-server-button:hover {
+    background: #2f3136;
+    cursor: pointer;
 }

@@ -37,7 +37,7 @@ export default class UpdateServer extends React.Component {
         if (!this.props.currentServer) return null;
         return (
             <div className='update-server-modal'>
-                <h3 className='update-server-header'>Edit your server</h3>
+                <h3 className='update-server-header'>Edit your server name</h3>
                 <form
                     className='update-server-form'
                     onSubmit={(e) => this.handleSubmit(e)}
