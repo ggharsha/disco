@@ -15,7 +15,15 @@ class Api::DirectMessagesController < ApplicationController
         @direct_message.sender_id = current_user.id
         @direct_message.conversation_id = @conversation.id
         if @direct_message.save
-            render 'api/direct_messages/show'
+            # render 'api/direct_messages/show'
+            ConversationsChannel.broadcast_to(@conversation, {
+                id: @direct_message.id,
+                senderId: @direct_message.sender_id,
+                user: User.find_by(id: @direct_message.sender_id),
+                conversationId: @direct_message.conversation_id,
+                body: @direct_message.body,
+                createdAt: @direct_message.created_at
+            })
         else
             render json: @direct_message.errors.full_messages, status: 422
         end

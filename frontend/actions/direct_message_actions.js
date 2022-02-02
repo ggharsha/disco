@@ -31,7 +31,7 @@ export const fetchDm = dmId => dispatch => (
 
 export const createDm = (conversationId, dm) => dispatch => (
     DmApiUtil.createDm(conversationId, dm)
-    .then(directMessage => dispatch(receiveDirectMessage(directMessage)))
+    // .then(directMessage => dispatch(receiveDirectMessage(directMessage)))
 );
 
 export const updateDm = dm => dispatch => (

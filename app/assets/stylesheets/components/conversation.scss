@@ -74,10 +74,11 @@
     overflow-y: scroll;
     position: fixed;
     padding-right: 240px;
-    padding-top: 100px;
+    overflow-x: auto;
     height: calc(100vh - 110px);
     width: calc(100% - 550px);
     bottom: 50px;
+    line-height: 1.7;
 }
 
 #type-dm-form {
