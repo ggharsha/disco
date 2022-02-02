@@ -12,7 +12,6 @@ class Api::ServersController < ApplicationController
     def create
         @server = Server.new(server_params)
         @server.owner_id = current_user.id
-        # debugger
         if @server.save!
             @membership = Membership.create(user_id: current_user.id, server_id: @server.id)
             @channel = Channel.create(server_id: @server.id, channel_name: 'general')
