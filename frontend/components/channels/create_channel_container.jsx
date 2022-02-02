@@ -1,12 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import {
-    fetchServer,
-    updateServer,
-    deleteServer
-} from '../../actions/server_actions';
+import { createChannel, fetchChannel } from "../../actions/channel_actions";
+import { fetchServer } from "../../actions/server_actions";
+import CreateChannel from "./create_channel";
 import { closeModal } from "../../actions/modal_actions";
-import UpdateServer from "./update_server";
 
 // selectors start
 const parseServerId = url => {
@@ -18,14 +15,14 @@ const parseServerId = url => {
 const mSTP = (state, ownProps) => ({
     currentServer: state.entities.servers[parseServerId(ownProps.history.location.pathname)],
     currentUser: state.entities.users[state.session.id],
-    errors: state.errors.serverErrors
+    // errors: state.errors.channelErrors
 });
 
 const mDTP = dispatch => ({
     fetchServer: serverId => dispatch(fetchServer(serverId)),
-    updateServer: server => dispatch(updateServer(server)),
-    deleteServer: serverId => dispatch(deleteServer(serverId)),
+    fetchChannel: channelId => dispatch(fetchChannel(channelId)),
+    createChannel: (channel, serverId) => dispatch(createChannel(channel, serverId)),
     closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mSTP, mDTP)(UpdateServer);
+export default connect(mSTP, mDTP)(CreateChannel);

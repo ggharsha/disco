@@ -53,9 +53,14 @@ export default class Channel extends React.Component {
             >
                 &#8964;
             </p>
-        ) : (
-            null
-        );
+        ) : null;
+
+        const channelOptions = this.props.server.ownerId === this.props.currentUserId ? (
+            <span 
+                className="add-channel"
+                onClick={() => this.props.openModal('createChannel')}
+            >+</span>
+        ) : null;
         this.handleChannelNav();
         return (
             <div className="channel-div">
@@ -69,7 +74,7 @@ export default class Channel extends React.Component {
                     <ul className="channels">
                         <li className="text-channels-header">
                             <span>TEXT CHANNELS</span>
-                            <span className="add-channel">+</span>
+                            {channelOptions}
                         </li>
                         {this.props.channels.map(channel => (
                             <Link 

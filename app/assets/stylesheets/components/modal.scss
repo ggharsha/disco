@@ -454,3 +454,74 @@
 .error-input {
     border: 1px solid #ed4245;
 }
+
+// create channel 
+
+.create-channel-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 180px;
+    width: 400px;
+    background: #36393f;
+    border-radius: 10px;
+}
+
+.channel-create-header {
+    font-family: $mukta;
+    font-weight: 700;
+    color: #f3f3f3;
+    font-size: 22px;
+}
+
+.channel-create-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.channel-create-button {
+    width: 300px;
+    height: 30px;
+    background: #5866f2;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: $mukta;
+    box-sizing: border-box;
+    margin: 10px;
+    border: none;
+}
+
+.channel-create-button:hover {
+    background-color: #505cdd;
+    cursor: pointer;
+}
+
+.channel-create-button:active {
+    background-color: #3d45a5;
+    cursor: pointer;
+}
+
+.channel-create-input {
+    width: 300px;
+    height: 30px;
+    color: white;
+    background: #525964;
+    border-radius: 5px;
+    border: none;
+    font-family: $mukta;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.error-input {
+    border: 1px solid #ed4245;
+}
