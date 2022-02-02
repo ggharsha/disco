@@ -10,7 +10,8 @@
 #  updated_at  :datetime         not null
 #
 class Server < ApplicationRecord
-    validates :owner_id, :server_name, :public, presence: true
+    validates :owner_id, :server_name, presence: true
+    validates :public, inclusion: { in: [true, false] }
 
     belongs_to :owner,
         foreign_key: :owner_id,

@@ -15,7 +15,6 @@ class Api::DirectMessagesController < ApplicationController
         @direct_message.sender_id = current_user.id
         @direct_message.conversation_id = @conversation.id
         if @direct_message.save
-            # render 'api/direct_messages/show'
             ConversationsChannel.broadcast_to(@conversation, {
                 id: @direct_message.id,
                 senderId: @direct_message.sender_id,
