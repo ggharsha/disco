@@ -6,7 +6,8 @@ export default class UpdateServer extends React.Component {
         this.state = {
             id: this.props.currentServer.id,
             server_name: this.props.currentServer.serverName,
-            public: this.props.currentServer.public
+            public: this.props.currentServer.public,
+            errors: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.serverId = null;
@@ -30,12 +31,13 @@ export default class UpdateServer extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.updateServer(this.state)
-        .then(() => this.props.closeModal());
+        .then(() => this.props.closeModal())
+        .fail(() => this.setState({ errors: this.props.errors[0] }));
     }
 
     render() {
         if (!this.props.currentServer) return null;
-        return (
+        return this.state.errors.length < 1 ? (
             <div className='update-server-modal'>
                 <h3 className='update-server-header'>Edit your server name</h3>
                 <form
@@ -64,6 +66,40 @@ export default class UpdateServer extends React.Component {
                     }
                 >
                         Delete Server
+                </button>
+            </div>
+        ) : (
+            <div className='update-server-modal'>
+                <h3 className='update-server-header'>Edit your server name</h3>
+                    <p className='error-display'>
+                        {this.state.errors}
+                    </p>
+                <form
+                    className='update-server-form'
+                    onSubmit={(e) => this.handleSubmit(e)}
+                >
+                    <input
+                        type='text'
+                        value={this.state.server_name}
+                        onChange={this.update('server_name')}
+                        className='update-server-input error-input'
+                    />
+                    <button
+                        type='submit'
+                        className='update-server-button'
+                    >
+                        Update
+                    </button>
+                </form>
+                <button
+                    className='delete-server-button'
+                    onClick={
+                        () => this.props.deleteServer(this.serverId)
+                            .then(() => this.props.closeModal())
+                            .then(() => this.props.history.push('/channels/@me'))
+                    }
+                >
+                    Delete Server
                 </button>
             </div>
         )

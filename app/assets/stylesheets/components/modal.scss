@@ -443,3 +443,14 @@
     background: #2f3136;
     cursor: pointer;
 }
+
+.error-display {
+    font-size: 14px;
+    font-family: $mukta;
+    font-weight: 300;
+    color: #ed4245;
+}
+
+.error-input {
+    border: 1px solid #ed4245;
+}
