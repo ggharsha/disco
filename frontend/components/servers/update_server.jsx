@@ -3,7 +3,12 @@ import React from 'react';
 export default class UpdateServer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.currentServer;
+        // this.state = this.props.currentServer;
+        this.state = {
+            id: this.props.currentServer.id,
+            server_name: this.props.currentServer.serverName,
+            public: this.props.currentServer.public
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.serverId = null;
     }
@@ -40,8 +45,8 @@ export default class UpdateServer extends React.Component {
                 >
                     <input 
                         type='text'
-                        value={this.state.serverName}
-                        onChange={this.update('serverName')}
+                        value={this.state.server_name}
+                        onChange={this.update('server_name')}
                         className='update-server-input'
                     />
                     <button 
@@ -50,6 +55,7 @@ export default class UpdateServer extends React.Component {
                     >Update</button>
                 </form>
                 <button 
+                    className='delete-server-button'
                     onClick={
                         () => this.props.deleteServer(this.serverId)
                         .then(() => this.props.closeModal())
