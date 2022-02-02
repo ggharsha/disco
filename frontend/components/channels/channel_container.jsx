@@ -5,13 +5,16 @@ import { updateChannel, deleteChannel, createChannel, fetchChannel } from "../..
 import { fetchServer } from "../../actions/server_actions";
 import { fetchUser } from "../../actions/users_actions";
 import { openModal } from "../../actions/modal_actions";
+import { fetchCurrentUser } from "../../actions/session_actions";
 
 const mSTP = (state, ownProps) => ({
     channel: state.entities.channels[ownProps.match.params.channelId],
     server: state.entities.servers[ownProps.match.params.serverId],
     users: Object.values(state.entities.users),
     channels: Object.values(state.entities.channels),
-    cableApp: ownProps.cableApp
+    cableApp: ownProps.cableApp,
+    currentUser: state.entities.users[state.session.id],
+    currentUserId: state.session.id
 });
 
 const mDTP = dispatch => ({
@@ -21,7 +24,8 @@ const mDTP = dispatch => ({
     deleteChannel: channelId => dispatch(deleteChannel(channelId)),
     fetchServer: serverId => dispatch(fetchServer(serverId)),
     fetchUser: userId => dispatch(fetchUser(userId)),
-    openModal: category => dispatch(openModal(category))
+    openModal: category => dispatch(openModal(category)),
+    fetchCurrentUser: userId => dispatch(fetchCurrentUser(userId))
 });
 
 export default connect(mSTP, mDTP)(Channel);

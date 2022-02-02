@@ -3,7 +3,6 @@ import React from 'react';
 export default class UpdateServer extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = this.props.currentServer;
         this.state = {
             id: this.props.currentServer.id,
             server_name: this.props.currentServer.serverName,
@@ -38,7 +37,7 @@ export default class UpdateServer extends React.Component {
         if (!this.props.currentServer) return null;
         return (
             <div className='update-server-modal'>
-                <h3 className='update-server-header'>Edit server name</h3>
+                <h3 className='update-server-header'>Edit your server</h3>
                 <form
                     className='update-server-form'
                     onSubmit={(e) => this.handleSubmit(e)}
@@ -52,7 +51,9 @@ export default class UpdateServer extends React.Component {
                     <button 
                         type='submit'
                         className='update-server-button'
-                    >Update</button>
+                    >
+                        Update
+                    </button>
                 </form>
                 <button 
                     className='delete-server-button'

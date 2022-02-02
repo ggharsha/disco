@@ -11,6 +11,7 @@ export default class Channel extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchCurrentUser(this.props.currentUserId)
         this.props.fetchServer(this.props.match.params.serverId)
         .then(() => this.props.fetchChannel(this.props.match.params.channelId))
         .then(() => this.handleChannelNav());
@@ -44,7 +45,17 @@ export default class Channel extends React.Component {
     }
 
     render() {
-        if (!this.props.server || !this.props.channel) return null;
+        if (!this.props.server || !this.props.channel || !this.props.currentUser) return null;
+        const serverOptions = this.props.server.ownerId === this.props.currentUserId ? (
+            <p
+                className="server-name-down-arrow"
+                onClick={() => this.props.openModal('updateServer')}
+            >
+                &#8964;
+            </p>
+        ) : (
+            null
+        );
         this.handleChannelNav();
         return (
             <div className="channel-div">
@@ -52,12 +63,13 @@ export default class Channel extends React.Component {
                     <p className="server-name-text">
                         {this.props.server.serverName}
                     </p>
-                    <p 
+                    {/* <p 
                         className="server-name-down-arrow"
                         onClick={() => this.props.openModal('updateServer')}
                     >
                         &#8964;
-                    </p>
+                    </p> */}
+                    {serverOptions}
                 </div>
                 <div className="channel-list">
                     <ul className="channels">
