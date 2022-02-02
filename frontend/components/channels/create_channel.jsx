@@ -26,7 +26,7 @@ export default class CreateChannel extends React.Component {
         e.preventDefault();
         this.props.createChannel(this.state, this.serverId)
         .then(() => this.props.closeModal())
-        // .fail(() => this.setState({ errors: this.props.errors[0] }));
+        .fail(() => this.setState({ errors: this.props.errors[0] }));
     }
 
     update(field) {

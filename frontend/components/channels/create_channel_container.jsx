@@ -15,7 +15,7 @@ const parseServerId = url => {
 const mSTP = (state, ownProps) => ({
     currentServer: state.entities.servers[parseServerId(ownProps.history.location.pathname)],
     currentUser: state.entities.users[state.session.id],
-    // errors: state.errors.channelErrors
+    errors: state.errors.channelErrors
 });
 
 const mDTP = dispatch => ({
