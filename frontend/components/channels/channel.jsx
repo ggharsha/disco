@@ -12,7 +12,7 @@ export default class Channel extends React.Component {
 
     componentDidMount() {
         this.props.fetchCurrentUser(this.props.currentUserId)
-        this.props.fetchServer(this.props.match.params.serverId)
+        .then(() => this.props.fetchServer(this.props.match.params.serverId))
         .then(() => this.props.fetchChannel(this.props.match.params.channelId))
         .then(() => this.handleChannelNav());
     }
