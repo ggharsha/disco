@@ -10,14 +10,17 @@ import { openModal } from "../../actions/modal_actions";
 import { fetchChannel } from "../../actions/channel_actions";
 
 // selectors start
-const selectServers = state => (
-    state.entities.servers ? Object.values(state.entities.servers) : []
-);
+const selectServers = state => {
+    if (Object.keys(state.entities.servers).length === 0) return [];
+    return state.entities.users[state.session.id].serversJoined.map(serverId => (
+        state.entities.servers[serverId]
+    ))
+};
 // selectors end
 
 const mSTP = state => ({
-    servers: selectServers(state),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    servers: selectServers(state)
 });
 
 const mDTP = dispatch => ({

@@ -1,7 +1,7 @@
 json.user do
     json.partial! 'api/users/user', user: @user 
-    json.servers_joined @user.servers_joined_ids
-    json.conversations @user.conversation_ids
+    # json.servers_joined @user.servers_joined_ids
+    # json.conversations @user.conversation_ids
 end
 
 json.servers do

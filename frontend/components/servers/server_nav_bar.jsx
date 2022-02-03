@@ -1,7 +1,6 @@
 import React from "react";
 import ServerNavIcon from "./server_nav_icon";
 import { Link } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 
 export default class ServerNavBar extends React.Component {
     constructor(props) {
