@@ -2,11 +2,10 @@
 
 #me-container {
     position: fixed;
-    width: calc(100% - 310px);
+    width: 240px;
     height: calc(100% - 50px);
     top: 0;
-    left: 0;
-    margin-left: 70px;
+    left: 70px;
     z-index: 5;
 }
 
@@ -25,7 +24,7 @@
     height: 50px;
     background: #36393f;
     border-bottom: 2px solid #232529;
-    box-shadow: 2px 0px #232529;
+    box-shadow: 0px 2px #2f3136;
     z-index: 20;
 }
 
