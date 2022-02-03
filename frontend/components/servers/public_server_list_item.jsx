@@ -25,7 +25,7 @@ const ServerListItem = ({ server, fetchServer, createMembership, currentUser }) 
                     Join
                 </button>
             </li>
-        )}
+    )} else return null;
 }
 
 export default ServerListItem;
