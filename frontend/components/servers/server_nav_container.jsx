@@ -12,7 +12,7 @@ import { fetchChannel } from "../../actions/channel_actions";
 // selectors start
 const selectServers = state => {
     if (Object.keys(state.entities.servers).length === 0) return [];
-    return state.entities.users[state.session.id].serversJoined.map(serverId => (
+    return state.entities.users[state.session.id].serversJoined.sort().map(serverId => (
         state.entities.servers[serverId]
     ))
 };

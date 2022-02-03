@@ -5,5 +5,5 @@ json.server do
 end
 
 json.current_user do
-    json.partial! 'api/users/user', user: @current_user
+    json.partial! 'api/users/user', user: @c_user
 end

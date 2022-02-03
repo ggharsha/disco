@@ -3,8 +3,8 @@ import ServerListItem from "./public_server_list_item";
 
 export default class PublicServers extends React.Component {
     componentDidMount() {
-        this.props.fetchCurrentUser(this.props.currentUser.id);
-        this.props.fetchServers();
+        this.props.fetchCurrentUser(this.props.currentUser.id)
+        .then(() => this.props.fetchServers());
     }
 
     render() {
@@ -22,6 +22,9 @@ export default class PublicServers extends React.Component {
                             fetchServer={this.props.fetchServer}
                             createMembership={this.props.createMembership}
                             currentUser={this.props.currentUser}
+                            closeModal={this.props.closeModal}
+                            history={this.props.history}
+                            fetchCurrentUser={this.props.fetchCurrentUser}
                         />
                     ))}
                 </ul>

@@ -27,7 +27,7 @@ function Modal({ modal, closeModal, history }) {
             component = <CreateChannelContainer history={history} />;
             break;
         case 'publicServers':
-            component = <PublicServerContainer />;
+            component = <PublicServerContainer history={history} />;
             break;
         case 'createConversation':
             // component = <CreateConversationContainer />;

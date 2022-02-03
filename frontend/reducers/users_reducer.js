@@ -37,7 +37,6 @@ const usersReducer = (state = {}, action) => {
             nextState[action.serverId.currentUser.id] = action.serverId.currentUser;
             return nextState;
         case RECEIVE_MEMBERSHIP:
-            debugger
             nextState[action.membership.userId] = action.membership.currentUser;
             return nextState;
         default:

@@ -38,7 +38,8 @@ export default class ServerNavBar extends React.Component {
                             {servers.map(server => (
                                 <Link 
                                     className="link-to-server" 
-                                    onClick={() => fetchServer(server.id).then(() => fetchChannel(this.checkDefaultChannel(server)))}
+                                    onClick={() => fetchServer(server.id)
+                                        .then(() => fetchChannel(this.checkDefaultChannel(server)))}
                                     key={server.id} 
                                     to={`/channels/${server.id}/${this.checkDefaultChannel(server)}`}
                                 >

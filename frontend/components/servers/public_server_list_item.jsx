@@ -1,6 +1,13 @@
 import React from "react"
 
-const ServerListItem = ({ server, fetchServer, createMembership, currentUser }) => {
+const ServerListItem = ({ 
+    server, 
+    fetchServer, 
+    createMembership,
+    fetchCurrentUser, 
+    currentUser, 
+    history, 
+    closeModal }) => {
     const imageArr = [
         window.randServ1, 
         window.randServ2, 
@@ -17,11 +24,15 @@ const ServerListItem = ({ server, fetchServer, createMembership, currentUser }) 
                     src={randomImg}
                     className="server-list-rand-icon"
                 />
-                {server.serverName}
-                <button onClick={() => createMembership({
+                <span>
+                    {server.serverName}
+                </span>
+                <button 
+                onClick={() => createMembership({
                     user_id: currentUser.id,
                     server_id: server.id
-                })}>
+                })
+                .then(() => closeModal())}>
                     Join
                 </button>
             </li>
