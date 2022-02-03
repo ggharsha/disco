@@ -35,6 +35,7 @@ user25 = User.create({ username: "charlie", email: "charlie@gmail.com", password
 user26 = User.create({ username: "arleen", email: "arleen@gmail.com", password: "password123" }) #26
 user27 = User.create({ username: "thiago", email: "teeahhhgoo@gmail.com", password: "password123" }) #27
 user28 = User.create({ username: "folgorio", email: "miggymiggy@bloomberg.com", password: "dodriobrate" }) #28
+user29 = User.create({ username: "brighid", email: "brighid@brig.com", password: "squigies" }) #29
 
 server1 = Server.create({ owner_id: user2.id, server_name: "aa friends", public: true }) #1
 server2 = Server.create({ owner_id: user1.id, server_name: "anime", public: true }) #2
@@ -156,5 +157,9 @@ conversation_memberships = ConversationMembership.create([
     { member_id: user1.id, conversation_id: conversation4.id },
     { member_id: user4.id, conversation_id: conversation4.id },
     { member_id: user5.id, conversation_id: conversation5.id },
-    { member_id: user1.id, conversation_id: conversation5.id }
+    { member_id: user1.id, conversation_id: conversation5.id },
+    { member_id: user11.id, conversation_id: conversation5.id },
+    { member_id: user17.id, conversation_id: conversation5.id },
+    { member_id: user20.id, conversation_id: conversation5.id },
+    { member_id: user22.id, conversation_id: conversation5.id },
 ])
