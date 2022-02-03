@@ -32,7 +32,8 @@ const ServerListItem = ({
                     user_id: currentUser.id,
                     server_id: server.id
                 })
-                .then(() => closeModal())}>
+                .then(() => closeModal())}
+                >
                     Join
                 </button>
             </li>

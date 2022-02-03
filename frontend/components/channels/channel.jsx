@@ -54,6 +54,12 @@ export default class Channel extends React.Component {
                 &#8964;
             </p>
         ) : null;
+        // ) : (<p
+        //     className="server-name-down-arrow"
+        //     onClick={() => this.props.openModal('leaveServer')}
+        // >
+        //     &#8964;
+        // </p>);
 
         const channelOptions = this.props.server.ownerId === this.props.currentUserId ? (
             <span 

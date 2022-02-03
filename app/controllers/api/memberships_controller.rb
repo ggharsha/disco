@@ -12,6 +12,7 @@ class Api::MembershipsController < ApplicationController
 
     def destroy
         @membership = Membership.find_by(membership_params)
+        @current_user = current_user
         if @membership.user_id == current_user.id && @membership.destroy
             render 'api/memberships/show'
         else
