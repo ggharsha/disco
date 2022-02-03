@@ -4,11 +4,10 @@
     height: 100%;
     width: 240px;
     z-index: 5;
-    margin-left: 70px;
-    position: absolute;
+    position: fixed;
     background: #2f3136;
     bottom: 0;
-    left: 0;
+    left: 70px;
 }
 
 #own-settings {

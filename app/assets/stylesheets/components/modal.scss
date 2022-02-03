@@ -532,3 +532,93 @@
     font-family: $mukta;
     font-weight: 300;
 }
+
+// public server list modal 
+
+.public-servers-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 20;
+    height: 500px;
+    width: 400px;
+    background: #f3f3f3;
+    color: #46494f;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.public-servers-list {
+    height: 400px;
+    width: 360px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+
+.public-server-list-item {
+    border: 1px solid #46494f;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: $mukta;
+    font-weight: 700;
+    font-size: 20px;
+    height: 50px;
+}
+
+.server-list-rand-icon {
+    margin-right: 25px;
+}
+
+.left-justify-public-server {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.join-server-button {
+    margin-right: 10px;
+    background-color: #5866f2;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 60px;
+    font-family: $mukta;
+    padding: 0;
+    border: none;
+}
+
+.join-server-button:hover {
+    background-color: #505cdd;
+    cursor: pointer;
+}
+
+.join-server-button:active {
+    background-color: #3d45a5;
+    cursor: pointer;
+}
+
+.join-public-server-header {
+    font-family: $mukta;
+    font-weight: 700;
+    font-size: 28px;
+    color: #222327
+}
+
+.close-public-server-modal {
+    margin-left: 350px;
+}
+
+.close-public-server-modal:hover {
+    cursor: pointer;
+}

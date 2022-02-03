@@ -11,9 +11,13 @@ export default class PublicServers extends React.Component {
         if (!this.props.servers) return null;
         return (
             <div className="public-servers-container">
-                <span>
+                <span 
+                    className="close-public-server-modal"
+                    onClick={() => this.props.closeModal()}
+                >
                     &times;
                 </span>
+                <h3 className="join-public-server-header">Join a server</h3>
                 <ul className="public-servers-list">
                     {this.props.servers.map(server => (
                         <ServerListItem 

@@ -17,22 +17,27 @@ const ServerListItem = ({
     const randomIdx = Math.floor(Math.random() * 4);
     const randomImg = imageArr[randomIdx];
 
+    const serverName = server.serverName.length > 16 ? server.serverName.slice(0, 16) + "..." : server.serverName;
+
     if (!currentUser.serversJoined.includes(server.id)) {
         return (
-            <li>
-                <img
-                    src={randomImg}
-                    className="server-list-rand-icon"
-                />
-                <span>
-                    {server.serverName}
-                </span>
+            <li className="public-server-list-item">
+                <div className="left-justify-public-server">
+                    <img
+                        src={randomImg}
+                        className="server-list-rand-icon"
+                    />
+                    <span className="public-server-server-name">
+                        {serverName}
+                    </span>
+                </div>
                 <button 
-                onClick={() => createMembership({
-                    user_id: currentUser.id,
-                    server_id: server.id
-                })
-                .then(() => closeModal())}
+                    className="join-server-button"
+                    onClick={() => createMembership({
+                        user_id: currentUser.id,
+                        server_id: server.id
+                    })
+                    .then(() => closeModal())}
                 >
                     Join
                 </button>

@@ -26,6 +26,7 @@
     background: #36393f;
     border-bottom: 2px solid #232529;
     box-shadow: 2px 0px #232529;
+    z-index: 20;
 }
 
 // friend list 
@@ -34,7 +35,7 @@
     position: fixed;
     height: calc(100% - 100px);
     width: 240px;
-    top: 50px;
+    top: 52px;
     left: 70px;
     // overflow-y: scroll;
     display: flex;

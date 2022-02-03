@@ -10,7 +10,7 @@ class Api::MembershipsController < ApplicationController
         end
     end
 
-    def destroy
+    def destroy # to be refactored at future date
         @membership = Membership.find_by(membership_params)
         @current_user = current_user
         if @membership.user_id == current_user.id && @membership.destroy
