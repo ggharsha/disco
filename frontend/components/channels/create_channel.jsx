@@ -37,7 +37,7 @@ export default class CreateChannel extends React.Component {
         return this.state.errors.length < 1 ? (
             <div className="create-channel-form">
                 <h3 className="channel-create-header">
-                    Give your channel a name! 
+                    Give your channel a name
                 </h3>
                 <form 
                     className="channel-create-form"

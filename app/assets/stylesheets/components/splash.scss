@@ -1,5 +1,10 @@
 @import '../fonts.scss';
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .splash {
     width: 100%;
     height: 100%;
@@ -85,8 +90,10 @@
 #splash-head-clouds {
     position: absolute;
     object-fit: contain;
-    margin-left: -1200px;
+    margin-left: -1300px;
     margin-top: -210px;
+    box-sizing: content-box;
+    overflow-x: hidden;
 }
 
 #splash-head-left {
@@ -113,6 +120,8 @@
     justify-content: center;
     width: 100%;
     height: 626px;
+    overflow: hidden;
+    box-sizing: content-box;
 }
 
 .head-container {
