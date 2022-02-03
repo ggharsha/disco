@@ -33,7 +33,7 @@ export default class ServerNavBar extends React.Component {
                             <li className="profile server-icon">
                                 <i className="fab fa-discord" />
                             </li>
-                            </Link>
+                        </Link>
                         <li className="disco-line" />
                             {servers.map(server => (
                                 <Link 

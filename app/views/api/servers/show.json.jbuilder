@@ -17,3 +17,9 @@ json.users do
         end
     end
 end
+
+if @current_user 
+    json.current_user do
+        json.partial! 'api/users/user', user: @current_user
+    end
+end

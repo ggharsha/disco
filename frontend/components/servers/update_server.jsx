@@ -95,6 +95,7 @@ export default class UpdateServer extends React.Component {
                     className='delete-server-button'
                     onClick={
                         () => this.props.deleteServer(this.serverId)
+                            // .then(() => this.props.fetchCurrentUser(this.props.currentUserId))
                             .then(() => this.props.closeModal())
                             .then(() => this.props.history.push('/channels/@me'))
                     }

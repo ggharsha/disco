@@ -4,7 +4,10 @@ import {
     RECEIVE_USER, 
     REMOVE_USER 
 } from "../actions/users_actions";
-import { RECEIVE_SERVER } from "../actions/server_actions";
+import { 
+    RECEIVE_SERVER,
+    REMOVE_SERVER
+} from "../actions/server_actions";
 import { RECEIVE_CONVERSATION } from "../actions/conversation_actions";
 
 const usersReducer = (state = {}, action) => {
@@ -26,6 +29,9 @@ const usersReducer = (state = {}, action) => {
             return action.server.users;
         case RECEIVE_CONVERSATION:
             return action.payload.users;
+        case REMOVE_SERVER:
+            nextState[action.serverId.currentUser.id] = action.serverId.currentUser
+            return nextState;
         default:
             return state;
     };

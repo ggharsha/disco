@@ -24,8 +24,6 @@ class Server < ApplicationRecord
         through: :memberships,
         source: :user
 
-    # has_one_attached :server_picture
-
     has_many :channels,
         foreign_key: :server_id,
         class_name: :Channel
