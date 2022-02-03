@@ -5,7 +5,11 @@ import App from './app';
 import actionCable from 'actioncable';
 
 const cableApp = {};
-cableApp.cable = actionCable.createConsumer('ws://localhost:3000/cable');
+if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+    cableApp.cable = actionCable.createConsumer('ws://localhost:3000/cable')
+} else {
+    cableApp.cable = actionCable.createConsumer('wss://disc-o.herokuapp.com/cable')
+};
 
 const Root = ({ store }) => (
     <Provider store={store} >
