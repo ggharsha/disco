@@ -56,7 +56,10 @@ export default class ServerNavBar extends React.Component {
                             className="server-icon add-server"
                             onClick={() => openModal('createServer')}
                         >+</li>
-                        <li className="server-icon public-servers">
+                        <li 
+                            className="server-icon public-servers"
+                            onClick={() => openModal('publicServers')}
+                        >
                             <i className="fas fa-compass"/>
                         </li>
                     </ul>

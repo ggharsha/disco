@@ -17,9 +17,11 @@ export default class PublicServers extends React.Component {
                 <ul className="public-servers-list">
                     {this.props.servers.map(server => (
                         <ServerListItem 
+                            key={server.id}
                             server={server} 
                             fetchServer={this.props.fetchServer}
                             createMembership={this.props.createMembership}
+                            currentUser={this.props.currentUser}
                         />
                     ))}
                 </ul>

@@ -5,7 +5,6 @@ import { fetchCurrentUser } from "../../actions/session_actions";
 import { createMembership } from "../../actions/membership_actions";
 import { closeModal } from "../../actions/modal_actions";
 import PublicServers from "./public_servers";
-import { connect } from "react-redux";
 
 const mSTP = state => ({
     currentUser: state.entities.users[state.session.id],

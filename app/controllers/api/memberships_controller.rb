@@ -1,6 +1,7 @@
 class Api::MembershipsController < ApplicationController
     def create
         @membership = Membership.new(membership_params)
+        @server = Server.find(params[:membership][:server_id])
         if @membership.save
             render 'api/memberships/show'
         else
