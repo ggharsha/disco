@@ -9,6 +9,10 @@ import {
     REMOVE_SERVER
 } from "../actions/server_actions";
 import { RECEIVE_CONVERSATION } from "../actions/conversation_actions";
+import { 
+    RECEIVE_MEMBERSHIP, 
+    REMOVE_MEMBERSHIP 
+} from "../actions/membership_actions";
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -31,6 +35,9 @@ const usersReducer = (state = {}, action) => {
             return action.payload.users;
         case REMOVE_SERVER:
             nextState[action.serverId.currentUser.id] = action.serverId.currentUser;
+            return nextState;
+        case RECEIVE_MEMBERSHIP:
+            nextState[action.membership.userId] = action.membership.currentUser;
             return nextState;
         default:
             return state;

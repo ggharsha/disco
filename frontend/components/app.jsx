@@ -18,46 +18,55 @@ import Splash from "./splash/splash";
 
 const App = ({ cableApp }) => (
     <div className="App">
-        {/* <Modal /> */}
+
         <Route 
             path="/" 
             component={Modal} 
         />
 
         <Switch>
+
             <AuthRoute 
                 exact path="/login" 
                 component={LoginFormContainer} 
             />
+
             <AuthRoute 
                 exact path="/register" 
                 component={SignupFormContainer} 
             />
-            <ProtectedRoute exact path="/app" /> {/* loading page */}
+
+            {/* <ProtectedRoute exact path="/app" /> loading page */}
+
             <ProtectedRoute 
                 exact path="/channels/@me/:directMessageId"
                 component={ConversationContainer}
                 cableApp={cableApp}
             />
+
             <ProtectedRoute 
                 exact path="/channels/:serverId/:channelId" 
                 component={ChannelContainer} 
                 cableApp={cableApp}
             />
+
             <Route 
                 exact path="/" 
                 component={Splash} 
             /> 
+
         </Switch>
 
         <ProtectedRoute 
             path="/channels" 
             component={ServerNavContainer} 
         />
+
         <ProtectedRoute
             path="/channels/@me"
             component={MeContainer}
         />
+        
     </div>
 );
 

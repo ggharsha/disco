@@ -31,7 +31,7 @@ class Api::UsersController < ApplicationController
         end
     end
 
-    def destroy
+    def destroy #leaving this method not working on frontend for now
         @user = User.find(params[:id])
         if !@user.is_password?(user_params[:password])
             render json: ['Incorrect password.'], status: 422

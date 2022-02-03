@@ -1,6 +1,8 @@
 class Api::MembershipsController < ApplicationController
     def create
         @membership = Membership.new(membership_params)
+        @server = Server.find(params[:membership][:server_id])
+        @c_user = current_user
         if @membership.save
             render 'api/memberships/show'
         else
@@ -8,8 +10,9 @@ class Api::MembershipsController < ApplicationController
         end
     end
 
-    def destroy
+    def destroy # to be refactored at future date
         @membership = Membership.find_by(membership_params)
+        @current_user = current_user
         if @membership.user_id == current_user.id && @membership.destroy
             render 'api/memberships/show'
         else

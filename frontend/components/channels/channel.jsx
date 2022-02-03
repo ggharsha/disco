@@ -12,7 +12,7 @@ export default class Channel extends React.Component {
 
     componentDidMount() {
         this.props.fetchCurrentUser(this.props.currentUserId)
-        this.props.fetchServer(this.props.match.params.serverId)
+        .then(() => this.props.fetchServer(this.props.match.params.serverId))
         .then(() => this.props.fetchChannel(this.props.match.params.channelId))
         .then(() => this.handleChannelNav());
     }
@@ -54,6 +54,12 @@ export default class Channel extends React.Component {
                 &#8964;
             </p>
         ) : null;
+        // ) : (<p
+        //     className="server-name-down-arrow"
+        //     onClick={() => this.props.openModal('leaveServer')}
+        // >
+        //     &#8964;
+        // </p>);
 
         const channelOptions = this.props.server.ownerId === this.props.currentUserId ? (
             <span 

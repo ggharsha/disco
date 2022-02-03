@@ -25,6 +25,7 @@ export default class CreateServer extends React.Component {
         this.props.createServer(this.state)
         .then(server => this.props.history.push(`/channels/${server.server.server.id}/${server.server.server.channels[0]}`))
         .then(() => this.props.closeModal())
+        .then(() => this.props.fetchCurrentUser(this.props.currentUserId))
         .fail(() => this.setState({ errors: this.props.errors[0] }));
     }
 

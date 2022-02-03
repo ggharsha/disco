@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :servers, only: [:create, :index, :show, :update, :destroy] do
       resources :channels, only: [:create]
     end
-    resources :memberships, only: [:create, :destroy]
+    resources :memberships, only: [:create]
     resources :channels, only: [:show, :update, :destroy] do 
       resources :messages, only: [:create]
     end
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :conversation_memberships, only: [:create, :destroy]
     resources :direct_messages, only: [:update, :show, :destroy, :index]
     resources :friendships, only: [:create, :update, :destroy, :index]
+    delete :memberships, to: 'memberships#destroy'
   end
 
   mount ActionCable.server => '/cable'

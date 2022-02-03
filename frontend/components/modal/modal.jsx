@@ -4,11 +4,12 @@ import { connect } from "react-redux";
 import UpdateUserContainer from '../servers/update_user_container';
 import CreateServerContainer from '../servers/create_server_container';
 import UpdateServerContainer from '../servers/update_server_container';
-// import PublicServerContainer from '../servers/public_server_container';
+import PublicServerContainer from '../servers/public_server_container';
 // import CreateConversationContainer from '../conversations/create_conversation_container';
 // import DeleteMessageContainer from '../channels/delete_message_container';
 // import DeleteDirectMessageContainer from '../conversations/delete_direct_message_container';
 import CreateChannelContainer from '../channels/create_channel_container';
+// import LeaveServerContainer from '../servers/leave_server_container';
 
 function Modal({ modal, closeModal, history }) {
     if (!modal) return null;
@@ -26,8 +27,8 @@ function Modal({ modal, closeModal, history }) {
         case 'createChannel':
             component = <CreateChannelContainer history={history} />;
             break;
-        case 'publicServer':
-            // component = <PublicServerContainer />;
+        case 'publicServers':
+            component = <PublicServerContainer history={history} />;
             break;
         case 'createConversation':
             // component = <CreateConversationContainer />;
@@ -38,6 +39,9 @@ function Modal({ modal, closeModal, history }) {
         case 'deleteDirectMessage':
             // component = <DeleteDirectMessageContainer />;
             break;
+        // case 'leaveServer':
+            // component = <LeaveServerContainer history={history} />;
+            // break;
         default:
             return null;
     }

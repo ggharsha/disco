@@ -24,7 +24,8 @@ export default class ServerNavBar extends React.Component {
             openModal,
             fetchChannel 
         } = this.props;
-        if (!this.props.currentUser && servers[0]) return null
+        console.log(servers)
+        if ((!this.props.currentUser && servers[0]) || !servers) return null
         return (
             <div>
                 <div className="server-div">
@@ -38,7 +39,8 @@ export default class ServerNavBar extends React.Component {
                             {servers.map(server => (
                                 <Link 
                                     className="link-to-server" 
-                                    onClick={() => fetchServer(server.id).then(() => fetchChannel(this.checkDefaultChannel(server)))}
+                                    onClick={() => fetchServer(server.id)
+                                        .then(() => fetchChannel(this.checkDefaultChannel(server)))}
                                     key={server.id} 
                                     to={`/channels/${server.id}/${this.checkDefaultChannel(server)}`}
                                 >
@@ -56,7 +58,10 @@ export default class ServerNavBar extends React.Component {
                             className="server-icon add-server"
                             onClick={() => openModal('createServer')}
                         >+</li>
-                        <li className="server-icon public-servers">
+                        <li 
+                            className="server-icon public-servers"
+                            onClick={() => openModal('publicServers')}
+                        >
                             <i className="fas fa-compass"/>
                         </li>
                     </ul>
