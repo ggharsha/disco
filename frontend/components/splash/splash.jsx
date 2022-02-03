@@ -85,8 +85,31 @@ export default class Splash extends React.Component {
                     <div className='left-text'>
                         <p>IMAGINE A PLACE...</p>
                     </div>
-                    <div className='middle-text'></div>
-                    <div className='right-text'></div>
+                    <div className='middle-text'>
+                        <p className='footer-text'>All images used belong to Discord and were used only for educational purposes.</p>
+                    </div>
+                    <div className='right-text'>
+                        <p 
+                            className='footer-text' 
+                            id='credits'
+                        >
+                            Created by: Harsha Bandi
+                        </p>
+                        <ul id='footer-socials'>
+                            <li>
+                                <a href='https://www.linkedin.com/in/harsha-bandi-57b260225/'>LinkedIn</a>
+                            </li>
+                            <li>
+                                <a href='https://angel.co/u/harsha-bandi'>AngelList</a>
+                            </li>
+                            <li>
+                                <a href='https://github.com/ggharsha'>GitHub</a>
+                            </li>
+                            <li>
+                                <a href='#'>Portfolio</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         )

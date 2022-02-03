@@ -27,10 +27,14 @@
     background: #2f3136;
     height: 100%;
     width: 30%;
+    position: fixed;
+    left: 0;
 }
 
 #user-settings-right {
+    left: 30%;
     display: flex;
+    position: fixed;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;

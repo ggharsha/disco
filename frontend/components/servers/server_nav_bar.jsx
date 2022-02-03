@@ -24,7 +24,6 @@ export default class ServerNavBar extends React.Component {
             openModal,
             fetchChannel 
         } = this.props;
-        console.log(servers)
         if ((!this.props.currentUser && servers[0]) || !servers) return null
         return (
             <div>
