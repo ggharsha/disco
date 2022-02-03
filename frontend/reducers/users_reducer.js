@@ -30,7 +30,7 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_CONVERSATION:
             return action.payload.users;
         case REMOVE_SERVER:
-            nextState[action.serverId.currentUser.id] = action.serverId.currentUser
+            nextState[action.serverId.currentUser.id] = action.serverId.currentUser;
             return nextState;
         default:
             return state;
