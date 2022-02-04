@@ -2,7 +2,11 @@
 
 -> **[Live here!](disc-o.herokuapp.com/#/)** <-
 
+![splash](https://raw.githubusercontent.com/ggharsha/disco/main/README-images/disco-splash.png)
+
 Disco is a full stack clone of the popular chat application Discord. In Disco, users can create accounts and servers to interact with communities. Most importantly, users can talk to each other in real-time with live chat!
+
+![live-chat](https://raw.githubusercontent.com/ggharsha/disco/main/README-images/disco-demo.gif)
 
 ## Technologies used
 * Ruby on Rails for backend
@@ -18,6 +22,8 @@ Disco is a full stack clone of the popular chat application Discord. In Disco, u
 * Postman to test backend methods
 
 ## Features
+
+![public channels](https://raw.githubusercontent.com/ggharsha/disco/main/README-images/disco-public.png)
 
 ### Server nav bar selection
 The state can hold a large number of servers in order to account for my public server modal that allows for joining, so in order to select which servers to display in the left nav bar, I added a selector that would keep track of which servers the user is actually a member of. The `serversJoined` array holds the ids of all servers a user is a member of, and the server nav bar dynamically changes whenever the user joins a server, leaves a server, or creates/destroys a server.
