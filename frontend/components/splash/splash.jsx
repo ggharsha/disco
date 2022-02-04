@@ -17,9 +17,9 @@ export default class Splash extends React.Component {
                         <li>
                             <a href='https://github.com/ggharsha'>GitHub</a>
                         </li>
-                        <li>
-                            <a href='#'>Portfolio</a>
-                        </li>
+                        {/* <li>
+                            <a href='#'>Portfolio</a> // to be done later
+                        </li> */}
                     </ul>
                     <Link to='/login' className='login'>Login</Link>
                 </div>
@@ -105,9 +105,9 @@ export default class Splash extends React.Component {
                             <li>
                                 <a href='https://github.com/ggharsha'>GitHub</a>
                             </li>
-                            <li>
-                                <a href='#'>Portfolio</a>
-                            </li>
+                            {/* <li>
+                                <a href='#'>Portfolio</a> // to be done later
+                            </li> */}
                         </ul>
                     </div>
                 </div>
