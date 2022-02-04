@@ -63,7 +63,7 @@ export default class DirectMessages extends React.Component {
                                     {directMessage.user.username}
                                 </span>
                                 <span className="message-body">
-                                    &nbsp;&nbsp;{directMessage.body}
+                                    {directMessage.body}
                                 </span>
                             </li>
                         ))}

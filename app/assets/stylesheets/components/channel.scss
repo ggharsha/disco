@@ -245,7 +245,7 @@
     color: #fafafa;
     font-family: $mukta;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .message-username:hover {
@@ -258,12 +258,13 @@
     font-family: $mukta;
     font-weight: 300;
     overflow-wrap: anywhere;
+    margin-left: 5px;
 }
 
 .channel-message {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     font-size: 16px;
 }

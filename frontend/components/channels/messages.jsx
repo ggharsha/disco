@@ -63,7 +63,7 @@ export default class Messages extends React.Component {
                                     {channelMessage.user.username}
                                 </span>
                                 <span className="message-body">
-                                    &nbsp;&nbsp;{channelMessage.body}
+                                    {channelMessage.body}
                                 </span>
                             </li>
                             ))}
