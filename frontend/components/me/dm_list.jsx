@@ -15,7 +15,7 @@ export default class DmList extends React.Component {
 
     handleChange(e, conversationId) {
         this.props.fetchConversation(conversationId);
-        let conversations = document.getElementsByClassName('conversation-list-item');
+        let conversations = document.getElementsByClassName('link-to-conversation');
         conversations = Array.prototype.slice.call(conversations);
         conversations.map(conversation => {
             if (conversation.classList.contains('selected-conversation')) {
@@ -37,6 +37,7 @@ export default class DmList extends React.Component {
                     {this.props.conversations.map(convo => (
                         <Link
                             key={convo.id} 
+                            id={convo.id}
                             to={`/channels/@me/${convo.id}`}
                             className="link-to-conversation"
                             onClick={e => this.handleChange(e, convo.id)}

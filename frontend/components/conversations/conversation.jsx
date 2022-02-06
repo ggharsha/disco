@@ -13,7 +13,7 @@ export default class Conversation extends React.Component {
     componentDidMount() {
         this.props.fetchAllConversations()
         .then(() => this.props.fetchConversation(this.props.match.params.directMessageId))
-        .then(() => this.props.handleConversationNav);
+        .then(() => this.handleConversationNav);
     }
 
     componentDidUpdate() {
@@ -21,7 +21,7 @@ export default class Conversation extends React.Component {
     }
 
     handleConversationNav() {
-        let convos = document.getElementsByClassName('conversation-list-item');
+        let convos = document.getElementsByClassName('link-to-conversation');
         convos = Array.prototype.slice.call(convos);
 
         let preselected = document.getElementsByClassName('selected-conversation');
