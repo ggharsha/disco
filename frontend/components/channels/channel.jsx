@@ -8,17 +8,38 @@ export default class Channel extends React.Component {
         super(props);
         this.handleChange = this.handleChange.bind(this);
         this.handleChannelNav = this.handleChannelNav.bind(this);
+        this.handleServerNav = this.handleServerNav.bind(this);
     }
 
     componentDidMount() {
+        this.handleChannelNav();
+        this.handleServerNav();
+
         this.props.fetchCurrentUser(this.props.currentUserId)
         .then(() => this.props.fetchServer(this.props.match.params.serverId))
         .then(() => this.props.fetchChannel(this.props.match.params.channelId))
-        .then(() => this.handleChannelNav());
     }
 
     componentDidUpdate() {
         this.handleChannelNav();
+        this.handleServerNav();
+    }
+
+    handleServerNav() {
+        let servers = document.getElementsByClassName('server-icon');
+        servers = Array.prototype.slice.call(servers);
+
+        let preselected = document.getElementsByClassName('selected-server');
+        preselected = Array.prototype.slice.call(preselected);
+
+        if (preselected.length === 0) {
+            servers.forEach(server => {
+                if (server.id === this.props.match.params.serverId) {
+                    server.classList.add('selected-server');
+                }
+        })};
+
+        // let's refactor this later to account for profile click
     }
 
     handleChannelNav() {

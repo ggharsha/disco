@@ -6,6 +6,7 @@ export default class ServerNavBar extends React.Component {
     constructor(props) {
         super(props);
         this.checkDefaultChannel = this.checkDefaultChannel.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
     
     componentDidMount() {
@@ -14,6 +15,20 @@ export default class ServerNavBar extends React.Component {
 
     checkDefaultChannel(server) {
         return server.channels[0]
+    }
+
+    handleChange(e, server) {
+        this.props.fetchChannel(server.id);
+        let servers = document.getElementsByClassName('server-icon');
+        servers = Array.prototype.slice.call(servers);
+        servers.map(server => {
+            if (server.classList.contains('selected-server')) {
+                server.classList.remove('selected-server')
+            }
+        });
+        e.currentTarget.classList.add('selected-server');
+
+        // let's refactor this later to account for profile click
     }
 
     render() {
@@ -47,6 +62,7 @@ export default class ServerNavBar extends React.Component {
                                     <ServerNavIcon 
                                         key={server.id} 
                                         server={server} 
+                                        handleChange={this.handleChange}
                                     />
                                     {/* <span className="tooltiptext">
                                         {server.serverName}
