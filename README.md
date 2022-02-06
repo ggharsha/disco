@@ -1,6 +1,6 @@
 # Disco
 
--> **[Live here!](disc-o.herokuapp.com/#/)** <-
+-> **[Live here!](https://disc-o.herokuapp.com/#/)** <-
 
 ![splash](https://raw.githubusercontent.com/ggharsha/disco/main/README-images/disco-splash.png)
 
