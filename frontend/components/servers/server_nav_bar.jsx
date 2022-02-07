@@ -18,7 +18,7 @@ export default class ServerNavBar extends React.Component {
     }
 
     handleChange(e, server) {
-        this.props.fetchChannel(server.id);
+        if (server) this.props.fetchServer(server.id);
         let servers = document.getElementsByClassName('server-icon');
         servers = Array.prototype.slice.call(servers);
         servers.map(server => {
@@ -46,13 +46,18 @@ export default class ServerNavBar extends React.Component {
                 <div className="server-div">
                     <ul className="server-list">
                         <Link to={"/channels/@me"}>
-                            <li className="profile server-icon">
+                            <li 
+                                className="profile server-icon"
+                                id="disco-icon"
+                                onClick={(e) => this.handleChange(e)}
+                            >
                                 <i className="fab fa-discord" />
                             </li>
                         </Link>
                         <li className="disco-line" />
                             {servers.map(server => (
                                 <Link 
+                                    id={server.id}
                                     className="link-to-server" 
                                     onClick={() => fetchServer(server.id)
                                         .then(() => fetchChannel(this.checkDefaultChannel(server)))}
