@@ -36,12 +36,10 @@ export default class Channel extends React.Component {
             servers.forEach(server => {
                 if (server.id === this.props.match.params.serverId) {
                     server.classList.add('selected-server');
-                } else if (!this.props.match.params.serverId && server.id === "disco-icon") {
+                } else if (!this.props.match.params.serverId) {
                     server.classList.add('selected-server');
                 }
         })};
-
-        // let's refactor this later to account for profile click
     }
 
     handleChannelNav() {

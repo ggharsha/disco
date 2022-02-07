@@ -27,8 +27,6 @@ export default class ServerNavBar extends React.Component {
             }
         });
         e.currentTarget.classList.add('selected-server');
-
-        // let's refactor this later to account for profile click
     }
 
     render() {
@@ -57,7 +55,6 @@ export default class ServerNavBar extends React.Component {
                         <li className="disco-line" />
                             {servers.map(server => (
                                 <Link 
-                                    id={server.id}
                                     className="link-to-server" 
                                     onClick={() => fetchServer(server.id)
                                         .then(() => fetchChannel(this.checkDefaultChannel(server)))}
