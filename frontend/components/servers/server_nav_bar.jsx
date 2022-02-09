@@ -57,14 +57,14 @@ export default class ServerNavBar extends React.Component {
                                 <Link 
                                     className="link-to-server" 
                                     onClick={() => fetchServer(server.id)
-                                        .then(() => fetchChannel(this.checkDefaultChannel(server)))}
+                                        .then(() => fetchChannel(this.checkDefaultChannel(server)))
+                                        .then((e) => this.handleChange(e, server))}
                                     key={server.id} 
                                     to={`/channels/${server.id}/${this.checkDefaultChannel(server)}`}
                                 >
                                     <ServerNavIcon 
                                         key={server.id} 
                                         server={server} 
-                                        handleChange={this.handleChange}
                                     />
                                     {/* <span className="tooltiptext">
                                         {server.serverName}

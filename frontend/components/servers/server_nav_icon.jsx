@@ -1,9 +1,8 @@
 import React from "react";
 
-const ServerNavIcon = ({ server, handleChange }) => (
+const ServerNavIcon = ({ server }) => (
     <li 
         className="server-icon"
-        onClick={(e) => handleChange(e, server)}
         id={server.id}
     >
         {server.serverName[0].toUpperCase()}
