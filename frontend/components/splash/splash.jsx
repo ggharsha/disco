@@ -9,7 +9,7 @@ export default class Splash extends React.Component {
                     <h6><i className="fab fa-discord" /> Disco</h6>
                     <ul id='socials'>
                         <li>
-                            <a href='https://www.linkedin.com/in/harsha-bandi-57b260225/'>LinkedIn</a>
+                            <a href='https://www.linkedin.com/in/ggharsha/'>LinkedIn</a>
                         </li>
                         <li>
                             <a href='https://angel.co/u/harsha-bandi'>AngelList</a>
@@ -97,7 +97,7 @@ export default class Splash extends React.Component {
                         </p>
                         <ul id='footer-socials'>
                             <li>
-                                <a href='https://www.linkedin.com/in/harsha-bandi-57b260225/'>LinkedIn</a>
+                                <a href='https://www.linkedin.com/in/ggharsha/'>LinkedIn</a>
                             </li>
                             <li>
                                 <a href='https://angel.co/u/harsha-bandi'>AngelList</a>
