@@ -626,3 +626,48 @@
 .close-public-server-modal:hover {
     cursor: pointer;
 }
+
+// leave server 
+
+.leave-server-modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 120px;
+    width: 300px;
+    z-index: 30;
+    background: #222327;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+}
+
+.leave-server-modal h3 {
+    color: #f3f3f3;
+    font-family: $mukta;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.leave-server-button {
+    width: 260px;
+    height: 35px;
+    border: none;
+    box-sizing: border-box;
+    color: #f3f3f3;
+    background: #ed4245;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.leave-server-button:hover {
+    cursor: pointer;
+    background: #be1d1f;
+}
+
+.leave-server-button:active {
+    background: #910a0c;
+}

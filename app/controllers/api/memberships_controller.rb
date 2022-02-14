@@ -10,11 +10,11 @@ class Api::MembershipsController < ApplicationController
         end
     end
 
-    def destroy # to be refactored at future date
+    def destroy
         @membership = Membership.find_by(membership_params)
-        @current_user = current_user
+        @user = current_user
         if @membership.user_id == current_user.id && @membership.destroy
-            render 'api/memberships/show'
+            render 'api/users/show'
         else
             render json: @membership.errors.full_messages, status: 422
         end
