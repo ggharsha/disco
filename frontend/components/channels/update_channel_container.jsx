@@ -6,6 +6,11 @@ import { closeModal } from "../../actions/modal_actions";
 import UpdateChannel from "./update_channel";
 
 // selectors start
+const parseServerId = url => {
+    const urlArr = url.split("/");
+    return parseInt(urlArr[2]);
+};
+
 const parseChannelId = url => {
     const urlArr = url.split("/");
     return parseInt(urlArr[3]);
@@ -14,7 +19,9 @@ const parseChannelId = url => {
 
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    currentChannel: state.entities.channels[parseChannelId(ownProps.history.location.pathname)]
+    currentChannel: state.entities.channels[parseChannelId(ownProps.history.location.pathname)],
+    currentServer: state.entities.servers[parseServerId(ownProps.history.location.pathname)],
+    errors: state.errors.channelErrors
 });
 
 const mDTP = dispatch => ({
