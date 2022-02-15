@@ -5,7 +5,7 @@ import UpdateUserContainer from '../servers/update_user_container';
 import CreateServerContainer from '../servers/create_server_container';
 import UpdateServerContainer from '../servers/update_server_container';
 import PublicServerContainer from '../servers/public_server_container';
-// import CreateConversationContainer from '../conversations/create_conversation_container';
+import CreateConversationContainer from '../conversations/create_conversation_container';
 // import DeleteMessageContainer from '../channels/delete_message_container';
 // import DeleteDirectMessageContainer from '../conversations/delete_direct_message_container';
 import CreateChannelContainer from '../channels/create_channel_container';
@@ -45,6 +45,9 @@ function Modal({ modal, closeModal, history }) {
             break;
         case 'updateChannel':
             component = <UpdateChannelContainer history={history} />;
+            break;
+        case 'createConversation':
+            component = <CreateConversationContainer history={history} />;
             break;
         default:
             return null;
