@@ -32,7 +32,12 @@ export default class DmList extends React.Component {
                 <ul className="convo-list">
                     <li className="direct-message-header">
                         <span>DIRECT MESSAGES</span>
-                        <span className="add-conversation">+</span>
+                        <span 
+                            className="add-conversation" 
+                            onClick={() => this.props.openModal('createConversation')}
+                        >
+                            +
+                        </span>
                     </li>
                     {this.props.conversations.map(convo => (
                         <Link

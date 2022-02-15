@@ -6,6 +6,7 @@ import {
     fetchAllConversations, 
     fetchConversation,
 } from "../../actions/conversation_actions";
+import { openModal } from "../../actions/modal_actions";
 
 // selectors start
 const selectConversations = state => (
@@ -22,7 +23,8 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
     fetchAllConversations: () => dispatch(fetchAllConversations()),
     fetchCurrentUser: userId => dispatch(fetchCurrentUser(userId)),
-    fetchConversation: conversationId => dispatch(fetchConversation(conversationId))
+    fetchConversation: conversationId => dispatch(fetchConversation(conversationId)),
+    openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(mSTP, mDTP)(DmList);

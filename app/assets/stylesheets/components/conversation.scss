@@ -114,3 +114,34 @@
 .conversation-message-history {
     z-index: 1;
 }
+
+// search bar
+
+.outer-search {
+    top: 0;
+    left: 70px;
+    width: 240px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-search {
+    width: 210px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #202225;
+    color: #868c90;
+    font-family: $mukta;
+    font-size: 14px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.inner-search:hover {
+    color: #f3f3f3;
+    cursor: pointer;
+}
