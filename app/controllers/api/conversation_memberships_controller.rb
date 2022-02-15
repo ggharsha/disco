@@ -1,8 +1,9 @@
 class Api::ConversationMembershipsController < ApplicationController
     def create
         @conversation_membership = ConversationMembership.new(conversation_membership_params)
+        @conversation = Conversation.find(params[:conversation_id])
         if @conversation_membership.save
-            render 'api/conversation_memberships/show'
+            render 'api/conversations/show'
         else
             render json: @conversation_membership.errors.full_messages, status: 422
         end
@@ -11,7 +12,7 @@ class Api::ConversationMembershipsController < ApplicationController
     def destroy
         @conversation_membership = ConversationMembership.find_by(conversation_membership_params)
         if @conversation_membership.member_id == current_user.id && @conversation_membership.destroy
-            render 'api/conversation_memberships/show'
+            render 'api/conversations/index'
         else
             render json: @conversation_membership.errors.full_messages, status: 422
         end
