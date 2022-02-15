@@ -671,3 +671,102 @@
 .leave-server-button:active {
     background: #910a0c;
 }
+
+// update channel
+
+.update-channel-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    height: 250px;
+    width: 400px;
+    background: #2f3136;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.update-channel-container button {
+    font-family: $mukta;
+    border-radius: 5px;
+    width: 350px;
+    height: 35px;
+    color: #f3f3f3;
+    font-size: 16px;
+}
+
+.update-channel-container h3 {
+    font-family: $mukta;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.update-channel-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 130px;
+    margin-bottom: 10px;
+}
+
+.update-channel-container p {
+    font-family: $mukta;
+    color: #ed4245;
+    position: absolute;
+}
+
+.update-channel-input,
+.update-channel-input-error {
+    height: 35px;
+    width: 350px;
+    background: #525964;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    color: #f3f3f3;
+    font-family: $lato;
+    font-weight: 300;
+    padding-left: 10px;
+}
+
+.update-channel-input-error {
+    border: 1px solid #ed4245;
+}
+
+.update-channel-button,
+.update-channel-button-error {
+    background: #5866f2;
+    border: none;
+}
+
+.update-channel-button:hover,
+.update-channel-button-error:hover {
+    cursor: pointer;
+    background: #505cdd;
+}
+
+.update-channel-button:active,
+.update-channel-button-error:active {
+    background: #3d45a5;
+}
+
+.delete-channel-button {
+    background: #ed4245;
+    border: none;
+}
+
+.delete-channel-button:hover {
+    background: #be1d1f;
+    cursor: pointer;
+}
+
+.delete-account-button:active {
+    background: #910a0c;
+}

@@ -55,12 +55,12 @@ export default class UpdateChannel extends React.Component {
     }
 
     render() {
-        if (this.props.errors) {
+        if (this.props.errors.length) {
             return (
                 <div className="update-channel-container">
                     <h3>Update Channel</h3>
-                    <p>{this.props.errors}</p>
                     <form onSubmit={e => this.handleSubmit(e)}>
+                        <p>{this.props.errors}</p>
                         <input 
                             className="update-channel-input-error"
                             type="text"
@@ -71,7 +71,7 @@ export default class UpdateChannel extends React.Component {
                             className="update-channel-button-error"
                             type="submit"
                         >
-                            Update Channel
+                            Submit
                         </button>
                     </form>
                     {this.deleteChannelButton()}
@@ -86,13 +86,13 @@ export default class UpdateChannel extends React.Component {
                             className="update-channel-input"
                             type="text"
                             value={this.state.channel_name}
-                            onChange={this.update}
+                            onChange={this.update()}
                         />
                         <button
                             className="update-channel-button"
                             type="submit"
                         >
-                            Update Channel
+                            Submit
                         </button>
                     </form>
                     {this.deleteChannelButton()}
