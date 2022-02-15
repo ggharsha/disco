@@ -10,6 +10,7 @@ import PublicServerContainer from '../servers/public_server_container';
 // import DeleteDirectMessageContainer from '../conversations/delete_direct_message_container';
 import CreateChannelContainer from '../channels/create_channel_container';
 import LeaveServerContainer from '../servers/leave_server_container';
+import UpdateChannelContainer from '../channels/update_channel_container';
 
 function Modal({ modal, closeModal, history }) {
     if (!modal) return null;
@@ -41,6 +42,9 @@ function Modal({ modal, closeModal, history }) {
             break;
         case 'leaveServer':
             component = <LeaveServerContainer history={history} />;
+            break;
+        case 'updateChannel':
+            component = <UpdateChannelContainer history={history} />;
             break;
         default:
             return null;

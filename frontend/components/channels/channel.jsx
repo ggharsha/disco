@@ -103,8 +103,25 @@ export default class Channel extends React.Component {
                             {channelOptions}
                         </li>
                         {this.props.channels.map(channel => (
+                            this.props.server.ownerId === this.props.currentUserId ? 
                             <Link 
                                 key={channel.id} 
+                                to={`/channels/${this.props.server.id}/${channel.id}`}
+                            >
+                                <li
+                                    onClick={(e) => this.handleChange(e, channel)}
+                                    className='channel-list-item'
+                                    id={channel.id}
+                                >
+                                    <span className="chan-hashtag">#</span>&nbsp;&nbsp;{channel.channelName}
+                                        <span className="chan-cog"><i
+                                            className="fas fa-cog"
+                                            onClick={() => this.props.openModal('updateChannel')}
+                                        /></span>
+                                </li>
+                            </Link> : 
+                            <Link
+                                key={channel.id}
                                 to={`/channels/${this.props.server.id}/${channel.id}`}
                             >
                                 <li

@@ -294,6 +294,21 @@
     color: #ffffff;
 }
 
+.chan-cog {
+    display: none;
+    position: fixed;
+    left: 260px;
+    margin-top: 3px;
+}
+
+.channel-list-item:hover .chan-cog {
+    display:inline;
+}
+
+.selected-channel .chan-cog {
+    display: inline;
+}
+
 //
 
 .selected-server {
