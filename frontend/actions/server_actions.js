@@ -23,7 +23,7 @@ const removeServer = serverId => ({
 const receiveErrors = errors => ({
     type: RECEIVE_SERVER_ERRORS,
     errors
-})
+});
 
 export const fetchServers = () => dispatch => {
     return ServerApiUtil.fetchServers()

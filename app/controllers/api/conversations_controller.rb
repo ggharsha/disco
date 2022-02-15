@@ -10,12 +10,24 @@ class Api::ConversationsController < ApplicationController
     end
 
     def create
+        # @conversation = Conversation.new
+        # @conversation.owner_id = current_user.id
+        # if @conversation.save
+        #     render 'api/conversations/show'
+        # else
+        #     render json: @conversation.errors.full_messages, status: 422
+        # end
         @conversation = Conversation.new
         @conversation.owner_id = current_user.id
-        if @conversation.save
+        begin
+            @conversation.transaction
+                params[:handles].each do |handle|
+                    ConversationMembership.save(member_id: User.find_by(handle: handle).id, conversation_id: @cconversation.id)
+                end
+            end
             render 'api/conversations/show'
-        else
-            render json: @conversation.errors.full_messages, status: 422
+        rescue
+            render json: ['Could not find a user, please try again'], status: 422
         end
     end
 
@@ -39,6 +51,6 @@ class Api::ConversationsController < ApplicationController
 
     private
     def conversation_params
-        params.require(:conversation).permit(:owner_id)
+        params.require(:conversation).permit(:handles)
     end
 end

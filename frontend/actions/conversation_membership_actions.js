@@ -2,6 +2,7 @@ import * as ConversationMembershipApiUtil from '../util/conversation_memberships
 
 export const RECEIVE_CONVERSATION_MEMBERSHIP = 'RECEIVE_CONVERSATION_MEMBERSHIP';
 export const REMOVE_CONVERSATION_MEMBERSHIP = 'REMOVE_CONVERSATION_MEMBERSHIP';
+export const RECEIVE_CONVERSATION_MEMBERSHIP_ERRORS = 'RECEIVE_CONVERSATION_MEMBERSHIP_ERRORS'
 
 const receiveConversationMembership = conversationMembership => ({
     type: RECEIVE_CONVERSATION_MEMBERSHIP,
