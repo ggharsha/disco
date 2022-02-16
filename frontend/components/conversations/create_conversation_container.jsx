@@ -4,7 +4,7 @@ import { closeModal } from '../../actions/modal_actions';
 import CreateConversation from './create_conversation';
 
 const mSTP = state => ({
-    currentUser: state.entitites.users[state.session.id],
+    currentUser: state.entities.users[state.session.id],
     conversations: state.entities.conversations,
     errors: state.errors.conversationErrors
 });

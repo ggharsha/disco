@@ -31,9 +31,6 @@ function Modal({ modal, closeModal, history }) {
         case 'publicServers':
             component = <PublicServerContainer history={history} />;
             break;
-        case 'createConversation':
-            // component = <CreateConversationContainer />;
-            break;
         case 'deleteMessage':
             // component = <DeleteMessageContainer />;
             break;
