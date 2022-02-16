@@ -37,7 +37,7 @@ export default class Channel extends React.Component {
                 if (server.id === this.props.match.params.serverId) {
                     server.classList.add('selected-server');
                 } else if (!this.props.match.params.serverId) {
-                    server.classList.add('selected-server');
+                    servers[0].classList.add('selected-server');
                 }
         })};
     }

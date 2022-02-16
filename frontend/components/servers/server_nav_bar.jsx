@@ -26,7 +26,8 @@ export default class ServerNavBar extends React.Component {
                 server.classList.remove('selected-server')
             }
         });
-        e.currentTarget.classList.add('selected-server');
+        if (server) e.currentTarget.classList.add('selected-server');
+        else servers[0].classList.add('selected-server');
     }
 
     render() {
@@ -43,11 +44,11 @@ export default class ServerNavBar extends React.Component {
             <div>
                 <div className="server-div">
                     <ul className="server-list">
-                        <Link to={"/channels/@me"}>
+                        <Link to={"/channels/@me"}
+                            onClick={(e) => this.handleChange(e)}>
                             <li 
                                 className="profile server-icon"
                                 id="disco-icon"
-                                onClick={(e) => this.handleChange(e)}
                             >
                                 <i className="fab fa-discord" />
                             </li>
