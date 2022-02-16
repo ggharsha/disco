@@ -5,7 +5,8 @@ import CreateConversation from './create_conversation';
 
 const mSTP = state => ({
     currentUser: state.entitites.users[state.session.id],
-    conversations: state.entities.conversations
+    conversations: state.entities.conversations,
+    errors: state.errors.conversationErrors
 });
 
 const mDTP = dispatch => ({

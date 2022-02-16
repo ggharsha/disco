@@ -3,6 +3,7 @@ import * as ConversationApiUtil from '../util/conversations_api_util';
 export const RECEIVE_ALL_CONVERSATIONS = 'RECEIVE_ALL_CONVERSATIONS';
 export const RECEIVE_CONVERSATION = 'RECEIVE_CONVERSATION';
 export const REMOVE_CONVERSATION = 'REMOVE_CONVERSATION';
+export const RECEIVE_CONVERSATION_ERRORS = 'RECEIVE_CONVERSATION_ERRORS';
 
 const receiveAllConversations = conversations => ({
     type: RECEIVE_ALL_CONVERSATIONS,
@@ -19,6 +20,11 @@ const removeConversation = conversationId => ({
     conversationId
 });
 
+const receiveErrors = errors => ({
+    type: RECEIVE_CONVERSATION_ERRORS,
+    errors
+});
+
 export const fetchAllConversations = () => dispatch => (
     ConversationApiUtil.fetchAllConversations()
     .then(conversations => dispatch(receiveAllConversations(conversations)))
@@ -31,15 +37,18 @@ export const fetchConversation = conversationId => dispatch => (
 
 export const createConversation = conversation => dispatch => (
     ConversationApiUtil.createConversation(conversation)
-    .then(conversation => dispatch(receiveConversation(conversation)))
+    .then(conversation => dispatch(receiveConversation(conversation)),
+        errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const updateConversation = conversation => dispatch => (
     ConversationApiUtil.updateConversation(conversation)
-    .then(conversation => dispatch(receiveConversation(conversation)))
+    .then(conversation => dispatch(receiveConversation(conversation)),
+        errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const deleteConversation = conversationId => dispatch => (
     ConversationApiUtil.deleteConversation(conversationId)
-    .then(() => dispatch(removeConversation(conversationId)))
+    .then(() => dispatch(removeConversation(conversationId)),
+        errors => dispatch(receiveErrors(errors.responseJSON)))
 );
