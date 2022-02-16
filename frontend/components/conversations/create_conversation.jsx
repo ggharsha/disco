@@ -24,7 +24,6 @@ export default class CreateConversation extends React.Component {
         e.preventDefault();
         this.props.createConversation({ handles: this.parseHandles(this.state.handles) })
         .then(res => {
-            console.log(res.payload.conversation.id)
             this.props.history.push(`/channels/@me/${res.payload.conversation.id}`);
             this.handleChange(res.payload.conversation.id);
             this.props.fetchConversation(res.payload.conversation.id);

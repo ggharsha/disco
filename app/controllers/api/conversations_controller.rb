@@ -15,11 +15,11 @@ class Api::ConversationsController < ApplicationController
         begin
             @conversation.transaction do
                 @conversation.save
+                ConversationMembership.create(member_id: current_user.id, conversation_id: @conversation.id)
                 params[:conversation][:handles].each do |handle|
                     username = handle.split("#").first
                     tag = handle.split("#").last
                     user_id = User.find_by(username: username, tag: tag).id
-                    ConversationMembership.create(member_id: current_user.id, conversation_id: @conversation.id)
                     ConversationMembership.create(member_id: user_id, conversation_id: @conversation.id)
                 end
             end
