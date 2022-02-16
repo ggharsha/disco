@@ -14,8 +14,13 @@ class Api::ConversationsController < ApplicationController
         @conversation.owner_id = current_user.id
         begin
             @conversation.transaction do
-                params[:handles].each do |handle|
-                    ConversationMembership.save(member_id: User.find_by(handle: handle).id, conversation_id: @cconversation.id)
+                @conversation.save
+                params[:conversation][:handles].each do |handle|
+                    username = handle.split("#").first
+                    tag = handle.split("#").last
+                    user_id = User.find_by(username: username, tag: tag).id
+                    ConversationMembership.create(member_id: current_user.id, conversation_id: @conversation.id)
+                    ConversationMembership.create(member_id: user_id, conversation_id: @conversation.id)
                 end
             end
             render 'api/conversations/show'

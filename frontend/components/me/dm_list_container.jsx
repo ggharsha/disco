@@ -15,7 +15,7 @@ const selectConversations = state => (
 // selectors end
 
 const mSTP = state => ({
-    conversations: selectConversations(state),
+    conversations: selectConversations(state).reverse(),
     currentUserId: state.session.id,
     currentUser: state.entities.users[state.session.id]
 });

@@ -3,6 +3,7 @@ import {
     RECEIVE_CONVERSATION,
     REMOVE_CONVERSATION
 } from '../actions/conversation_actions';
+import { CLOSE_MODAL } from '../actions/modal_actions';
 
 const conversationErrorsReducer = (state = [], action) => {
     Object.freeze(state);
@@ -12,6 +13,8 @@ const conversationErrorsReducer = (state = [], action) => {
         case RECEIVE_CONVERSATION:
             return [];
         case REMOVE_CONVERSATION:
+            return [];
+        case CLOSE_MODAL:
             return [];
         default:
             return state;

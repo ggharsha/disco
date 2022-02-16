@@ -8,6 +8,12 @@ export default class CreateConversation extends React.Component {
             errors: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.parseHandles = this.parseHandles.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchCurrentUser(this.props.currentUser.id)
     }
     
     update() {
@@ -16,14 +22,36 @@ export default class CreateConversation extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
+        this.props.createConversation({ handles: this.parseHandles(this.state.handles) })
+        .then(res => {
+            console.log(res.payload.conversation.id)
+            this.props.history.push(`/channels/@me/${res.payload.conversation.id}`);
+            this.handleChange(res.payload.conversation.id);
+            this.props.fetchConversation(res.payload.conversation.id);
+        })
+        .then(() => this.props.fetchCurrentUser(this.props.currentUser.id))
+        .then(() => this.props.closeModal())
+        .fail(() => this.setState({ errors: this.props.errors[0] }));
+    }
+    
+    handleChange(conversationId) {
+        this.props.fetchConversation(conversationId);
+        let conversations = document.getElementsByClassName('link-to-conversation');
+        conversations = Array.prototype.slice.call(conversations);
+        conversations.map(conversation => {
+            if (conversation.classList.contains('selected-conversation')) {
+                conversation.classList.remove('selected-conversation');
+            }
+        });
+        conversations[0].classList.add('selected-conversation');
     }
 
     parseHandles() {
-        return this.state.handles.split(",");
+        return this.state.handles.split(", ");
     }
 
     render() {
+        if (!this.props.currentUser) return null;
         return this.props.errors.length ? (
             <div className="create-convo-container">
                 <h3>Add users to your conversation</h3>
@@ -42,7 +70,8 @@ export default class CreateConversation extends React.Component {
                         Create
                     </button>
                 </form>
-                <p>{this.props.errors}</p>
+                <p className="placeholder">Enter the handles of members here, separated by commas (e.g. Friend#0203, Enemy#0111)</p>
+                <p className="create-convo-errors">{this.props.errors}</p>
             </div>
         ) : (
             <div className="create-convo-container">
