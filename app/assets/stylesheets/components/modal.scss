@@ -778,10 +778,74 @@
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    height: 200px;
-    width: 400px;
+    height: 100px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background: #2f3136;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.create-convo-container h3 {
+    margin-top: -50px;
+    margin-bottom: 50px;
+    color: #f3f3f3;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: $mukta;
+}
+
+.create-convo-container form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-convo-container input {
+    background: #72767d;
+    font-family: $lato;
+    width: 450px;
+    height: 80px;
+    font-size: 20px;
+    color: #f3f3f3;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: none;
+    margin-top: -15px;
+}
+
+.create-convo-button {
+    position: absolute;
+    height: 35px;
+    width: 100px;
+    background: #5866f2;
+    border: none;
+    color: #f3f3f3;
+    margin-left: 330px;
+    font-family: $lato;
+    font-weight: 700;
+    margin-top: -10px;
+    border-radius: 5px;
+}
+
+.create-convo-button:hover {
+    cursor: pointer;
+    background: #505cdd;
+}
+
+.create-convo-button:active {
+    background: #3d45a5;
+}
+
+.placeholder {
+    text-align: center;
+    font-family: $mukta;
+    color: #f3f3f3;
+    margin-top: 30px;
+    font-size: 16px;
+    width: 700px;
 }

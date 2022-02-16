@@ -62,6 +62,7 @@ export default class CreateConversation extends React.Component {
                         Create
                     </button>
                 </form>
+                <p className="placeholder">Enter the handles of members here, separated by commas (e.g. Friend#0203, Enemy#0111)</p>
             </div>
         )
     }
