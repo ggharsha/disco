@@ -808,7 +808,7 @@
 .create-convo-container input {
     background: #72767d;
     font-family: $lato;
-    width: 450px;
+    width: 460px;
     height: 80px;
     font-size: 20px;
     color: #f3f3f3;
@@ -819,27 +819,28 @@
 }
 
 .create-convo-button {
-    position: absolute;
-    height: 35px;
-    width: 100px;
-    background: #5866f2;
-    border: none;
-    color: #f3f3f3;
-    margin-left: 330px;
-    font-family: $lato;
-    font-weight: 700;
-    margin-top: -10px;
-    border-radius: 5px;
+    display: none;
+    // position: absolute;
+    // height: 35px;
+    // width: 100px;
+    // background: #5866f2;
+    // border: none;
+    // color: #f3f3f3;
+    // margin-left: 330px;
+    // font-family: $lato;
+    // font-weight: 700;
+    // margin-top: -10px;
+    // border-radius: 5px;
 }
 
-.create-convo-button:hover {
-    cursor: pointer;
-    background: #505cdd;
-}
+// .create-convo-button:hover {
+//     cursor: pointer;
+//     background: #505cdd;
+// }
 
-.create-convo-button:active {
-    background: #3d45a5;
-}
+// .create-convo-button:active {
+//     background: #3d45a5;
+// }
 
 .placeholder {
     text-align: center;

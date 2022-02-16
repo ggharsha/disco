@@ -1,10 +1,13 @@
 import React from "react";
 
 const UserListItem = ({ user }) => (
-    <li className="user-list-item">
-        <img className="user-list-avatar" src={user.photoUrl} />
-        <p className="user-list-name">{user.username}</p>
-    </li>
+    <div className="tooltip">
+        <li className="user-list-item">
+            <img className="user-list-avatar" src={user.photoUrl} />
+            <p className="user-list-name">{user.username}</p>
+        </li>
+        <span className="tooltiptext">{user.username}#{user.tag}</span>
+    </div>
 );
 
 export default UserListItem;
