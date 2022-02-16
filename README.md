@@ -29,25 +29,25 @@ Disco is a full stack clone of the popular chat application Discord. In Disco, u
 Creating a conversation is slightly trickier than creating a server, as adding users can add a variable number of people to a group message. In order to account for this, I send back the list of user handles as an array and split it in order to generate a conversation. The create method utilizes an ActiveRecord transaction which allows it to create a failure and rollback the entire method if any member is typed incorrectly, rendering an error for the frontend to display to the user. Handles are used rather than usernames because Disco does not have unique username constraints, so the user must be parsed more thoroughly.
 
 ```ruby
-    def create
-        @conversation = Conversation.new
-        @conversation.owner_id = current_user.id
-        begin
-            @conversation.transaction do
-                @conversation.save
-                ConversationMembership.create(member_id: current_user.id, conversation_id: @conversation.id)
-                params[:conversation][:handles].each do |handle|
-                    username = handle.split("#").first
-                    tag = handle.split("#").last
-                    user_id = User.find_by(username: username, tag: tag).id
-                    ConversationMembership.create(member_id: user_id, conversation_id: @conversation.id)
-                end
+def create
+    @conversation = Conversation.new
+    @conversation.owner_id = current_user.id
+    begin
+        @conversation.transaction do
+            @conversation.save
+            ConversationMembership.create(member_id: current_user.id, conversation_id: @conversation.id)
+            params[:conversation][:handles].each do |handle|
+                username = handle.split("#").first
+                tag = handle.split("#").last
+                user_id = User.find_by(username: username, tag: tag).id
+                ConversationMembership.create(member_id: user_id, conversation_id: @conversation.id)
             end
-            render 'api/conversations/show'
-        rescue
-            render json: ['Could not find a user, please try again'], status: 422
         end
+        render 'api/conversations/show'
+    rescue
+        render json: ['Could not find a user, please try again'], status: 422
     end
+end
 ```
 
 ### Server nav bar selection
