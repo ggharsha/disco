@@ -46,9 +46,9 @@ export default class ServerNavBar extends React.Component {
     }
 
     helpHandleChange(e, server) {
+        this.handleChange(e, server);
         this.props.fetchServer(server.id)
-        .then(() => this.props.fetchChannel(this.checkDefaultChannel(server)))
-        .then(() => this.handleChange(e, server))
+        .then(() => this.props.fetchChannel(this.checkDefaultChannel(server)));
     }
 
     render() {
