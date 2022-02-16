@@ -27,7 +27,20 @@ export default class ServerNavBar extends React.Component {
             }
         });
         if (server) e.currentTarget.classList.add('selected-server');
-        else servers[0].classList.add('selected-server');
+        else {
+            servers[0].classList.add('selected-server');
+            this.removeConversation()
+        };
+    }
+
+    removeConversation() {
+        let conversations = document.getElementsByClassName('link-to-conversation');
+        conversations = Array.prototype.slice.call(conversations);
+        conversations.map(conversation => {
+            if (conversation.classList.contains('selected-conversation')) {
+                conversation.classList.remove('selected-conversation');
+            }
+        });
     }
 
     render() {
