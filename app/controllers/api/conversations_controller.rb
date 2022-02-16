@@ -10,17 +10,10 @@ class Api::ConversationsController < ApplicationController
     end
 
     def create
-        # @conversation = Conversation.new
-        # @conversation.owner_id = current_user.id
-        # if @conversation.save
-        #     render 'api/conversations/show'
-        # else
-        #     render json: @conversation.errors.full_messages, status: 422
-        # end
         @conversation = Conversation.new
         @conversation.owner_id = current_user.id
         begin
-            @conversation.transaction
+            @conversation.transaction do
                 params[:handles].each do |handle|
                     ConversationMembership.save(member_id: User.find_by(handle: handle).id, conversation_id: @cconversation.id)
                 end
