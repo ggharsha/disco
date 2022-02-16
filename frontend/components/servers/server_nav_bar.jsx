@@ -7,6 +7,7 @@ export default class ServerNavBar extends React.Component {
         super(props);
         this.checkDefaultChannel = this.checkDefaultChannel.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.helpHandleChange = this.helpHandleChange.bind(this);
     }
     
     componentDidMount() {
@@ -20,14 +21,15 @@ export default class ServerNavBar extends React.Component {
     handleChange(e, server) {
         if (server) this.props.fetchServer(server.id);
         let servers = document.getElementsByClassName('server-icon');
-        servers = Array.prototype.slice.call(servers);
+        servers = Array.from(servers).slice(0, servers.length - 2);
         servers.map(server => {
             if (server.classList.contains('selected-server')) {
                 server.classList.remove('selected-server')
             }
         });
-        if (server) e.currentTarget.classList.add('selected-server');
-        else {
+        if (server) {
+            e.target.classList.add('selected-server');
+        } else {
             servers[0].classList.add('selected-server');
             this.removeConversation()
         };
@@ -41,6 +43,12 @@ export default class ServerNavBar extends React.Component {
                 conversation.classList.remove('selected-conversation');
             }
         });
+    }
+
+    helpHandleChange(e, server) {
+        this.props.fetchServer(server.id)
+        .then(() => this.props.fetchChannel(this.checkDefaultChannel(server)))
+        .then(() => this.handleChange(e, server))
     }
 
     render() {
@@ -70,9 +78,7 @@ export default class ServerNavBar extends React.Component {
                             {servers.map(server => (
                                 <Link 
                                     className="link-to-server" 
-                                    onClick={() => fetchServer(server.id)
-                                        .then(() => fetchChannel(this.checkDefaultChannel(server)))
-                                        .then((e) => this.handleChange(e, server))}
+                                    onClick={e => this.helpHandleChange(e, server)}
                                     key={server.id} 
                                     to={`/channels/${server.id}/${this.checkDefaultChannel(server)}`}
                                 >
