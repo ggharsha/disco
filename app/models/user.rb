@@ -32,7 +32,7 @@ class User < ApplicationRecord
     validates :email, :session_token, uniqueness: true
     validates :username, uniqueness: { scope: :tag }
     validates :password, length: { minimum: 8 }, allow_nil: true
-    validates :email, format: { with: /\A[\w+-.]+@[a-z\d-]+(.[a-z\d-]+)*.[a-z]+\z/i, message: "Invalid email"  },
+    validates :email, format: { with: /\A[\w+-.]+@[a-z\d-]+(.[a-z\d-]+)*.[a-z]+\z/i, message: "invalid"  },
         uniqueness: { case_sensitive: false },
         length: { minimum: 4, maximum: 254 }
     after_initialize :ensure_session_token, :assign_tag, :assign_avatar
