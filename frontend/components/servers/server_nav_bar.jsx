@@ -1,38 +1,15 @@
 import React from "react";
 import ServerNavIcon from "./server_nav_icon";
 import { Link } from "react-router-dom";
+import ServerNavBarList from "./server_nav_bar_list";
 
 export default class ServerNavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.checkDefaultChannel = this.checkDefaultChannel.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.helpHandleChange = this.helpHandleChange.bind(this);
     }
     
     componentDidMount() {
         this.props.fetchCurrentUser(this.props.currentUser.id);
-    }
-
-    checkDefaultChannel(server) {
-        return server.channels[0]
-    }
-
-    handleChange(e, server) {
-        if (server) this.props.fetchServer(server.id);
-        let servers = document.getElementsByClassName('server-icon');
-        servers = Array.from(servers).slice(0, servers.length - 2);
-        servers.map(server => {
-            if (server.classList.contains('selected-server')) {
-                server.classList.remove('selected-server')
-            }
-        });
-        if (server) {
-            e.target.classList.add('selected-server');
-        } else {
-            servers[0].classList.add('selected-server');
-            this.removeConversation()
-        };
     }
 
     removeConversation() {
@@ -45,64 +22,27 @@ export default class ServerNavBar extends React.Component {
         });
     }
 
-    helpHandleChange(e, server) {
-        this.handleChange(e, server);
-        this.props.fetchServer(server.id)
-        .then(() => this.props.fetchChannel(this.checkDefaultChannel(server)));
-    }
-
     render() {
         const { 
             servers, 
             fetchServer, 
             fetchServers, 
             openModal,
-            fetchChannel 
+            fetchChannel,
+            history
         } = this.props;
 
         if ((!this.props.currentUser && servers[0]) || !servers) return null
         return (
             <div>
                 <div className="server-div">
-                    <ul className="server-list">
-                        <Link to={"/channels/@me"}
-                            onClick={(e) => this.handleChange(e)}>
-                            <li 
-                                className="profile server-icon"
-                                id="disco-icon"
-                            >
-                                <i className="fab fa-discord" />
-                            </li>
-                        </Link>
-                        <li className="disco-line" />
-                            {servers.map(server => (
-                                <Link 
-                                    className="link-to-server" 
-                                    onClick={e => this.helpHandleChange(e, server)}
-                                    key={server.id} 
-                                    to={`/channels/${server.id}/${this.checkDefaultChannel(server)}`}
-                                >
-                                    <ServerNavIcon 
-                                        key={server.id} 
-                                        server={server} 
-                                    />
-                                    {/* <span className="tooltiptext">
-                                        {server.serverName}
-                                    </span> */}
-                                </Link>
-                            ))}
-                        <li className="disco-line" />
-                        <li 
-                            className="server-icon add-server"
-                            onClick={() => openModal('createServer')}
-                        >+</li>
-                        <li 
-                            className="server-icon public-servers"
-                            onClick={() => openModal('publicServers')}
-                        >
-                            <i className="fas fa-compass"/>
-                        </li>
-                    </ul>
+                    <ServerNavBarList 
+                        servers={servers}
+                        fetchServer={fetchServer}
+                        fetchChannel={fetchChannel}
+                        openModal={openModal}
+                        history={history}
+                    />
                 </div>
                 <div id="channel-bg">
                     <div id="dm-line"></div>
