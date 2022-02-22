@@ -12,16 +12,6 @@ export default class ServerNavBar extends React.Component {
         this.props.fetchCurrentUser(this.props.currentUser.id);
     }
 
-    removeConversation() {
-        let conversations = document.getElementsByClassName('link-to-conversation');
-        conversations = Array.prototype.slice.call(conversations);
-        conversations.map(conversation => {
-            if (conversation.classList.contains('selected-conversation')) {
-                conversation.classList.remove('selected-conversation');
-            }
-        });
-    }
-
     render() {
         const { 
             servers, 

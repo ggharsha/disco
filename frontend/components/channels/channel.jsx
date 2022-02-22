@@ -2,67 +2,17 @@ import React from "react";
 import UserListItem from "./user_list_item";
 import MessagesContainer from "./messages_container";
 import { Link } from "react-router-dom";
+import ChannelList from "./channel_list";
 
 export default class Channel extends React.Component {
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleChannelNav = this.handleChannelNav.bind(this);
-        this.handleServerNav = this.handleServerNav.bind(this);
     }
 
     componentDidMount() {
-        this.handleChannelNav();
-        this.handleServerNav();
-
         this.props.fetchCurrentUser(this.props.currentUserId)
         .then(() => this.props.fetchServer(this.props.match.params.serverId))
         .then(() => this.props.fetchChannel(this.props.match.params.channelId))
-    }
-
-    componentDidUpdate() {
-        this.handleChannelNav();
-        this.handleServerNav();
-    }
-
-    handleServerNav() {
-        let servers = document.getElementsByClassName('server-icon');
-        servers = Array.prototype.slice.call(servers);
-
-        let preselected = document.getElementsByClassName('selected-server');
-        preselected = Array.prototype.slice.call(preselected);
-
-        if (preselected.length === 0) {
-            servers.forEach(server => {
-                if (server.id === this.props.match.params.serverId) {
-                    server.classList.add('selected-server');
-                } else if (!this.props.match.params.serverId) {
-                    servers[0].classList.add('selected-server');
-                }
-        })};
-    }
-
-    handleChannelNav() {
-        let channels = document.getElementsByClassName('channel-list-item');
-        channels = Array.prototype.slice.call(channels);
-
-        let preselected = document.getElementsByClassName('selected-channel');
-        preselected = Array.prototype.slice.call(preselected);
-
-        if (preselected.length === 0) {
-            channels.forEach(channel => {
-                if (channel.id === this.props.match.params.channelId) channel.classList.add('selected-channel');
-        })};
-    }
-
-    handleChange(e, channel) {
-        this.props.fetchChannel(channel.id);
-        let channels = document.getElementsByClassName('channel-list-item');
-        channels = Array.prototype.slice.call(channels);
-        channels.map(channel => {
-            if (channel.classList.contains('selected-channel')) channel.classList.remove('selected-channel')
-        });
-        e.currentTarget.classList.add('selected-channel');
     }
 
     render() {
@@ -87,7 +37,6 @@ export default class Channel extends React.Component {
                 onClick={() => this.props.openModal('createChannel')}
             >+</span>
         ) : null;
-        this.handleChannelNav();
         return (
             <div className="channel-div">
                 <div className="server-name">
@@ -97,7 +46,16 @@ export default class Channel extends React.Component {
                     {serverOptions}
                 </div>
                 <div className="channel-list">
-                    <ul className="channels">
+                    <ChannelList 
+                        channels={this.props.channels}
+                        server={this.props.server}
+                        currentUser={this.props.currentUser}
+                        history={this.props.history}
+                        openModal={this.props.openModal}
+                        fetchChannel={this.props.fetchChannel}
+                        channelOptions={channelOptions}
+                    />
+                    {/* <ul className="channels">
                         <li className="text-channels-header">
                             <span>TEXT CHANNELS</span>
                             {channelOptions}
@@ -133,7 +91,7 @@ export default class Channel extends React.Component {
                                 </li>
                             </Link>
                         ))}
-                    </ul>
+                    </ul> */}
                 </div>
                 <div className="channel-main">
                     <MessagesContainer 
