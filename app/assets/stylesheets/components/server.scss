@@ -23,6 +23,13 @@
     align-items: center;
     justify-content: flex-start;
     z-index: 1;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.server-div::-webkit-scrollbar {
+    display: none;
 }
 
 // add some styling for clicks
