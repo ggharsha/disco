@@ -46,14 +46,14 @@ const ServerHeader = ({ server, openModal, currentUser }) => {
             className="server-name-down-arrow"
             onClick={() => handleClick()}
         >
-            &#8964;
+            <i className="fas fa-chevron-down" />
         </p>
     ) : (
         <p
             className="server-name-down-arrow"
             onClick={() => handleClick()}
         >
-            &times;
+            <i className="fas fa-times" />
         </p>
     )
 
