@@ -1,7 +1,6 @@
 import React from "react";
 import UserListItem from "./user_list_item";
 import MessagesContainer from "./messages_container";
-import { Link } from "react-router-dom";
 import ChannelList from "./channel_list";
 
 export default class Channel extends React.Component {
@@ -50,48 +49,11 @@ export default class Channel extends React.Component {
                         channels={this.props.channels}
                         server={this.props.server}
                         currentUser={this.props.currentUser}
-                        history={this.props.history}
                         openModal={this.props.openModal}
                         fetchChannel={this.props.fetchChannel}
                         channelOptions={channelOptions}
+                        match={this.props.match}
                     />
-                    {/* <ul className="channels">
-                        <li className="text-channels-header">
-                            <span>TEXT CHANNELS</span>
-                            {channelOptions}
-                        </li>
-                        {this.props.channels.map(channel => (
-                            this.props.server.ownerId === this.props.currentUserId ? 
-                            <Link 
-                                key={channel.id} 
-                                to={`/channels/${this.props.server.id}/${channel.id}`}
-                            >
-                                <li
-                                    onClick={(e) => this.handleChange(e, channel)}
-                                    className='channel-list-item'
-                                    id={channel.id}
-                                >
-                                    <span className="chan-hashtag">#</span>&nbsp;&nbsp;{channel.channelName}
-                                        <span className="chan-cog"><i
-                                            className="fas fa-cog"
-                                            onClick={() => this.props.openModal('updateChannel')}
-                                        /></span>
-                                </li>
-                            </Link> : 
-                            <Link
-                                key={channel.id}
-                                to={`/channels/${this.props.server.id}/${channel.id}`}
-                            >
-                                <li
-                                    onClick={(e) => this.handleChange(e, channel)}
-                                    className='channel-list-item'
-                                    id={channel.id}
-                                >
-                                    <span className="chan-hashtag">#</span>&nbsp;&nbsp;{channel.channelName}
-                                </li>
-                            </Link>
-                        ))}
-                    </ul> */}
                 </div>
                 <div className="channel-main">
                     <MessagesContainer 

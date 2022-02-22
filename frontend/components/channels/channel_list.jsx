@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ChannelList = ({ channels, server, currentUser, history, openModal, fetchChannel, channelOptions }) => {
-    const historyChannel = parseInt(history.location.pathname.split("/")[3]);
-    const [currentChannel, setCurrentChannel] = useState(historyChannel);
+const ChannelList = ({ channels, server, currentUser, openModal, fetchChannel, channelOptions, match }) => {
+    const paramsChannel = parseInt(match.params.channelId);
+    const [currentChannel, setCurrentChannel] = useState(paramsChannel);
 
     const handleClick = channel => {
         setCurrentChannel(channel.id);
