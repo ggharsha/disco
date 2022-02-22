@@ -19,6 +19,7 @@ const ServerNavBarList = ({ servers, fetchServer, fetchChannel, openModal, histo
 
     const handleMeClick = () => {
         setCurrentServer(null);
+        removeConversations();
     };
 
     const selectedServer = server => (
@@ -32,6 +33,16 @@ const ServerNavBarList = ({ servers, fetchServer, fetchChannel, openModal, histo
             {server.serverName[0].toUpperCase()}
         </li>
     );
+
+    const removeConversations = () => {
+        let conversations = document.getElementsByClassName('link-to-conversation');
+        conversations = Array.prototype.slice.call(conversations);
+        conversations.map(conversation => {
+            if (conversation.classList.contains('selected-conversation')) {
+                conversation.classList.remove('selected-conversation');
+            }
+        });
+    }
 
     const me = (
         <Link to={"/channels/@me"}

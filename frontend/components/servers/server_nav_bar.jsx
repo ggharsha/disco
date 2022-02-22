@@ -1,6 +1,4 @@
 import React from "react";
-import ServerNavIcon from "./server_nav_icon";
-import { Link } from "react-router-dom";
 import ServerNavBarList from "./server_nav_bar_list";
 
 export default class ServerNavBar extends React.Component {

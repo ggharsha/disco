@@ -6,31 +6,12 @@ export default class Conversation extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleConversationNav = this.handleConversationNav.bind(this);
         this.convertUsersIntoArray = this.convertUsersIntoArray.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchAllConversations()
-        .then(() => this.props.fetchConversation(this.props.match.params.directMessageId))
-        .then(() => this.handleConversationNav);
-    }
-
-    componentDidUpdate() {
-        this.handleConversationNav();
-    }
-
-    handleConversationNav() {
-        let convos = document.getElementsByClassName('link-to-conversation');
-        convos = Array.prototype.slice.call(convos);
-
-        let preselected = document.getElementsByClassName('selected-conversation');
-        preselected = Array.prototype.slice.call(preselected);
-
-        if (preselected.length === 0) {
-            convos.forEach(convo => {
-                if (convo.id === this.props.match.params.directMessageId) convo.classList.add('selected-conversation');
-        })};
+        .then(() => this.props.fetchConversation(this.props.match.params.directMessageId));
     }
 
     convertUsersIntoArray() {

@@ -10,7 +10,7 @@ export default class Me extends React.Component {
                     <SearchConvoContainer />
                 </div>
                 <div id="dm-container">
-                    <DmListContainer />
+                    <DmListContainer history={this.props.history} />
                 </div>
                 <div id="friend-container">
 
