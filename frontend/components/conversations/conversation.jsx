@@ -5,7 +5,6 @@ import UserListItem from "../me/user_list_item";
 export default class Conversation extends React.Component {
     constructor(props) {
         super(props);
-
         this.convertUsersIntoArray = this.convertUsersIntoArray.bind(this);
     }
 

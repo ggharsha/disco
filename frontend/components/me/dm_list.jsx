@@ -1,6 +1,4 @@
 import React from "react";
-import ConvoListItem from "./dm_list_item";
-import { Link } from "react-router-dom";
 import DmListHooks from "./dm_list_hooks";
 
 export default class DmList extends React.Component {
