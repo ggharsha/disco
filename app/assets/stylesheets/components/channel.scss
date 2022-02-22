@@ -11,6 +11,13 @@
     background: #2f3136;
     z-index: 10;
     box-sizing: border-box;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.user-list::-webkit-scrollbar {
+    display: none;
 }
 
 .user-list .users {
@@ -67,6 +74,13 @@
     width: 240px;
     z-index: 10;
     box-sizing: border-box;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.channel-list::-webkit-scrollbar {
+    display: none;
 }
 
 .channel-list .channels {
