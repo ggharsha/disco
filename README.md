@@ -63,31 +63,45 @@ const selectServers = state => {
 ```
 
 ### Channel navigation
-In order to give the user the feeling of dynamically navigating through channels, as well as to add to the clarity of the website, I created some methods that would dynamically style the channel navigation bar by checking params and injecting additional styling. `handleChannelNav` runs in `componentDidMount` and `componentDidUpdate` so that the nav bar will always be styled correctly.
+In order to give the user the feeling of dynamically navigating through channels, as well as to add to the clarity of the website, I created some methods that would dynamically style the channel navigation bar upon every render using React hooks. The server navigation bar and DM navigation bar also have similar methods using hooks, though they function slightly differently in terms of injected styling. Using the `useState` hook, I can shift styling in my `onClick` and re-render by changing the component's local state.
 
 ```js
-handleChannelNav() {
-        let channels = document.getElementsByClassName('channel-list-item');
-        channels = Array.prototype.slice.call(channels);
+// channel_list.jsx
 
-        let preselected = document.getElementsByClassName('selected-channel');
-        preselected = Array.prototype.slice.call(preselected);
+const [currentChannel, setCurrentChannel] = useState(paramsChannel);
 
-        if (preselected.length === 0) {
-            channels.forEach(channel => {
-                if (channel.id === this.props.match.params.channelId) channel.classList.add('selected-channel');
-        })};
-    }
+const handleClick = channel => {
+    setCurrentChannel(channel.id);
+    fetchChannel(channel.id);
+};
 
-    handleChange(e, channel) {
-        this.props.fetchChannel(channel.id);
-        let channels = document.getElementsByClassName('channel-list-item');
-        channels = Array.prototype.slice.call(channels);
-        channels.map(channel => {
-            if (channel.classList.contains('selected-channel')) channel.classList.remove('selected-channel')
-        });
-        e.currentTarget.classList.add('selected-channel');
-    }
+const channelText = channel => {
+// this is just one condition
+    return (<li
+        onClick={() => handleClick(channel)}
+        className='channel-list-item selected-channel'
+    >
+        <span className="chan-hashtag">#</span>&nbsp;&nbsp;{channel.channelName}
+        <span className="chan-cog"><i
+            className="fas fa-cog"
+            onClick={() => openModal('updateChannel')}
+        /></span>
+    </li>)
+// ...
+}
+
+return (
+// ...
+    {channels.map(channel => (
+        <Link
+            key={channel.id}
+            to={`/channels/${server.id}/${channel.id}`}
+        >
+            {channelText(channel)}
+        </Link> 
+    ))}
+// ...
+)
 ```
 
 ## Future plans
