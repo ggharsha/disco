@@ -361,3 +361,49 @@
 .tooltip:hover .tooltiptext {
     visibility: visible; 
 }
+
+// server header 
+
+.server-header-options {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    background: #18191c;
+    width: 220px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.server-header-options ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.server-header-option {
+    width: 210px;
+    border-radius: 5px;
+    font-family: $mukta;
+    color: #72767d;
+    font-size: 16px;
+    height: 30px;
+    padding-left: 10px;
+    padding-top: 12px;
+    font-weight: 500;
+}
+
+.server-header-option:hover {
+    background: #4d59c8;
+    color: #f3f3f3;
+    cursor: pointer;
+}
+
+.server-header-option.leave-server {
+    color: #ed4245;
+}
+
+.server-header-option.leave-server:hover {
+    background: #ed4245;
+    color: #f3f3f3;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import UserListItem from "./user_list_item";
 import MessagesContainer from "./messages_container";
 import ChannelList from "./channel_list";
+import ServerHeader from "./server_header";
 
 export default class Channel extends React.Component {
     constructor(props) {
@@ -38,12 +39,11 @@ export default class Channel extends React.Component {
         ) : null;
         return (
             <div className="channel-div">
-                <div className="server-name">
-                    <p className="server-name-text">
-                        {this.props.server.serverName}
-                    </p>
-                    {serverOptions}
-                </div>
+                <ServerHeader 
+                    server={this.props.server}
+                    openModal={this.props.openModal}
+                    currentUser={this.props.currentUser}
+                />
                 <div className="channel-list">
                     <ChannelList 
                         channels={this.props.channels}

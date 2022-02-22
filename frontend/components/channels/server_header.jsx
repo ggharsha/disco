@@ -41,7 +41,7 @@ const ServerHeader = ({ server, openModal, currentUser }) => {
         </div>
     );
 
-    const menuIcon = setMenu ? (
+    const menuIcon = !menu ? (
         <p
             className="server-name-down-arrow"
             onClick={() => handleClick()}
@@ -63,6 +63,7 @@ const ServerHeader = ({ server, openModal, currentUser }) => {
                 {server.serverName}
             </p>
             {menuIcon}
+            {menu && currentUser.id === server.ownerId ? ownerOptions : menu && currentUser.id !== server.ownerId ? memberOptions : null}
         </div>
     );
 };
