@@ -1,6 +1,7 @@
 import React from "react";
 import ConvoListItem from "./dm_list_item";
 import { Link } from "react-router-dom";
+import DmListHooks from "./dm_list_hooks";
 
 export default class DmList extends React.Component {
     constructor(props) {
@@ -29,7 +30,13 @@ export default class DmList extends React.Component {
         if (!this.props.conversations) return null;
         return (
             <div className="convo-list-container">
-                <ul className="convo-list">
+                <DmListHooks 
+                    history={this.props.history}
+                    conversations={this.props.conversations}
+                    openModal={this.props.openModal}
+                    currentUser={this.props.currentUser}
+                />
+                {/* <ul className="convo-list">
                     <li className="direct-message-header">
                         <span>DIRECT MESSAGES</span>
                         <span 
@@ -54,7 +61,7 @@ export default class DmList extends React.Component {
                             />
                         </Link>
                     ))}
-                </ul>
+                </ul> */}
             </div>
         )
     }
