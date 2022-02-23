@@ -82,7 +82,7 @@ export default class DirectMessages extends React.Component {
                         onChange={this.update("body")}
                         placeholder={`Send a message`}
                     />
-                    <button type="submit">Submit</button>
+                    {this.state.body.length ? <button type="submit">Submit</button> : <button disabled type="submit">Submit</button>}
                 </form>
             </div>
         )
