@@ -11,13 +11,13 @@ const UserListItem = ({ user }) => {
 
     const userListModal = (
         <div className="transparent-modal-background" onClick={() => handleClick()}>
-            <div className="user-list-modal">
+            <div className="user-list-modal" onClick={e => e.stopPropagation()}>
                 <div className="user-list-modal-banner"></div>
                 <img className="user-list-modal-avatar" src={user.photoUrl} />
                 <div className="user-list-modal-body">
                     <p className="user-list-modal-username">
                         {user.username}
-                        <span className="user-list-modal-tag">{user.tag}</span>
+                        <span className="user-list-modal-tag">#{user.tag}</span>
                     </p>
                 </div>
             </div>

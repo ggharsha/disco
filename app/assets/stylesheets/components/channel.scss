@@ -426,32 +426,59 @@
 // user-list-modal
 
 .transparent-modal-background {
-    // position: absolute;
+    position: fixed;
     z-index: 50;
     background: transparent;
     height: 100%;
     width: 100%;
     top: 0;
-    left: 0;
+    left: 70px;
 }
 
-// .user-list-modal {
-//     position: absolute;
-//     left: -290px;
-//     height: 300px;
-//     width: 300px;
-//     border-radius: 5px;
-// }
+.user-list-modal {
+    position: absolute;
+    height: 270px;
+    width: 300px;
+    border-radius: 5px;
+    z-index: 51;
+    top: 30%;
+    right: 320px;
+    transform: translate(0, -50%);
+}
 
-// .user-list-modal-banner {
-//     background: #4d59c8;
-//     height: 60px;
-//     width: fit-content;
-// }
+.user-list-modal-banner {
+    background: #4d59c8;
+    height: 60px;
+    width: 300px;
+    border-radius: 5px 5px 0 0;
+}
 
-// .user-list-modal-avatar {
-//     border-radius: 50%;
-//     height: 100px;
-//     width: 100px;
-// }
+.user-list-modal-body {
+    background: #18191c;
+    height: 210px;
+    width: 300px;
+    border-radius: 0 0 5px 5px;
+}
 
+.user-list-modal-avatar {
+    border-radius: 50%;
+    height: 84px;
+    width: 84px;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 15px;
+    border: 8px solid #18191c;
+}
+
+.user-list-modal-username {
+    padding-top: 60px;
+    padding-left: 20px;
+    font-family: $mukta;
+    color: #f3f3f3;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.user-list-modal-tag {
+    color: #babbbe;
+}
