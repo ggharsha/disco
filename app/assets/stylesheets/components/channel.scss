@@ -12,6 +12,7 @@
     z-index: 10;
     box-sizing: border-box;
     overflow-y: scroll;
+    // overflow-x: visible;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
@@ -336,45 +337,45 @@
 
 // 
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
+// .tooltip {
+//     position: relative;
+//     display: inline-block;
+// }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 150px;
-    height: 30px;
-    background-color: #18191c;
-    color: #f3f3f3;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    top: -5px;
-    right: 110%;
-    font-family: $mukta;
-    font-weight: 700;
-    font-size: 16px;
-    padding-top: 15px;
-    // margin-top: 5px;
-}
+// .tooltip .tooltiptext {
+//     visibility: hidden;
+//     width: 150px;
+//     height: 30px;
+//     background-color: #18191c;
+//     color: #f3f3f3;
+//     text-align: center;
+//     border-radius: 6px;
+//     padding: 5px 0;
+//     position: absolute;
+//     z-index: 20;
+//     top: -5px;
+//     right: 110%;
+//     font-family: $mukta;
+//     font-weight: 700;
+//     font-size: 16px;
+//     padding-top: 15px;
+//     // margin-top: 5px;
+// }
 
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent transparent #18191c;
-}
+// .tooltip .tooltiptext::after {
+//     content: "";
+//     position: absolute;
+//     top: 50%;
+//     left: 100%;
+//     margin-top: -5px;
+//     border-width: 5px;
+//     border-style: solid;
+//     border-color: transparent transparent transparent #18191c;
+// }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible; 
-}
+// .tooltip:hover .tooltiptext {
+//     visibility: visible; 
+// }
 
 // server header 
 
@@ -420,4 +421,64 @@
 .server-header-option.leave-server:hover {
     background: #ed4245;
     color: #f3f3f3;
+}
+
+// user-list-modal
+
+.transparent-modal-background {
+    position: fixed;
+    z-index: 50;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 70px;
+}
+
+.user-list-modal {
+    position: absolute;
+    height: 270px;
+    width: 300px;
+    border-radius: 5px;
+    z-index: 51;
+    top: 30%;
+    right: 320px;
+    transform: translate(0, -50%);
+}
+
+.user-list-modal-banner {
+    background: #4d59c8;
+    height: 60px;
+    width: 300px;
+    border-radius: 5px 5px 0 0;
+}
+
+.user-list-modal-body {
+    background: #18191c;
+    height: 210px;
+    width: 300px;
+    border-radius: 0 0 5px 5px;
+}
+
+.user-list-modal-avatar {
+    border-radius: 50%;
+    height: 84px;
+    width: 84px;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 15px;
+    border: 8px solid #18191c;
+}
+
+.user-list-modal-username {
+    padding-top: 60px;
+    padding-left: 20px;
+    font-family: $mukta;
+    color: #f3f3f3;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.user-list-modal-tag {
+    color: #babbbe;
 }
