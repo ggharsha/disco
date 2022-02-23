@@ -66,6 +66,7 @@
     justify-content: flex-start;
     margin-left: 5px;
     border-radius: 5px;
+    user-select: none;
 }
 
 .direct-message-header {
@@ -78,6 +79,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    user-select: none;
 }
 
 .conversation-list-text {
