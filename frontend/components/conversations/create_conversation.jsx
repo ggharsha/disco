@@ -81,7 +81,6 @@ export default class CreateConversation extends React.Component {
                         value={this.state.handles}
                         onChange={this.update()}
                         className="create-convo-input"
-                        placeholder="Enter the handles of members here, separated by commas (e.g. Friend#0203, Enemy#0111)"
                     />
                     <button
                         className="create-convo-button"
