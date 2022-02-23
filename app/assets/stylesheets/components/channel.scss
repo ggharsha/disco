@@ -39,6 +39,7 @@
     padding-bottom: 5px;
     width: 210px;
     border-radius: 5px;
+    user-select: none;
 }
 
 .user-list-item:hover {
@@ -98,6 +99,7 @@
     font-weight: 600;
     width: 220px;
     border-radius: 5px;
+    user-select: none;
 }
 
 .channel-list-item:hover {
@@ -349,19 +351,20 @@
 .server-header-options ul {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-evenly;
 }
 
 .server-header-option {
-    width: 210px;
+    margin: 5px;
+    width: 200px;
     border-radius: 5px;
     font-family: $mukta;
     color: #72767d;
-    font-size: 16px;
-    height: 30px;
-    padding-left: 10px;
-    padding-top: 12px;
+    font-size: 14px;
+    height: 20px;
+    padding-left: 8px;
+    padding-top: 8px;
     font-weight: 500;
 }
 
