@@ -12,6 +12,7 @@
     z-index: 10;
     box-sizing: border-box;
     overflow-y: scroll;
+    // overflow-x: visible;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
@@ -336,45 +337,45 @@
 
 // 
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
+// .tooltip {
+//     position: relative;
+//     display: inline-block;
+// }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 150px;
-    height: 30px;
-    background-color: #18191c;
-    color: #f3f3f3;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    top: -5px;
-    right: 110%;
-    font-family: $mukta;
-    font-weight: 700;
-    font-size: 16px;
-    padding-top: 15px;
-    // margin-top: 5px;
-}
+// .tooltip .tooltiptext {
+//     visibility: hidden;
+//     width: 150px;
+//     height: 30px;
+//     background-color: #18191c;
+//     color: #f3f3f3;
+//     text-align: center;
+//     border-radius: 6px;
+//     padding: 5px 0;
+//     position: absolute;
+//     z-index: 20;
+//     top: -5px;
+//     right: 110%;
+//     font-family: $mukta;
+//     font-weight: 700;
+//     font-size: 16px;
+//     padding-top: 15px;
+//     // margin-top: 5px;
+// }
 
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent transparent #18191c;
-}
+// .tooltip .tooltiptext::after {
+//     content: "";
+//     position: absolute;
+//     top: 50%;
+//     left: 100%;
+//     margin-top: -5px;
+//     border-width: 5px;
+//     border-style: solid;
+//     border-color: transparent transparent transparent #18191c;
+// }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible; 
-}
+// .tooltip:hover .tooltiptext {
+//     visibility: visible; 
+// }
 
 // server header 
 
@@ -421,3 +422,36 @@
     background: #ed4245;
     color: #f3f3f3;
 }
+
+// user-list-modal
+
+.transparent-modal-background {
+    // position: absolute;
+    z-index: 50;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+// .user-list-modal {
+//     position: absolute;
+//     left: -290px;
+//     height: 300px;
+//     width: 300px;
+//     border-radius: 5px;
+// }
+
+// .user-list-modal-banner {
+//     background: #4d59c8;
+//     height: 60px;
+//     width: fit-content;
+// }
+
+// .user-list-modal-avatar {
+//     border-radius: 50%;
+//     height: 100px;
+//     width: 100px;
+// }
+
