@@ -82,7 +82,7 @@ export default class Messages extends React.Component {
                         onChange={this.update("body")}
                         placeholder={`Message #${this.props.channel.channelName}`}
                     />
-                    <button type="submit">Submit</button>
+                    {this.state.body.length ? <button type="submit">Submit</button> : <button disabled type="submit">Submit</button>}
                 </form>
             </div>
         )
