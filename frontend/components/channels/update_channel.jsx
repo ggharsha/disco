@@ -24,23 +24,15 @@ export default class UpdateChannel extends React.Component {
         .fail(() => this.setState({ errors: this.props.errors[0] }));
     }
 
+    checkDefaultChannel(server) {
+        return server.channels[0];
+    }
+
     handleDelete(e) {
         e.preventDefault();
         this.props.deleteChannel(this.props.currentChannel.id)
-        .then(() => this.props.history.push('/channels/@me'))
+        .then(() => this.props.history.push(`/channels/${this.props.currentServer.id}/${this.checkDefaultChannel(this.props.currentServer)}`))
         .then(() => this.props.closeModal())
-        .then(() => this.handleChange())
-    }
-
-    handleChange() {
-        let servers = document.getElementsByClassName('server-icon');
-        servers = Array.prototype.slice.call(servers);
-        servers.map(server => {
-            if (server.classList.contains('selected-server')) {
-                server.classList.remove('selected-server')
-            };
-        });
-        servers[0].classList.add('selected-server');
     }
 
     deleteChannelButton() {
