@@ -35,17 +35,6 @@ export default class UpdateChannel extends React.Component {
         .then(() => this.props.closeModal())
     }
 
-    // handleChange() {
-    //     let servers = document.getElementsByClassName('server-icon');
-    //     servers = Array.prototype.slice.call(servers);
-    //     servers.map(server => {
-    //         if (server.classList.contains('selected-server')) {
-    //             server.classList.remove('selected-server')
-    //         };
-    //     });
-    //     servers[0].classList.add('selected-server');
-    // }
-
     deleteChannelButton() {
         return this.props.currentServer.channels.length > 1 ? (
             <button
