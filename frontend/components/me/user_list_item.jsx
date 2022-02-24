@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const UserListItem = ({ user }) => {
     const [modalStatus, setModalStatus] = useState(false);
@@ -9,8 +9,22 @@ const UserListItem = ({ user }) => {
         else setModalStatus(true);
     }
 
+    const modalRef = useRef();
+
+    useEffect(() => {
+        const handler = event => {
+            if (!modalRef.current.contains(event.target)) {
+                setModalStatus(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handler);
+
+        return () => document.removeEventListener("mousedown", handler);
+    })
+
     const userListModal = (
-        <div className="user-list-modal" onClick={e => e.stopPropagation()}>
+        <div className="user-list-modal" ref={modalRef} onClick={e => e.stopPropagation()}>
             <div className="user-list-modal-banner"></div>
             <img className="user-list-modal-avatar" src={user.photoUrl} />
             <div className="user-list-modal-body">
@@ -19,7 +33,6 @@ const UserListItem = ({ user }) => {
                     <span className="user-list-modal-tag">#{user.tag}</span>
                 </p>
             </div>
-            <div className="transparent-modal-background" onClick={() => handleClick()} />
         </div>
     )
 

@@ -385,16 +385,6 @@
 
 // user-list-modal
 
-.transparent-modal-background {
-    position: fixed;
-    z-index: -1;
-    background: transparent;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 70px;
-}
-
 .user-list-modal {
     position: fixed;
     display: inline-block;
