@@ -9,16 +9,16 @@ export default class Splash extends React.Component {
                     <h6><i className="fab fa-discord" /> Disco</h6>
                     <ul id='socials'>
                         <li>
-                            <a href='https://www.linkedin.com/in/ggharsha/'>LinkedIn</a>
+                            <a target="_blank" href='https://www.linkedin.com/in/ggharsha/'>LinkedIn</a>
                         </li>
                         <li>
-                            <a href='https://angel.co/u/harsha-bandi'>AngelList</a>
+                            <a target="_blank" href='https://angel.co/u/harsha-bandi'>AngelList</a>
                         </li>
                         <li>
-                            <a href='https://github.com/ggharsha'>GitHub</a>
+                            <a target="_blank" href='https://github.com/ggharsha'>GitHub</a>
                         </li>
                         <li>
-                            <a href='https://ggharsha.github.io'>Portfolio</a>
+                            <a target="_blank" href='https://ggharsha.github.io'>Portfolio</a>
                         </li>
                     </ul>
                     <Link to='/login' className='login'>Login</Link>
@@ -97,16 +97,16 @@ export default class Splash extends React.Component {
                         </p>
                         <ul id='footer-socials'>
                             <li>
-                                <a href='https://www.linkedin.com/in/ggharsha/'>LinkedIn</a>
+                                <a target="_blank" href='https://www.linkedin.com/in/ggharsha/'>LinkedIn</a>
                             </li>
                             <li>
-                                <a href='https://angel.co/u/harsha-bandi'>AngelList</a>
+                                <a target="_blank" href='https://angel.co/u/harsha-bandi'>AngelList</a>
                             </li>
                             <li>
-                                <a href='https://github.com/ggharsha'>GitHub</a>
+                                <a target="_blank" href='https://github.com/ggharsha'>GitHub</a>
                             </li>
                             <li>
-                                <a href='https://ggharsha.github.io'>Portfolio</a>
+                                <a target="_blank" href='https://ggharsha.github.io'>Portfolio</a>
                             </li>
                         </ul>
                     </div>
