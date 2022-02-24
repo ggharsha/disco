@@ -1,16 +1,29 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const ServerHeader = ({ server, openModal, currentUser }) => {
     const [menu, setMenu] = useState(false);
+    const menuRef = useRef();
 
     const handleClick = () => {
         if (menu) setMenu(false);
         else setMenu(true);
     };
 
+    useEffect(() => {
+        const handler = event => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setMenu(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handler);
+
+        return () => document.removeEventListener("mousedown", handler);
+    })
+
     const ownerOptions = (
-        <div className="server-header-options">
+        <div className="server-header-options" ref={menuRef}>
             <ul>
                 <li 
                 className="server-header-option"
@@ -29,7 +42,7 @@ const ServerHeader = ({ server, openModal, currentUser }) => {
     );
 
     const memberOptions = (
-        <div className="server-header-options">
+        <div className="server-header-options" ref={menuRef}>
             <ul>
                 <li 
                 className="server-header-option leave-server"
