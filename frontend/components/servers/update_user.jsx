@@ -102,9 +102,11 @@ export default class UpdateUser extends React.Component {
                     <button 
                         onClick={() => deleteUser(currentUser.id)}
                         className="delete-account-button"
+                        disabled
                     >
                         Delete Account
-                    </button> 
+                    </button>
+                    <p className="disabled-text">This button is disabled!</p>
                 </div>
             </div>
         )
