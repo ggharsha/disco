@@ -12,7 +12,7 @@ const ServerHeader = ({ server, openModal, currentUser }) => {
 
     useEffect(() => {
         const handler = event => {
-            if (!menuRef.current.contains(event.target)) {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
                 setMenu(false);
             }
         }
