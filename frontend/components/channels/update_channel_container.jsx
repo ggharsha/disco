@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { updateChannel, deleteChannel } from "../../actions/channel_actions";
 import { fetchCurrentUser } from "../../actions/session_actions";
 import { closeModal } from "../../actions/modal_actions";
+import { fetchServer } from "../../actions/server_actions";
 import UpdateChannel from "./update_channel";
 
 // selectors start
@@ -25,6 +26,7 @@ const mSTP = (state, ownProps) => ({
 });
 
 const mDTP = dispatch => ({
+    fetchServer: serverId => dispatch(fetchServer(serverId)),
     updateChannel: channel => dispatch(updateChannel(channel)),
     deleteChannel: channelId => dispatch(deleteChannel(channelId)),
     fetchCurrentUser: userId => dispatch(fetchCurrentUser(userId)),
