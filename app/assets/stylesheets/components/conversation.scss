@@ -81,11 +81,11 @@
 }
 
 #type-dm-form {
+    bottom: 0;
     position: fixed;
     height: 50px;
-    width: calc(100% - 560px);
-    z-index: 10;
-    bottom: 0;
+    width: 100%;
+    z-index: -1;
 }
 
 #type-dm-form input {
