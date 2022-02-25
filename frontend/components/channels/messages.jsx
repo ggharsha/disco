@@ -1,4 +1,5 @@
 import React from "react";
+import ChannelMessageItem from "./channel_message";
 
 export default class Messages extends React.Component {
     constructor(props) {
@@ -52,20 +53,24 @@ export default class Messages extends React.Component {
                 <div className="channel-message-history">
                     <ul className="channel-message-list">
                         {this.props.channelMessages.map(channelMessage => (
-                            <li 
-                                key={channelMessage.id}
-                                className="channel-message"
-                            >
-                                <span className="message-timestamp">
-                                    {channelMessage.createdAt.slice(11, 16)}&nbsp;&nbsp;
-                                </span>
-                                <span className="message-username">
-                                    {channelMessage.user.username}
-                                </span>
-                                <span className="message-body">
-                                    {channelMessage.body}
-                                </span>
-                            </li>
+                            <ChannelMessageItem 
+                                key={channelMessage.id} 
+                                message={channelMessage}
+                            />
+                            // <li 
+                            //     key={channelMessage.id}
+                            //     className="channel-message"
+                            // >
+                            //     <span className="message-timestamp">
+                            //         {channelMessage.createdAt.slice(11, 16)}&nbsp;&nbsp;
+                            //     </span>
+                            //     <span className="message-username">
+                            //         {channelMessage.user.username}
+                            //     </span>
+                            //     <span className="message-body">
+                            //         {channelMessage.body}
+                            //     </span>
+                            // </li>
                             ))}
                         <div style={{ float: "left", clear: "both" }}
                             ref={(el) => { this.messagesEnd = el; }}>
