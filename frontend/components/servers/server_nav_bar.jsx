@@ -42,7 +42,7 @@ export default class ServerNavBar extends React.Component {
                             />
                             <div id="handle">
                                 <p id="own-username">
-                                    {this.props.currentUser.username}
+                                    {this.props.currentUser.username.length > 10 ? this.props.currentUser.username.slice(0, 10) + "..." : this.props.currentUser.username}
                                 </p>
                                 <p id="own-tag">
                                     #{this.props.currentUser.tag}
