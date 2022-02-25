@@ -24,10 +24,11 @@ class Api::UsersController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-        if @user && @user.update(user_params)
+        if @user && @user.is_password?(params[:user][:password]) && @user.update(user_params) 
             render :show
         else
-            render json: @user.errors.full_messages, status: 422
+            errors = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ["Incorrect password."] 
+            render json: errors, status: 422
         end
     end
 
