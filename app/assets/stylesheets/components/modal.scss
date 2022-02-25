@@ -1018,7 +1018,7 @@
         input {
             padding-left: 5px;
             margin-top: -20px;
-            width: 100%;
+            width: 98%;
             height: 40px;
             color: #f3f3f3;
             font-family: $lato;
@@ -1026,6 +1026,10 @@
             background: #313339;
             border: none;
             border-radius: 5px;
+        }
+
+        .user-settings-modal-input-errors {
+            border: 1px solid #ed4245;
         }
     }
 }
@@ -1103,3 +1107,4 @@
         text-decoration: underline;
     }
 }
+
