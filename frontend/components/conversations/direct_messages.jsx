@@ -1,4 +1,5 @@
 import React from "react";
+import ConversationMessageItem from "./conversation_message";
 
 export default class DirectMessages extends React.Component {
     constructor(props) {
@@ -52,20 +53,24 @@ export default class DirectMessages extends React.Component {
                 <div className="conversation-message-history">
                     <ul className="conversation-message-list">
                         {this.props.directMessages.map(directMessage => (
-                            <li
+                            <ConversationMessageItem 
+                                message={directMessage}
                                 key={directMessage.id}
-                                className="conversation-message"
-                            >
-                                <span className="message-timestamp">
-                                    {directMessage.createdAt.slice(11, 16)}&nbsp;&nbsp;
-                                </span>
-                                <span className="message-username">
-                                    {directMessage.user.username}
-                                </span>
-                                <span className="message-body">
-                                    {directMessage.body}
-                                </span>
-                            </li>
+                            />
+                            // <li
+                            //     key={directMessage.id}
+                            //     className="conversation-message"
+                            // >
+                            //     <span className="message-timestamp">
+                            //         {directMessage.createdAt.slice(11, 16)}&nbsp;&nbsp;
+                            //     </span>
+                            //     <span className="message-username">
+                            //         {directMessage.user.username}
+                            //     </span>
+                            //     <span className="message-body">
+                            //         {directMessage.body}
+                            //     </span>
+                            // </li>
                         ))}
                         <div style={{ float: "left", clear: "both" }}
                             ref={(el) => { this.messagesEnd = el; }}>
