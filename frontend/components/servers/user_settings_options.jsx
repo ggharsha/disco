@@ -47,10 +47,16 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
     const usernameEdit = (
         <div className="user-settings-modal-background">
             <div className="user-settings-modal-foreground" ref={modalRef}>
-                <span onClick={() => setUsernameStatus(false)}>&times;</span>
+                <span 
+                    className="close-modal-user-settings"
+                    onClick={() => setUsernameStatus(false)}
+                >
+                    &times;
+                </span>
                 <h3>Change your username</h3>
                 <p>Enter a new username and your existing password.</p>
                 <form onSubmit={e => handleSubmitUsername(e)}>
+                    <span className="label-for-settings-modal">USERNAME</span>
                     {errors.length ? <input 
                         type="text"
                         value={username} 
@@ -62,6 +68,7 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
                         onChange={e => setUsername(e.currentTarget.value)}
                         className="user-settings-modal-input"
                     />}
+                    <span className="label-for-settings-modal">PASSWORD</span>
                     {errors.length ? <input 
                         type="password"
                         value={password}
@@ -75,7 +82,10 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
                     />}
                     {errors.length ? <p className="user-settings-errors">{errors[0]}</p> : null}
                     <div className="user-settings-modal-bottom">
-                        <p className="cancel-user-settings">Cancel</p>
+                        <p 
+                            onClick={() => setUsernameStatus(false)}
+                            className="cancel-user-settings"
+                        >Cancel</p>
                         <button 
                             className="submit-user-settings"
                             type="submit"
@@ -91,10 +101,15 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
     const emailEdit = (
         <div className="user-settings-modal-background">
             <div className="user-settings-modal-foreground" ref={modalRef}>
-                <span onClick={() => setEmailStatus(false)}>&times;</span>
-                <h3>Change your email</h3>
+                <span
+                    className="close-modal-user-settings"
+                    onClick={() => setUsernameStatus(false)}
+                >
+                    &times;
+                </span>                <h3>Change your email</h3>
                 <p>Enter a new email and your existing password.</p>
                 <form onSubmit={e => handleSubmitEmail(e)}>
+                    <span className="label-for-settings-modal">EMAIL</span>
                     {errors.length ? <input
                         type="text"
                         value={email}
@@ -106,6 +121,7 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
                         onChange={e => setEmail(e.currentTarget.value)}
                         className="user-settings-modal-input"
                     />}
+                    <span className="label-for-settings-modal">PASSWORD</span>
                     {errors.length ? <input
                         type="password"
                         value={password}
@@ -119,7 +135,10 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
                     />}
                     {errors.length ? <p className="user-settings-errors">{errors[0]}</p> : null}
                     <div className="user-settings-modal-bottom">
-                        <p className="cancel-user-settings">Cancel</p>
+                        <p 
+                            onClick={() => setEmailStatus(false)}
+                            className="cancel-user-settings"
+                        >Cancel</p>
                         <button
                             className="submit-user-settings"
                             type="submit"
