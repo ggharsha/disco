@@ -4,7 +4,6 @@ import { useRef, useState, useEffect } from "react";
 const UserSettingsOptions = ({ user, updateUser, errors }) => {
     const [usernameStatus, setUsernameStatus] = useState(false);
     const [emailStatus, setEmailStatus] = useState(false);
-    const [userErrors, setUserErrors] = useState(errors)
     const [username, setUsername] = useState(user.username);
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState(user.email);
@@ -51,18 +50,29 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
                 <h3>Change your username</h3>
                 <p>Enter a new username and your existing password.</p>
                 <form onSubmit={e => handleSubmitUsername(e)}>
-                    <input 
+                    {errors.length ? <input 
                         type="text"
                         value={username} 
                         onChange={e => setUsername(e.currentTarget.value)}
+                        className="user-settings-modal-input-errors"
+                    /> : <input
+                        type="text"
+                        value={username}
+                        onChange={e => setUsername(e.currentTarget.value)}
                         className="user-settings-modal-input"
-                    />
-                    <input 
+                    />}
+                    {errors.length ? <input 
+                        type="password"
+                        value={password}
+                        onChange={e => setPassword(e.currentTarget.value)}
+                        className="user-settings-modal-input-errors"
+                    /> : <input
                         type="password"
                         value={password}
                         onChange={e => setPassword(e.currentTarget.value)}
                         className="user-settings-modal-input"
-                    />
+                    />}
+                    {errors.length ? <p className="user-settings-errors">{errors[0]}</p> : null}
                     <div className="user-settings-modal-bottom">
                         <p className="cancel-user-settings">Cancel</p>
                         <button 
@@ -83,18 +93,29 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
                 <h3>Change your email</h3>
                 <p>Enter a new email and your existing password.</p>
                 <form onSubmit={e => handleSubmitEmail(e)}>
-                    <input
+                    {errors.length ? <input
+                        type="text"
+                        value={email}
+                        onChange={e => setEmail(e.currentTarget.value)}
+                        className="user-settings-modal-input-errors"
+                    /> : <input
                         type="text"
                         value={email}
                         onChange={e => setEmail(e.currentTarget.value)}
                         className="user-settings-modal-input"
-                    />
-                    <input
+                    />}
+                    {errors.length ? <input
+                        type="password"
+                        value={password}
+                        onChange={e => setPassword(e.currentTarget.value)}
+                        className="user-settings-modal-input-errors"
+                    /> : <input
                         type="password"
                         value={password}
                         onChange={e => setPassword(e.currentTarget.value)}
                         className="user-settings-modal-input"
-                    />
+                    />}
+                    {errors.length ? <p className="user-settings-errors">{errors[0]}</p> : null}
                     <div className="user-settings-modal-bottom">
                         <p className="cancel-user-settings">Cancel</p>
                         <button
