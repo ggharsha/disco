@@ -3,6 +3,7 @@ import * as UserApiUtil from '../util/users_api_util';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const REMOVE_USER = 'REMOVE_USER';
+export const RECEIVE_USER_ERRORS = 'RECEIVE_USER_ERRORS';
 
 const receiveAllUsers = users => ({
     type: RECEIVE_ALL_USERS,
@@ -17,6 +18,11 @@ const receiveUser = user => ({
 const removeUser = userId => ({
     type: REMOVE_USER,
     userId
+});
+
+const receiveErrors = errors => ({
+    type: RECEIVE_USER_ERRORS,
+    errors
 });
 
 export const fetchUsers = () => dispatch => {
@@ -36,7 +42,8 @@ export const createUser = user => dispatch => {
 
 export const updateUser = user => dispatch => {
     return UserApiUtil.updateUser(user)
-    .then(user => dispatch(receiveUser(user)))
+    .then(user => dispatch(receiveUser(user)),
+        errors => dispatch(receiveErrors(errors.responseJSON)))
 };
 
 export const deleteUser = userId => dispatch => {

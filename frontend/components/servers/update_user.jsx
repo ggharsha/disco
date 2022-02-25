@@ -1,4 +1,5 @@
 import React from "react";
+import UserSettingsOptions from "./user_settings_options_container";
 
 export default class UpdateUser extends React.Component {
     constructor(props) {
@@ -60,7 +61,28 @@ export default class UpdateUser extends React.Component {
                     >
                         &times;
                     </p>
-                    <div id="user-settings-form-container">
+                    <div className="user-settings-form-container">
+                        <div className="user-settings-form-banner">
+
+                        </div>
+                        <img 
+                            className="settings-avatar"
+                            src={currentUser.photoUrl}
+                        />
+                        <h3 className="settings-username">
+                            {currentUser.username}
+                            <span className="settings-username-tag">#{currentUser.tag}</span>
+                        </h3>
+                        <div className="user-settings-form-body">
+                            <div className="user-settings-form-inner-body">
+                                <UserSettingsOptions 
+                                    user={currentUser}
+                                    updateUser={updateUser}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    {/* <div id="user-settings-form-container">
                         <p className="my-account-header">My Account</p>
                         <form 
                             onSubmit={(e) => this.handleSubmit(e)}
@@ -98,7 +120,7 @@ export default class UpdateUser extends React.Component {
                                 Update
                             </button>
                         </form>
-                    </div>
+                    </div> */}
                     <button 
                         onClick={() => deleteUser(currentUser.id)}
                         className="delete-account-button"
