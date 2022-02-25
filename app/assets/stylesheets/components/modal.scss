@@ -864,7 +864,7 @@
 .user-settings-form-container {
     margin-left: 50px;
     position: absolute;
-    height: 400px;
+    height: 350px;
     width: 660px;
     box-sizing: border-box;
     border-radius: 8px;
@@ -879,7 +879,7 @@
 
 .user-settings-form-body {
     bottom: 0;
-    height: 300px;
+    height: 250px;
     background: #202225;
     border-radius: 0 0 8px 8px;
 }
@@ -906,4 +906,83 @@
 
 .settings-username-tag {
     color: #babbbf;
+}
+
+.user-settings-form-inner-body {
+    position: absolute;
+    height: 150px;
+    width: 630px;
+    background: #2f3136;
+    bottom: 30px;
+    left: 15px;
+    border-radius: 8px;
+}
+
+.user-settings-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 90%;
+}
+
+.user-settings-options li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 95%;
+}
+
+.label-for-settings {
+    font-family: $mukta;
+    font-weight: 500;
+    color: #babbbf;
+}
+
+.user-settings-options-inner-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: #f3f3f3;
+    font-family: $mukta;
+    font-size: 16px;
+}
+
+.user-settings-left {
+    background: #4f545c;
+    border-radius: 5px;
+    padding: 8px 14px 8px 14px;
+    user-select: none;
+}
+
+.user-settings-left:hover {
+    background: #72767d;
+    cursor: pointer;
+}
+
+.user-settings-modal-background {
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.user-settings-modal-foreground {
+    position: fixed;
+    z-index: 51;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 330px;
+    height: 440px;
+    background: #37393f;
+    border-radius: 5px;
+    box-sizing: border-box;
 }

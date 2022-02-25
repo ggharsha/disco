@@ -47,6 +47,7 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
     const usernameEdit = (
         <div className="user-settings-modal-background">
             <div className="user-settings-modal-foreground" ref={modalRef}>
+                <span onClick={() => setUsernameStatus(false)}>&times;</span>
                 <h3>Change your username</h3>
                 <p>Enter a new username and your existing password.</p>
                 <form onSubmit={e => handleSubmitUsername(e)}>
@@ -90,6 +91,7 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
     const emailEdit = (
         <div className="user-settings-modal-background">
             <div className="user-settings-modal-foreground" ref={modalRef}>
+                <span onClick={() => setEmailStatus(false)}>&times;</span>
                 <h3>Change your email</h3>
                 <p>Enter a new email and your existing password.</p>
                 <form onSubmit={e => handleSubmitEmail(e)}>
@@ -133,13 +135,19 @@ const UserSettingsOptions = ({ user, updateUser, errors }) => {
     return (
         <ul className="user-settings-options">
             <li>
-                <span className="user-settings-right">{user.username}</span>
-                <span className="user-settings-left" onClick={() => setUsernameStatus(true)}>Edit</span>
+                <span className="label-for-settings">USERNAME</span>
+                <div className="user-settings-options-inner-div">
+                    <span className="user-settings-right">{user.username}</span>
+                    <span className="user-settings-left" onClick={() => setUsernameStatus(true)}>Edit</span>
+                </div>
             </li>
             {usernameStatus ? usernameEdit : null}
             <li>
-                <span className="user-settings-right">{user.email}</span>
-                <span className="user-settings-left" onClick={() => setEmailStatus(true)}>Edit</span>
+                <span className="label-for-settings">EMAIL</span>
+                <div className="user-settings-options-inner-div">
+                    <span className="user-settings-right">{user.email}</span>
+                    <span className="user-settings-left" onClick={() => setEmailStatus(true)}>Edit</span>
+                </div>
             </li>
             {emailStatus ? emailEdit : null}
         </ul>
