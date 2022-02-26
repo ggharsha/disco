@@ -11,12 +11,13 @@ export default class Messages extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
         this.props.fetchCurrentUser(this.props.currentUser.id);
-        this.props.fetchChannel(this.props.channelId)
+        this.props.fetchChannel(this.props.match.params.channelId)
             .then(() => {
                 this.props.cableApp.cable.subscriptions.create({
                     channel: `ChannelsChannel`,
-                    id: this.props.channelId
+                    id: this.props.match.params.channelId
                 },
                 {
                     received: msg => {
@@ -27,7 +28,21 @@ export default class Messages extends React.Component {
         this.scrollToBottom();
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
+            this.props.fetchChannel(this.props.match.params.channelId)
+                .then(() => {
+                    this.props.cableApp.cable.subscriptions.create({
+                        channel: `ChannelsChannel`,
+                        id: this.props.match.params.channelId
+                    },
+                        {
+                            received: msg => {
+                                this.props.receiveMessage(msg)
+                            }
+                        })
+                });
+        }
         this.scrollToBottom();
     }
 
