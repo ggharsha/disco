@@ -60,6 +60,7 @@ export default class Channel extends React.Component {
                         channel={this.props.channel} 
                         channelId={this.props.channel.id}
                         cableApp={this.props.cableApp}
+                        match={this.props.match}
                     />
                     <p id="channel-header-name">
                         <span>#</span>&nbsp;&nbsp;{this.props.channel.channelName}
