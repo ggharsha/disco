@@ -11,7 +11,6 @@ export default class Messages extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchCurrentUser(this.props.currentUser.id);
         this.props.fetchChannel(this.props.match.params.channelId)
             .then(() => {
