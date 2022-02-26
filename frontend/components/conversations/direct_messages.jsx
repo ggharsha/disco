@@ -27,7 +27,21 @@ export default class DirectMessages extends React.Component {
         this.scrollToBottom();
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
+        if (prevProps.conversationId !== this.props.conversationId) {
+            this.props.fetchConversation(this.props.conversationId)
+                .then(() => {
+                    this.props.cableApp.cable.subscriptions.create({
+                        channel: `ConversationsChannel`,
+                        id: this.props.conversationId
+                    },
+                        {
+                            received: dm => {
+                                this.props.receiveDirectMessage(dm)
+                            }
+                        })
+                })
+        }
         this.scrollToBottom();
     }
 
